@@ -1,0 +1,5 @@
+export { default as LandingPages } from './LandingPages'
+export { default as CorporateWebsites } from './CorporateWebsites'
+export { default as EcommercePage } from './EcommercePage'
+export { default as RedesignPage } from './RedesignPage'
+export { default as UXUIDesign } from './UXUIDesign'

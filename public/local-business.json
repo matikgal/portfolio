@@ -1,0 +1,63 @@
+{
+	"@context": "https://schema.org",
+	"@type": "LocalBusiness",
+	"name": "uWebs",
+	"description": "Profesjonalne tworzenie stron internetowych Bielsko-Biała, Żywiec, Beskidy",
+	"url": "https://uwebs.pl",
+	"telephone": "+48-123-456-789",
+	"email": "kontakt@uwebs.pl",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Bielsko-Biała",
+		"addressRegion": "Śląsk",
+		"addressCountry": "PL"
+	},
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": "49.8225",
+		"longitude": "19.0444"
+	},
+	"areaServed": [
+		{
+			"@type": "City",
+			"name": "Bielsko-Biała"
+		},
+		{
+			"@type": "City",
+			"name": "Żywiec"
+		},
+		{
+			"@type": "Place",
+			"name": "Beskidy"
+		},
+		{
+			"@type": "State",
+			"name": "Śląsk"
+		},
+		{
+			"@type": "Country",
+			"name": "Polska"
+		}
+	],
+	"serviceType": [
+		"Tworzenie stron internetowych",
+		"Landing pages",
+		"Strony firmowe",
+		"Sklepy internetowe",
+		"Web design",
+		"UX/UI Design",
+		"SEO"
+	],
+	"priceRange": "3500-25000 PLN",
+	"paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+	"currenciesAccepted": "PLN",
+	"openingHours": "Mo-Fr 09:00-17:00",
+	"sameAs": ["https://www.linkedin.com/company/uwebs", "https://www.instagram.com/uwebs"],
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5.0",
+		"reviewCount": "15",
+		"bestRating": "5",
+		"worstRating": "1"
+	}
+}
