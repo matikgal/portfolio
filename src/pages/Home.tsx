@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Code, Sparkles, Zap, Rocket, Search, PenTool } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+
 import { Button } from '@/components/ui/button'
 import { useLanguage } from '@/contexts/LanguageContext'
 import Navigation from '@/components/Navigation'
@@ -152,12 +152,17 @@ const Home = () => {
 						{/* Large Featured Card */}
 						<motion.div
 							variants={fadeInUp}
-							className="lg:col-span-2 lg:row-span-2 group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-colors cursor-pointer">
-							<div className="aspect-[16/10] bg-gradient-to-br from-primary to-secondary/30 relative overflow-hidden">
+							className="lg:col-span-2 lg:row-span-1 group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-colors">
+							<div className=" relative overflow-hidden">
+								<img
+									src="/tort-desktop.webp"
+									alt="Portfolio Website Screenshot"
+									className="w-full h-full object-cover object-top"
+								/>
 								<div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 									<div className="text-center text-primary-foreground">
-										<p className="font-mono text-sm uppercase tracking-wider mb-2">Landing Page</p>
-										<h3 className="font-heading font-bold text-h3 mb-4">Featured Project</h3>
+										<p className="font-mono text-sm uppercase tracking-wider mb-2">Portfolio Website</p>
+										<h3 className="font-heading font-bold text-h3 mb-4">Nasze Portfolio</h3>
 										<Button variant="secondary" size="sm">
 											Zobacz Case Study
 											<ArrowRight className="ml-2 h-4 w-4" />
@@ -168,16 +173,26 @@ const Home = () => {
 						</motion.div>
 
 						{/* Smaller Cards */}
-						{[1, 2, 3, 4].map(i => (
+						{[
+							{ img: '/farma-desktop.webp', title: 'Farma', category: 'E-commerce' },
+							{ img: '/fryzjer-desktop.webp', title: 'Salon Fryzjerski', category: 'Usługi' },
+							{ img: '/mechanik-desktop.webp', title: 'Warsztat', category: 'Usługi' },
+							{ img: '/chaty-desktop.webp', title: 'Chaty AI', category: 'SaaS' }
+						].map((project, i) => (
 							<motion.div
 								key={i}
 								variants={fadeInUp}
-								className="group relative overflow-hidden bg-card border-4 border-primary hover:border-accent transition-colors cursor-pointer">
-								<div className="aspect-[4/3] bg-gradient-to-br from-accent/30 to-primary/30 relative overflow-hidden">
+								className="group relative overflow-hidden bg-card border-4 border-primary hover:border-accent transition-colors">
+								<div className="aspect-[4/3] relative overflow-hidden bg-gray-100">
+									<img
+										src={project.img}
+										alt={`${project.title} Screenshot`}
+										className="w-full h-full object-fill"
+									/>
 									<div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div className="text-center text-primary-foreground">
-											<p className="font-mono text-xs uppercase tracking-wider mb-2">E-commerce</p>
-											<h3 className="font-heading font-bold text-xl mb-2">Project {i}</h3>
+											<p className="font-mono text-xs uppercase tracking-wider mb-2">{project.category}</p>
+											<h3 className="font-heading font-bold text-xl mb-2">{project.title}</h3>
 											<span className="text-sm text-secondary">Zobacz więcej →</span>
 										</div>
 									</div>
@@ -378,6 +393,8 @@ const Home = () => {
 			</section>
 
 			<Footer />
+
+
 		</>
 	)
 }
