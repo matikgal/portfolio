@@ -28,7 +28,7 @@ const translations = {
 		'hero.title': 'Tworzymy strony internetowe które',
 		'hero.title_highlight': 'sprzedają.',
 		'hero.description':
-			'Młode, dynamiczne studio z Beskidów. Specjalizujemy się w tworzeniu stron które rzeczywiście sprzedają. Nowoczesny design, SEO, responsywność. Konkurencyjne ceny od 3500 PLN - idealne dla startupów i małych firm.',
+			'Tworzymy strony internetowe które rzeczywiście sprzedają. Nowoczesny design, SEO, responsywność. Konkurencyjne ceny - idealne dla startupów i małych firm.',
 		'hero.cta_portfolio': 'Zobacz nasze realizacje',
 		'hero.scroll_more': 'Zobacz więcej',
 
@@ -135,6 +135,15 @@ const translations = {
 		'404.back_button': 'Wróć',
 		'404.suggestions_title': 'Może Szukasz Czegoś Innego?',
 		'404.suggestions_subtitle': 'Sprawdź nasze najpopularniejsze strony',
+
+		// Cookie Banner
+		'cookies.title': 'Używamy cookies',
+		'cookies.description':
+			'Ta strona używa plików cookies aby zapewnić najlepsze doświadczenia. Kontynuując przeglądanie wyrażasz zgodę na ich użycie.',
+		'cookies.learn_more': 'Dowiedz się więcej',
+		'cookies.accept': 'Akceptuję',
+		'cookies.reject': 'Odrzuć',
+		'cookies.close': 'Zamknij',
 	},
 	en: {
 		// Navigation
@@ -257,6 +266,15 @@ const translations = {
 		'404.back_button': 'Go Back',
 		'404.suggestions_title': "Maybe You're Looking For Something Else?",
 		'404.suggestions_subtitle': 'Check our most popular pages',
+
+		// Cookie Banner
+		'cookies.title': 'We use cookies',
+		'cookies.description':
+			'This website uses cookies to ensure the best experience. By continuing to browse you consent to their use.',
+		'cookies.learn_more': 'Learn more',
+		'cookies.accept': 'Accept',
+		'cookies.reject': 'Reject',
+		'cookies.close': 'Close',
 	},
 }
 

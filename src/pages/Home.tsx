@@ -1,5 +1,20 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Code, Sparkles, Zap, Rocket, Search, PenTool } from 'lucide-react'
+import {
+	ArrowRight,
+	Code,
+	Sparkles,
+	Zap,
+	Rocket,
+	Search,
+	PenTool,
+	Clock,
+	DollarSign,
+	Target,
+	Smartphone,
+	Palette,
+	Globe,
+} from 'lucide-react'
+
 import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
@@ -115,109 +130,331 @@ const Home = () => {
 				</motion.div>
 			</section>
 
-			{/* Trust Bar - Clients */}
+			{/* Features Bar */}
 			<section className="py-20 bg-card">
 				<div className="container mx-auto px-6">
 					<motion.p
 						{...fadeInUp}
 						className="font-mono text-sm text-center text-muted-foreground uppercase tracking-wider mb-12">
-						Zaufali nam
+						Dlaczego my?
 					</motion.p>
-					<motion.div
-						className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-						{...fadeInUp}>
-						{[1, 2, 3, 4].map(i => (
-							<div key={i} className="text-4xl font-heading font-bold text-primary">
-								LOGO {i}
-							</div>
-						))}
+					<motion.div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center" {...fadeInUp}>
+						{[
+							{ icon: Clock, title: 'Szybko', desc: 'Realizacja w 2-4 tygodnie' },
+							{ icon: DollarSign, title: 'Przystępnie', desc: 'Konkurencyjne ceny' },
+							{ icon: Target, title: 'Skutecznie', desc: 'Strony które sprzedają' },
+							{ icon: Rocket, title: 'Nowoczesnie', desc: 'Najnowsze technologie' },
+						].map((feature, i) => {
+							const IconComponent = feature.icon as React.ComponentType<{ className?: string }>
+							return (
+								<div key={i} className="text-center">
+									<IconComponent className="w-12 h-12 mx-auto mb-3 text-secondary" />
+									<h3 className="font-heading font-bold text-lg text-primary mb-2">{feature.title}</h3>
+									<p className="text-sm text-muted-foreground">{feature.desc}</p>
+								</div>
+							)
+						})}
 					</motion.div>
 				</div>
 			</section>
 
-			{/* Featured Work */}
-			<section className="py-32 bg-background">
-				<div className="container mx-auto px-6">
-					<motion.div {...fadeInUp} className="mb-16">
-						<h2 className="font-heading font-bold text-h1-mobile md:text-h1 text-primary mb-4">Wybrane Projekty</h2>
-						<p className="font-body text-body-lg text-muted-foreground">Portfolio które mówi więcej niż tysiąc słów</p>
+			{/* Portfolio Showcase - Diagonal Layout */}
+			<section className="py-32 bg-background relative overflow-hidden">
+				{/* Subtle Background Elements */}
+				<div className="absolute inset-0 opacity-3">
+					<div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-r from-secondary/5 to-transparent transform -rotate-12"></div>
+					<div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-l from-accent/5 to-transparent transform rotate-12"></div>
+				</div>
+
+				<div className="container mx-auto px-6 relative z-10">
+					{/* Section Header */}
+					<motion.div {...fadeInUp} className="text-center mb-20">
+						<p className="font-mono text-sm text-secondary uppercase tracking-wider mb-4">Portfolio</p>
+						<h2 className="font-heading font-bold text-h1-mobile md:text-h1 text-primary mb-6">
+							Projekty Które <span className="text-secondary">Wyróżniają</span>
+						</h2>
+						<p className="font-body text-body-lg text-muted-foreground max-w-2xl mx-auto">
+							Każdy projekt to unikalna historia sukcesu. Zobacz jak pomagamy markom osiągnąć swoje cele w cyfrowym
+							świecie.
+						</p>
 					</motion.div>
 
+					{/* Diagonal Portfolio Layout */}
 					<motion.div
 						variants={staggerContainer}
 						initial="initial"
 						whileInView="whileInView"
 						viewport={{ once: true }}
-						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-						{/* Large Featured Card */}
-						<motion.div
-							variants={fadeInUp}
-							className="lg:col-span-2 lg:row-span-1 group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-colors">
-							<div className=" relative overflow-hidden">
-								<img
-									src="/tort-desktop.webp"
-									alt="Portfolio Website Screenshot"
-									className="w-full h-full object-cover object-top"
-								/>
-								<div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-									<div className="text-center text-primary-foreground">
-										<p className="font-mono text-sm uppercase tracking-wider mb-2">Portfolio Website</p>
-										<h3 className="font-heading font-bold text-h3 mb-4">Nasze Portfolio</h3>
-										<Button variant="secondary" size="sm">
-											Zobacz Case Study
-											<ArrowRight className="ml-2 h-4 w-4" />
-										</Button>
+						className="space-y-16">
+						{/* Project 1 - Left Aligned */}
+						<motion.div variants={fadeInUp} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+							<div className="lg:col-span-7 order-2 lg:order-1">
+								<div className="group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform hover:-rotate-1">
+									{/* Browser Chrome */}
+									<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
+										<div className="flex gap-2">
+											<div className="w-3 h-3 bg-destructive rounded-full"></div>
+											<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+											<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+										</div>
+										<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
+											<span className="text-xs text-muted-foreground font-mono">sielska-ostoja.pl</span>
+										</div>
+									</div>
+									{/* Image Container with proper aspect ratio */}
+									<div className="aspect-[19/10] relative overflow-hidden bg-muted">
+										<img
+											src="/farma-desktop.webp"
+											alt="Sielska Ostoja - Ranczo i Agroturystyka"
+											className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+										/>
+									</div>
+								</div>
+							</div>
+							<div className="lg:col-span-5 order-1 lg:order-2 lg:pl-8">
+								<div className="flex flex-wrap gap-2 mb-4">
+									<span className="px-3 py-1 bg-green-500 text-white text-xs font-mono uppercase tracking-wider">
+										Wizytówka
+									</span>
+									<span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-mono uppercase tracking-wider">
+										Agroturystyka
+									</span>
+								</div>
+								<h3 className="font-heading font-bold text-h2-mobile md:text-h2 text-primary mb-4">Sielska Ostoja</h3>
+								<p className="font-body text-body text-muted-foreground mb-6 leading-relaxed">
+									Strona wizytówka dla rancza i agroturystyki. Prezentuje ofertę noclegową, atrakcje dla dzieci i
+									dorosłych oraz piękne tereny rekreacyjne w sercu natury.
+								</p>
+								<div className="flex flex-wrap gap-3 text-sm text-muted-foreground mb-6">
+									<span className="flex items-center gap-1">
+										<div className="w-2 h-2 bg-green-500 rounded-full"></div>
+										Vue.js
+									</span>
+									<span className="flex items-center gap-1">
+										<div className="w-2 h-2 bg-accent rounded-full"></div>
+										Turystyka
+									</span>
+									<span className="flex items-center gap-1">
+										<div className="w-2 h-2 bg-primary rounded-full"></div>
+										Responsive
+									</span>
+								</div>
+								<Button variant="outline" className="group">
+									Zobacz Stronę
+									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+								</Button>
+							</div>
+						</motion.div>
+
+						{/* Project 2 - Right Aligned */}
+						<motion.div variants={fadeInUp} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+							<div className="lg:col-span-5 lg:pr-8">
+								<div className="flex flex-wrap gap-2 mb-4">
+									<span className="px-3 py-1 bg-pink-500 text-white text-xs font-mono uppercase tracking-wider">
+										Usługi
+									</span>
+									<span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-mono uppercase tracking-wider">
+										Beauty
+									</span>
+								</div>
+								<h3 className="font-heading font-bold text-h2-mobile md:text-h2 text-primary mb-4">Eleganza Salon</h3>
+								<p className="font-body text-body text-muted-foreground mb-6 leading-relaxed">
+									Elegancka strona dla salonu fryzjerskiego z systemem rezerwacji online, galerią stylizacji i
+									prezentacją usług. Nowoczesny design podkreślający profesjonalizm salonu.
+								</p>
+								<div className="flex flex-wrap gap-3 text-sm text-muted-foreground mb-6">
+									<span className="flex items-center gap-1">
+										<div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+										React
+									</span>
+									<span className="flex items-center gap-1">
+										<div className="w-2 h-2 bg-accent rounded-full"></div>
+										Rezerwacje
+									</span>
+									<span className="flex items-center gap-1">
+										<div className="w-2 h-2 bg-primary rounded-full"></div>
+										Galeria
+									</span>
+								</div>
+								<Button variant="outline" className="group">
+									Zobacz Stronę
+									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+								</Button>
+							</div>
+							<div className="lg:col-span-7">
+								<div className="group relative overflow-hidden bg-card border-4 border-primary hover:border-accent transition-all duration-500 hover:shadow-lift-lg transform hover:rotate-1">
+									{/* Browser Chrome */}
+									<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
+										<div className="flex gap-2">
+											<div className="w-3 h-3 bg-destructive rounded-full"></div>
+											<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+											<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+										</div>
+										<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
+											<span className="text-xs text-muted-foreground font-mono">eleganza-salon.pl</span>
+										</div>
+									</div>
+									{/* Image Container */}
+									<div className="aspect-[19/10] relative overflow-hidden bg-muted">
+										<img
+											src="/fryzjer-desktop.webp"
+											alt="Eleganza Salon - Salon Fryzjerski"
+											className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+										/>
 									</div>
 								</div>
 							</div>
 						</motion.div>
 
-						{/* Smaller Cards */}
-						{[
-							{ img: '/farma-desktop.webp', title: 'Farma', category: 'E-commerce' },
-							{ img: '/fryzjer-desktop.webp', title: 'Salon Fryzjerski', category: 'Usługi' },
-							{ img: '/mechanik-desktop.webp', title: 'Warsztat', category: 'Usługi' },
-							{ img: '/chaty-desktop.webp', title: 'Chaty AI', category: 'SaaS' }
-						].map((project, i) => (
-							<motion.div
-								key={i}
-								variants={fadeInUp}
-								className="group relative overflow-hidden bg-card border-4 border-primary hover:border-accent transition-colors">
-								<div className="aspect-[4/3] relative overflow-hidden bg-gray-100">
-									<img
-										src={project.img}
-										alt={`${project.title} Screenshot`}
-										className="w-full h-full object-fill"
-									/>
-									<div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-										<div className="text-center text-primary-foreground">
-											<p className="font-mono text-xs uppercase tracking-wider mb-2">{project.category}</p>
-											<h3 className="font-heading font-bold text-xl mb-2">{project.title}</h3>
-											<span className="text-sm text-secondary">Zobacz więcej →</span>
+						{/* Project 3 - Left Aligned */}
+						<motion.div variants={fadeInUp} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+							<div className="lg:col-span-7 order-2 lg:order-1">
+								<div className="group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform hover:-rotate-1">
+									{/* Browser Chrome */}
+									<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
+										<div className="flex gap-2">
+											<div className="w-3 h-3 bg-destructive rounded-full"></div>
+											<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+											<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+										</div>
+										<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
+											<span className="text-xs text-muted-foreground font-mono">slodkie-marzenia.pl</span>
 										</div>
 									</div>
+									{/* Image Container */}
+									<div className="aspect-[19/10] relative overflow-hidden bg-muted">
+										<img
+											src="/tort-desktop.webp"
+											alt="Słodkie Marzenia - Cukiernia"
+											className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+										/>
+									</div>
 								</div>
-							</motion.div>
-						))}
-					</motion.div>
+							</div>
+							<div className="lg:col-span-5 order-1 lg:order-2 lg:pl-8">
+								<div className="flex flex-wrap gap-2 mb-4">
+									<span className="px-3 py-1 bg-pink-500 text-white text-xs font-mono uppercase tracking-wider">
+										E-commerce
+									</span>
+									<span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-mono uppercase tracking-wider">
+										Cukiernia
+									</span>
+								</div>
+								<h3 className="font-heading font-bold text-h2-mobile md:text-h2 text-primary mb-4">Słodkie Marzenia</h3>
+								<p className="font-body text-body text-muted-foreground mb-6 leading-relaxed">
+									Elegancka strona dla cukierni specjalizującej się w tortach na zamówienie. System galerii, kalkulatora
+									cen i formularza zamówień z możliwością personalizacji.
+								</p>
+								<div className="flex flex-wrap gap-3 text-sm text-muted-foreground mb-6">
+									<span className="flex items-center gap-1">
+										<div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+										Vue.js
+									</span>
+									<span className="flex items-center gap-1">
+										<div className="w-2 h-2 bg-accent rounded-full"></div>
+										Zamówienia
+									</span>
+									<span className="flex items-center gap-1">
+										<div className="w-2 h-2 bg-primary rounded-full"></div>
+										Galeria
+									</span>
+								</div>
+								<Button variant="outline" className="group">
+									Zobacz Stronę
+									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+								</Button>
+							</div>
+						</motion.div>
 
-					<motion.div {...fadeInUp} className="text-center mt-12">
-						<Link to="/portfolio">
-							<Button
-								variant="outline"
-								size="lg"
-								className="group font-body font-medium tracking-wider uppercase border-2">
-								Zobacz Wszystkie Projekty
-								<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-							</Button>
-						</Link>
+						{/* Smaller Projects Grid */}
+						<motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-16">
+							{[
+								{
+									img: '/chaty-desktop.webp',
+									title: 'Prestige Nieruchomości',
+									category: 'Nieruchomości',
+									desc: 'Agencja nieruchomości z wyszukiwarką ofert',
+									color: 'bg-amber-500',
+									url: 'prestige-nieruchomosci.pl',
+								},
+								{
+									img: '/mechanik-desktop.webp',
+									title: 'Prime Motors',
+									category: 'Warsztat',
+									desc: 'Warsztat samochodowy z systemem umówień',
+									color: 'bg-blue-500',
+									url: 'prime-motors.pl',
+								},
+								{
+									img: '/motory-desktop.png',
+									title: 'Thunder Garage',
+									category: 'Motocykle',
+									desc: 'Sklep motocyklowy z prezentacją oferty',
+									color: 'bg-gray-800',
+									url: 'thunder-garage.pl',
+								},
+							].map((project, i) => (
+								<motion.div
+									key={i}
+									variants={fadeInUp}
+									className="group relative overflow-hidden bg-card border-4 border-primary hover:border-accent transition-all duration-300 hover:shadow-lift cursor-pointer">
+									{/* Browser Chrome */}
+									<div className="bg-muted p-2 flex items-center gap-2 border-b-2 border-primary">
+										<div className="flex gap-1">
+											<div className="w-2 h-2 bg-destructive rounded-full"></div>
+											<div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+											<div className="w-2 h-2 bg-green-500 rounded-full"></div>
+										</div>
+										<div className="flex-1 mx-2 h-4 bg-background flex items-center px-2">
+											<span className="text-xs text-muted-foreground font-mono">{project.url}</span>
+										</div>
+									</div>
+									{/* Image Container */}
+									<div className="aspect-[19/10] relative overflow-hidden bg-muted">
+										<img
+											src={project.img}
+											alt={`${project.title} Screenshot`}
+											className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+										/>
+									</div>
+									{/* Content Overlay */}
+									<div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+										<div className="p-6 text-primary-foreground w-full">
+											<span
+												className={`inline-block px-2 py-1 ${project.color} text-white text-xs font-mono uppercase tracking-wider mb-3`}>
+												{project.category}
+											</span>
+											<h3 className="font-heading font-bold text-lg mb-2">{project.title}</h3>
+											<p className="text-sm text-primary-foreground/90 mb-4">{project.desc}</p>
+											<span className="text-sm text-secondary font-medium">Zobacz projekt →</span>
+										</div>
+									</div>
+								</motion.div>
+							))}
+						</motion.div>
+
+						{/* View All Projects CTA */}
+						<motion.div variants={fadeInUp} className="text-center pt-16">
+							<Link to="/portfolio">
+								<Button variant="secondary" size="lg" className="group font-body font-medium tracking-wider uppercase">
+									Zobacz Wszystkie Projekty
+									<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+								</Button>
+							</Link>
+						</motion.div>
 					</motion.div>
 				</div>
 			</section>
 
 			{/* Services - Bento Box */}
-			<section className="py-32 bg-card">
-				<div className="container mx-auto px-6">
+			<section className="py-32 bg-card relative overflow-hidden">
+				{/* Background Elements */}
+				<div className="absolute inset-0 opacity-3">
+					<div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-r from-secondary/5 to-transparent transform -rotate-12"></div>
+					<div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-l from-accent/5 to-transparent transform rotate-12"></div>
+				</div>
+
+				<div className="container mx-auto px-6 relative z-10">
 					<motion.div {...fadeInUp} className="mb-16">
 						<h2 className="font-heading font-bold text-h1-mobile md:text-h1 text-primary mb-4">Czym Się Zajmujemy</h2>
 					</motion.div>
@@ -251,32 +488,41 @@ const Home = () => {
 								desc: 'Multi-page websites dla Twojego biznesu',
 								link: '/uslugi/strony-firmowe',
 							},
-							{
-								icon: Zap,
-								title: 'E-commerce',
-								desc: 'Sklepy które sprzedają 24/7',
-								link: '/uslugi/sklepy-internetowe',
-							},
+							// {
+							// 	icon: Zap,
+							// 	title: 'E-commerce',
+							// 	desc: 'Sklepy które sprzedają 24/7',
+							// 	link: '/uslugi/sklepy-internetowe',
+							// },
 							{ icon: Rocket, title: 'Redesign', desc: 'Odświeżenie które robi różnicę', link: '/uslugi/redesign' },
-							{
-								icon: PenTool,
-								title: 'UX/UI Design',
-								desc: 'Interfejsy które użytkownicy kochają',
-								link: '/uslugi/ux-ui-design',
-							},
-						].map((service, i) => (
-							<motion.div
-								key={i}
-								variants={fadeInUp}
-								className="group bg-background p-8 border-4 border-primary hover:border-accent hover:shadow-lift transition-all duration-300">
-								<service.icon className="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition-transform" />
-								<h3 className="font-heading font-bold text-h3-mobile mb-3">{service.title}</h3>
-								<p className="text-body-sm text-muted-foreground mb-4">{service.desc}</p>
-								<Link to={service.link} className="text-secondary font-body font-medium text-sm hover:underline">
-									Dowiedz się więcej →
-								</Link>
-							</motion.div>
-						))}
+						].map((service, i) => {
+							const IconComponent = service.icon as React.ComponentType<{ className?: string }>
+							return (
+								<motion.div
+									key={i}
+									variants={fadeInUp}
+									className="group bg-background p-8 border-4 border-primary hover:border-accent hover:shadow-lift transition-all duration-300">
+									<IconComponent className="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition-transform" />
+									<h3 className="font-heading font-bold text-h3-mobile mb-3">{service.title}</h3>
+									<p className="text-body-sm text-muted-foreground mb-4">{service.desc}</p>
+									<Link to={service.link} className="text-secondary font-body font-medium text-sm hover:underline">
+										Dowiedz się więcej →
+									</Link>
+								</motion.div>
+							)
+						})}
+
+						{/* UX/UI Design - Full Width */}
+						<motion.div
+							variants={fadeInUp}
+							className="lg:col-span-3 group bg-background p-8 border-4 border-primary hover:border-accent hover:shadow-lift transition-all duration-300">
+							<PenTool className="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition-transform" />
+							<h3 className="font-heading font-bold text-h3-mobile mb-3">UX/UI Design</h3>
+							<p className="text-body-sm text-muted-foreground mb-4">Interfejsy które użytkownicy kochają</p>
+							<Link to="/uslugi/ux-ui-design" className="text-secondary font-body font-medium text-sm hover:underline">
+								Dowiedz się więcej →
+							</Link>
+						</motion.div>
 					</motion.div>
 				</div>
 			</section>
@@ -341,26 +587,34 @@ const Home = () => {
 				</div>
 			</section>
 
-			{/* Stats */}
+			{/* Values */}
 			<section className="py-20 bg-secondary text-secondary-foreground">
 				<div className="container mx-auto px-6">
+					<motion.div {...fadeInUp} className="text-center mb-16">
+						<h2 className="font-heading font-bold text-h1-mobile md:text-h1 mb-4">Co Gwarantujemy</h2>
+						<p className="font-body text-body-lg opacity-70">Każda strona którą tworzymy spełnia najwyższe standardy</p>
+					</motion.div>
 					<motion.div
 						variants={staggerContainer}
 						initial="initial"
 						whileInView="whileInView"
 						viewport={{ once: true }}
-						className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 						{[
-							{ number: '150+', label: 'Projects' },
-							{ number: '98%', label: 'Happy Clients' },
-							{ number: '50+', label: 'Clients' },
-							{ number: '5', label: 'Years' },
-						].map((stat, i) => (
-							<motion.div key={i} variants={fadeInUp}>
-								<div className="font-mono font-bold text-[80px] md:text-[120px] leading-none mb-4">{stat.number}</div>
-								<p className="font-body text-lg">{stat.label}</p>
-							</motion.div>
-						))}
+							{ icon: Palette, title: 'Design', desc: 'Nowoczesny i funkcjonalny' },
+							{ icon: Zap, title: 'Wydajność', desc: 'Szybkie ładowanie stron' },
+							{ icon: Smartphone, title: 'Responsywność', desc: 'Działa na każdym urządzeniu' },
+							{ icon: Globe, title: 'SEO', desc: 'Optymalizacja pod wyszukiwarki' },
+						].map((value, i) => {
+							const IconComponent = value.icon as React.ComponentType<{ className?: string }>
+							return (
+								<motion.div key={i} variants={fadeInUp}>
+									<IconComponent className="w-16 h-16 mx-auto mb-4 text-secondary-foreground" />
+									<h3 className="font-heading font-bold text-xl mb-2">{value.title}</h3>
+									<p className="font-body text-sm opacity-80">{value.desc}</p>
+								</motion.div>
+							)
+						})}
 					</motion.div>
 				</div>
 			</section>
@@ -393,8 +647,6 @@ const Home = () => {
 			</section>
 
 			<Footer />
-
-
 		</>
 	)
 }

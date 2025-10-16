@@ -143,10 +143,8 @@ const Contact = () => {
 										className="w-full px-4 py-3 border-2 border-primary focus:border-secondary bg-background text-foreground font-body">
 										<option>Landing Page</option>
 										<option>Strona Firmowa</option>
-										<option>E-commerce</option>
 										<option>Redesign</option>
 										<option>UX/UI Design</option>
-										<option>Konsulting</option>
 									</select>
 								</div>
 
