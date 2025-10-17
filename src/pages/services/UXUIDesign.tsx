@@ -55,7 +55,7 @@ const UXUIDesign = () => {
 
 	const benefits = [
 		'Zwiększenie zadowolenia użytkowników',
-		'Poprawa współczynnika konwersji',
+		'Łatwiejsze korzystanie ze strony',
 		'Redukcja kosztów wsparcia technicznego',
 		'Lepsze pozycjonowanie w wyszukiwarkach',
 		'Zwiększenie lojalności klientów',
@@ -86,7 +86,7 @@ const UXUIDesign = () => {
 		{
 			step: '05',
 			title: 'Prototyping & Testing',
-			desc: 'Budujemy prototypy i testujemy je z użytkownikami',
+			desc: 'Budujemy prototypy i je testujemy',
 		},
 	]
 
@@ -242,17 +242,23 @@ const UXUIDesign = () => {
 						</motion.div>
 
 						<motion.div {...fadeInUp} className="bg-secondary/10 p-8 border-4 border-secondary">
-							<div className="text-center">
-								<div className="font-mono font-bold text-6xl text-secondary mb-2">400%</div>
-								<p className="text-body text-primary-foreground/80 mb-6">ROI z inwestycji w UX design</p>
-								<div className="grid grid-cols-2 gap-4 text-center">
+							<div className="space-y-8">
+								<div className="text-center">
+									<PenTool className="w-16 h-16 text-secondary mx-auto mb-4" />
+									<h3 className="font-heading font-bold text-h3 mb-4">Czym jest UX/UI Design?</h3>
+									<p className="text-body text-primary-foreground/80">
+										UX to doświadczenie użytkownika - jak łatwo i przyjemnie korzysta się z Twojej strony. UI to
+										interfejs - jak wygląda i jak działa. Razem tworzą skuteczną stronę internetową.
+									</p>
+								</div>
+								<div className="grid grid-cols-2 gap-6 text-center pt-6 border-t-2 border-secondary/30">
 									<div>
-										<div className="font-mono font-bold text-3xl text-secondary">100+</div>
-										<p className="text-sm text-primary-foreground/70">Projektów UX/UI</p>
+										<div className="font-mono font-bold text-3xl text-secondary mb-2">UX</div>
+										<p className="text-sm text-primary-foreground/70">Doświadczenie</p>
 									</div>
 									<div>
-										<div className="font-mono font-bold text-3xl text-secondary">88%</div>
-										<p className="text-sm text-primary-foreground/70">Wzrost konwersji</p>
+										<div className="font-mono font-bold text-3xl text-secondary mb-2">UI</div>
+										<p className="text-sm text-primary-foreground/70">Interfejs</p>
 									</div>
 								</div>
 							</div>

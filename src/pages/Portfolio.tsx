@@ -86,7 +86,7 @@ const Portfolio = () => {
 	return (
 		<>
 			<SEOHead
-				title="Portfolio - Nasze Realizacje | uWebs"
+				title="uWebs - Portfolio"
 				description="Zobacz nasze projekty: landing pages, strony firmowe, sklepy internetowe. Profesjonalne realizacje dla firm z różnych branż. Sprawdź nasze portfolio!"
 				keywords="portfolio web design, realizacje stron internetowych, przykłady landing pages, projekty stron firmowych, case studies"
 				canonical="https://uwebs.pl/portfolio"

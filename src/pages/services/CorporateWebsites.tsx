@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle, Code, Globe, Shield, Smartphone, Users, Zap } from 'lucide-react'
+import { ArrowRight, CheckCircle, Code, Globe, Shield, Smartphone, Sparkles, Users, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { Button } from '@/components/ui/button'
@@ -44,7 +44,7 @@ const CorporateWebsites = () => {
 		{
 			icon: Shield,
 			title: 'Bezpieczeństwo',
-			desc: 'Najwyższe standardy bezpieczeństwa i regularne aktualizacje',
+			desc: 'Najwyższe standardy bezpieczeństwa',
 		},
 		{
 			icon: Zap,
@@ -58,8 +58,6 @@ const CorporateWebsites = () => {
 		'Zwiększenie wiarygodności marki',
 		'Lepsze pozycjonowanie w Google',
 		'Łatwe zarządzanie treścią',
-		'Integracja z systemami CRM',
-		'Wsparcie techniczne 24/7',
 	]
 
 	const process = [
@@ -220,17 +218,23 @@ const CorporateWebsites = () => {
 						</motion.div>
 
 						<motion.div {...fadeInUp} className="bg-secondary/10 p-8 border-4 border-secondary">
-							<div className="text-center">
-								<div className="font-mono font-bold text-6xl text-secondary mb-2">85%</div>
-								<p className="text-body text-primary-foreground/80 mb-6">Klientów sprawdza stronę przed zakupem</p>
-								<div className="grid grid-cols-2 gap-4 text-center">
+							<div className="space-y-8">
+								<div className="text-center">
+									<Sparkles className="w-16 h-16 text-secondary mx-auto mb-4" />
+									<h3 className="font-heading font-bold text-h3 mb-4">Dlaczego strona firmowa?</h3>
+									<p className="text-body text-primary-foreground/80">
+										Profesjonalna strona internetowa to wizytówka Twojej firmy w sieci. Buduje zaufanie i pokazuje,
+										że jesteś wiarygodnym partnerem biznesowym.
+									</p>
+								</div>
+								<div className="grid grid-cols-2 gap-6 text-center pt-6 border-t-2 border-secondary/30">
 									<div>
-										<div className="font-mono font-bold text-3xl text-secondary">100+</div>
-										<p className="text-sm text-primary-foreground/70">Stron Firmowych</p>
+										<div className="font-mono font-bold text-3xl text-secondary mb-2">Multi-page</div>
+										<p className="text-sm text-primary-foreground/70">Wiele podstron</p>
 									</div>
 									<div>
-										<div className="font-mono font-bold text-3xl text-secondary">24/7</div>
-										<p className="text-sm text-primary-foreground/70">Wsparcie</p>
+										<div className="font-mono font-bold text-3xl text-secondary mb-2">CMS</div>
+										<p className="text-sm text-primary-foreground/70">Łatwa edycja</p>
 									</div>
 								</div>
 							</div>
@@ -396,7 +400,7 @@ const CorporateWebsites = () => {
 								</li>
 								<li className="flex items-center gap-2">
 									<CheckCircle className="w-5 h-5 text-secondary" />
-									<span className="text-body-sm">24/7 wsparcie premium</span>
+									<span className="text-body-sm">12 miesięcy wsparcia</span>
 								</li>
 							</ul>
 							<div className="mt-auto">

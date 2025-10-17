@@ -43,9 +43,9 @@ const Home = () => {
 	return (
 		<>
 			<SEOHead
-				title="uWebs - Tworzenie Stron Internetowych Bielsko-Biała | Landing Pages Beskidy"
-				description="Profesjonalne tworzenie stron internetowych Bielsko-Biała, Żywiec, Beskidy. Landing pages, strony firmowe, sklepy online. Konkurencyjne ceny od 3500 PLN. Bezpłatna konsultacja!"
-				keywords="tworzenie stron internetowych Bielsko-Biała, landing page Żywiec, strona firmowa Beskidy, sklep internetowy Śląsk, web design Bielsko, SEO Żywiec, Polska"
+				title="uWebs - Tworzenie Stron Internetowych"
+				description="Profesjonalne tworzenie stron internetowych. Landing pages, strony firmowe od 3500 PLN. Nowoczesny design, SEO, responsywność. Bezpłatna konsultacja!"
+				keywords="tworzenie stron internetowych, landing page, strona firmowa, web design, SEO, responsywne strony, uWebs"
 				canonical="https://uwebs.pl"
 			/>
 			<FAQSchema />

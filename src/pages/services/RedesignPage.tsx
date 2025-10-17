@@ -38,8 +38,8 @@ const RedesignPage = () => {
 		},
 		{
 			icon: TrendingUp,
-			title: 'Optymalizacja konwersji',
-			desc: 'Poprawa elementów wpływających na współczynnik konwersji',
+			title: 'Lepsza skuteczność',
+			desc: 'Poprawa elementów które mają wpływ na działania użytkowników',
 		},
 		{
 			icon: Zap,
@@ -54,9 +54,9 @@ const RedesignPage = () => {
 	]
 
 	const benefits = [
-		'Zwiększenie konwersji o 150-300%',
+		'Nowoczesny, świeży wygląd',
 		'Poprawa pozycjonowania w Google',
-		'Modernizacja wyglądu strony',
+		'Lepsza wydajność strony',
 		'Lepsze doświadczenie użytkownika',
 		'Optymalizacja na urządzenia mobilne',
 		'Zachowanie istniejących treści',
@@ -86,17 +86,17 @@ const RedesignPage = () => {
 		{
 			step: '05',
 			title: 'Optymalizacja',
-			desc: 'Testowanie i optymalizacja wydajności oraz konwersji',
+			desc: 'Testowanie i optymalizacja wydajności oraz funkcjonalności',
 		},
 	]
 
 	const signs = [
 		'Strona wygląda przestarzale',
-		'Niska konwersja odwiedzających',
+		'Użytkownicy szybko opuszczają stronę',
 		'Słabe pozycje w Google',
 		'Problemy na urządzeniach mobilnych',
 		'Długi czas ładowania',
-		'Wysoki bounce rate',
+		'Mało zapytań od klientów',
 	]
 
 	return (
@@ -141,7 +141,7 @@ const RedesignPage = () => {
 								Odświeżenie które <span className="text-secondary">robi różnicę</span>
 							</h1>
 							<p className="font-body text-body-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-								Modernizujemy Twoją obecną stronę, poprawiając UX, wydajność i konwersje. Zachowujemy to co działa, a
+								Modernizujemy Twoją obecną stronę, poprawiając wygląd, UX i wydajność. Zachowujemy to co działa, a
 								ulepszamy to co można zrobić lepiej.
 							</p>
 							<div className="flex flex-wrap gap-4 justify-center">
@@ -203,7 +203,7 @@ const RedesignPage = () => {
 						</p>
 						<Link to="/kontakt#formularz-kontaktowy">
 							<Button variant="secondary" size="lg">
-								Zamów Darmowy Audyt
+								Umów Konsultację
 							</Button>
 						</Link>
 					</motion.div>
@@ -249,7 +249,7 @@ const RedesignPage = () => {
 						<motion.div {...fadeInUp}>
 							<h2 className="font-heading font-bold text-h1-mobile md:text-h1 mb-6">Jakie korzyści daje redesign?</h2>
 							<p className="text-body text-primary-foreground/80 mb-8">
-								Dobrze wykonany redesign to inwestycja, która zwraca się wielokrotnie poprzez lepsze wyniki biznesowe.
+								Dobrze wykonany redesign to inwestycja w wizerunek Twojej firmy i lepsze doświadczenie użytkowników.
 							</p>
 							<div className="space-y-4">
 								{benefits.map((benefit, i) => (
@@ -268,17 +268,23 @@ const RedesignPage = () => {
 						</motion.div>
 
 						<motion.div {...fadeInUp} className="bg-secondary/10 p-8 border-4 border-secondary">
-							<div className="text-center">
-								<div className="font-mono font-bold text-6xl text-secondary mb-2">250%</div>
-								<p className="text-body text-primary-foreground/80 mb-6">Średni wzrost konwersji po redesignie</p>
-								<div className="grid grid-cols-2 gap-4 text-center">
+							<div className="space-y-8">
+								<div className="text-center">
+									<Rocket className="w-16 h-16 text-secondary mx-auto mb-4" />
+									<h3 className="font-heading font-bold text-h3 mb-4">Kiedy warto zrobić redesign?</h3>
+									<p className="text-body text-primary-foreground/80">
+										Jeśli Twoja strona ma więcej niż 3-4 lata, prawdopodobnie wygląda przestarzale i nie spełnia
+										obecnych standardów. Redesign to świeże spojrzenie na Twoją obecność w sieci.
+									</p>
+								</div>
+								<div className="grid grid-cols-2 gap-6 text-center pt-6 border-t-2 border-secondary/30">
 									<div>
-										<div className="font-mono font-bold text-3xl text-secondary">80+</div>
-										<p className="text-sm text-primary-foreground/70">Redesignów</p>
+										<div className="font-mono font-bold text-3xl text-secondary mb-2">Szybciej</div>
+										<p className="text-sm text-primary-foreground/70">Lepsza wydajność</p>
 									</div>
 									<div>
-										<div className="font-mono font-bold text-3xl text-secondary">95%</div>
-										<p className="text-sm text-primary-foreground/70">Zadowolonych klientów</p>
+										<div className="font-mono font-bold text-3xl text-secondary mb-2">Nowocześnie</div>
+										<p className="text-sm text-primary-foreground/70">Świeży design</p>
 									</div>
 								</div>
 							</div>
@@ -295,7 +301,7 @@ const RedesignPage = () => {
 							Jak przebiega proces redesignu?
 						</h2>
 						<p className="font-body text-body-lg text-muted-foreground max-w-2xl mx-auto">
-							Sprawdzony 5-etapowy proces, który gwarantuje sukces modernizacji
+							Sprawdzony 5-etapowy proces modernizacji Twojej strony
 						</p>
 					</motion.div>
 
@@ -459,11 +465,11 @@ const RedesignPage = () => {
 							Gotowy na redesign który zmieni wszystko?
 						</h2>
 						<p className="font-body text-body-lg text-primary-foreground/70 mb-10">
-							Umów bezpłatną konsultację i otrzymaj darmowy audyt swojej strony
+							Umów bezpłatną konsultację i porozmawiajmy o modernizacji Twojej strony
 						</p>
 						<Link to="/kontakt#formularz-kontaktowy">
 							<Button variant="secondary" size="lg" className="group font-body font-medium tracking-wider uppercase">
-								Umów Darmowy Audyt
+								Umów Konsultację
 								<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
 							</Button>
 						</Link>

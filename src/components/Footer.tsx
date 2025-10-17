@@ -47,10 +47,10 @@ const Footer = () => {
 							{[
 								{ name: 'Landing Pages', link: '/uslugi/landing-pages' },
 								{ name: 'Strony Firmowe', link: '/uslugi/strony-firmowe' },
-								{ name: 'E-commerce', link: '/uslugi/sklepy-internetowe' },
+								
 								{ name: 'Redesign', link: '/uslugi/redesign' },
 								{ name: 'UX/UI Design', link: '/uslugi/ux-ui-design' },
-								{ name: 'Konsulting', link: '/kontakt' },
+							
 							].map(service => (
 								<li key={service.name}>
 									<Link

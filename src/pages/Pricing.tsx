@@ -3,6 +3,7 @@ import { Check } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import SEOHead from '@/components/SEOHead'
 import { Button } from '@/components/ui/button'
 
 const Pricing = () => {
@@ -15,11 +16,11 @@ const Pricing = () => {
 
 	const packages = [
 		{
-			name: 'Landing Page',
-			price: 'do 500 PLN',
-			description: 'Pojedyncza strona sprzedażowa',
+			name: 'Strona Basic',
+			price: 'od 500 PLN',
+			description: 'Podstawowa strona firmowa',
 			features: [
-				'1 strona konwertująca',
+				'1-5 podstron',
 				'Responsywny design',
 				'Formularz kontaktowy',
 				'Podstawowe SEO',
@@ -29,30 +30,29 @@ const Pricing = () => {
 			accent: false,
 		},
 		{
-			name: 'Strona Firmowa',
-			price: 'od 1000 PLN',
+			name: 'Strona Standard',
+			price: 'od 8000 PLN',
 			description: 'Kompleksowa prezentacja firmy',
 			features: [
 				'5-10 podstron',
-				'Panel administracyjny (CMS)',
-				'Blog/Aktualności',
+				'Podstawowy CMS',
 				'Zaawansowane SEO',
 				'Integracje (mapy, social media)',
-				'Czas realizacji: 3-4 tygodnie',
+				'Czas realizacji: 4-6 tygodni',
 			],
 			accent: true,
 		},
 		{
-			name: 'Sklep Internetowy',
-			price: 'od 2000 PLN',
-			description: 'E-commerce gotowy do sprzedaży',
+			name: 'Strona Premium',
+			price: 'od 15000 PLN',
+			description: 'Zaawansowana strona korporacyjna',
 			features: [
-				'Katalog produktów',
-				'Koszyk i płatności online',
-				'Panel zarządzania zamówieniami',
-				'Integracja z kurierami',
-				'System rabatów i promocji',
-				'Czas realizacji: 4-6 tygodni',
+				'10+ podstron',
+				'Zaawansowany CMS',
+				'Wielojęzyczność',
+				'Zaawansowane animacje',
+				'Dedykowane funkcjonalności',
+				'Czas realizacji: 6-8 tygodni',
 			],
 			accent: false,
 		},
@@ -60,6 +60,12 @@ const Pricing = () => {
 
 	return (
 		<>
+			<SEOHead
+				title="uWebs - Cennik"
+				description="Sprawdź nasze ceny: Strona Basic od 3500 PLN, Standard od 8000 PLN, Premium od 15000 PLN. Przejrzyste ceny bez ukrytych kosztów. Bezpłatna wycena!"
+				keywords="cennik stron internetowych, ile kosztuje strona, ceny web design, wycena strony internetowej, uWebs"
+				canonical="https://uwebs.pl/cennik"
+			/>
 			<Navigation />
 
 			<main className="pt-32 pb-20 min-h-screen bg-background">
@@ -83,11 +89,10 @@ const Pricing = () => {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.6, delay: index * 0.1 }}
-								className={`p-10 border-4 flex flex-col ${
-									pkg.accent
-										? 'bg-primary text-primary-foreground border-secondary shadow-lift-lg scale-105'
-										: 'bg-card border-primary'
-								} transition-all duration-300 hover:shadow-lift`}>
+								className={`p-10 border-4 flex flex-col ${pkg.accent
+									? 'bg-primary text-primary-foreground border-secondary shadow-lift-lg scale-105'
+									: 'bg-card border-primary'
+									} transition-all duration-300 hover:shadow-lift`}>
 								{pkg.accent && (
 									<div className="inline-flex px-4 py-1 mb-6 bg-secondary text-secondary-foreground font-mono text-xs uppercase tracking-wider w-fit">
 										Popular
@@ -95,15 +100,13 @@ const Pricing = () => {
 								)}
 
 								<h3
-									className={`font-heading font-bold text-h3 mb-2 ${
-										pkg.accent ? 'text-primary-foreground' : 'text-primary'
-									}`}>
+									className={`font-heading font-bold text-h3 mb-2 ${pkg.accent ? 'text-primary-foreground' : 'text-primary'
+										}`}>
 									{pkg.name}
 								</h3>
 								<p
-									className={`font-body text-body-sm mb-6 ${
-										pkg.accent ? 'text-primary-foreground/70' : 'text-muted-foreground'
-									}`}>
+									className={`font-body text-body-sm mb-6 ${pkg.accent ? 'text-primary-foreground/70' : 'text-muted-foreground'
+										}`}>
 									{pkg.description}
 								</p>
 
@@ -121,9 +124,8 @@ const Pricing = () => {
 												className={`w-5 h-5 mt-0.5 flex-shrink-0 ${pkg.accent ? 'text-secondary' : 'text-accent'}`}
 											/>
 											<span
-												className={`font-body text-body-sm ${
-													pkg.accent ? 'text-primary-foreground/90' : 'text-foreground'
-												}`}>
+												className={`font-body text-body-sm ${pkg.accent ? 'text-primary-foreground/90' : 'text-foreground'
+													}`}>
 												{feature}
 											</span>
 										</li>

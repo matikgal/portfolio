@@ -34,18 +34,18 @@ const LandingPages = () => {
 	const features = [
 		{
 			icon: Target,
-			title: 'Optymalizacja konwersji',
-			desc: 'Każdy element jest zaprojektowany z myślą o maksymalizacji współczynnika konwersji',
+			title: 'Zaprojektowane do sprzedaży',
+			desc: 'Każdy element jest przemyślany tak, aby przekonać odwiedzającego do działania',
 		},
 		{
 			icon: TrendingUp,
-			title: 'A/B Testing',
-			desc: 'Testujemy różne wersje elementów, aby znaleźć najskuteczniejsze rozwiązania',
+			title: 'Testowanie wersji',
+			desc: 'Sprawdzamy różne warianty strony, aby znaleźć najskuteczniejsze rozwiązania',
 		},
 		{
 			icon: Users,
-			title: 'User Experience',
-			desc: 'Intuicyjne interfejsy, które prowadzą użytkownika przez ścieżkę zakupową',
+			title: 'Łatwe w użyciu',
+			desc: 'Intuicyjne interfejsy, które prowadzą użytkownika krok po kroku do celu',
 		},
 		{
 			icon: Zap,
@@ -60,7 +60,7 @@ const LandingPages = () => {
 		'Mobilna responsywność',
 		'SEO-friendly struktura',
 		'Integracja z narzędziami analitycznymi',
-		'Wsparcie techniczne przez 6 miesięcy',
+
 	]
 
 	const process = [
@@ -72,12 +72,12 @@ const LandingPages = () => {
 		{
 			step: '02',
 			title: 'Strategia UX',
-			desc: 'Projektujemy ścieżkę użytkownika i optymalizujemy pod konwersje',
+			desc: 'Projektujemy intuicyjną ścieżkę użytkownika i strukturę strony',
 		},
 		{
 			step: '03',
 			title: 'Design & Copy',
-			desc: 'Tworzymy atrakcyjny design i przekonujące teksty sprzedażowe',
+			desc: 'Tworzymy atrakcyjny design i angażujące treści',
 		},
 		{
 			step: '04',
@@ -94,9 +94,9 @@ const LandingPages = () => {
 	return (
 		<>
 			<SEOHead
-				title="Landing Pages - Strony Konwertujące od 3500 PLN"
-				description="Profesjonalne landing pages które sprzedają. Optymalizacja konwersji, A/B testing, responsywny design. Ceny od 3500 PLN. Skuteczne strony sprzedażowe!"
-				keywords="landing page, strona sprzedażowa, optymalizacja konwersji, A/B testing, strona jednosekcyjna, marketing online, zwiększenie sprzedaży"
+				title="uWebs - Landing Pages"
+				description="Profesjonalne landing pages które sprzedają. Skuteczne strony jednosekcyjne, responsywny design, testowanie wersji. Ceny od 3500 PLN."
+				keywords="landing page, strona sprzedażowa, strona jednosekcyjna, marketing online, zwiększenie sprzedaży, skuteczna strona, uWebs"
 				canonical="https://uwebs.pl/uslugi/landing-pages"
 			/>
 			<script type="application/ld+json">
@@ -209,7 +209,7 @@ const LandingPages = () => {
 							Dlaczego nasze Landing Pages działają?
 						</h2>
 						<p className="font-body text-body-lg text-muted-foreground max-w-2xl mx-auto">
-							Każda strona jest budowana w oparciu o sprawdzone strategie konwersji i najlepsze praktyki UX
+							Każda strona jest budowana w oparciu o sprawdzone strategie sprzedażowe i najlepsze praktyki projektowania
 						</p>
 					</motion.div>
 
@@ -242,8 +242,8 @@ const LandingPages = () => {
 								Co zyskujesz z profesjonalną Landing Page?
 							</h2>
 							<p className="text-body text-primary-foreground/80 mb-8">
-								Inwestycja w dobrze zaprojektowaną landing page zwraca się wielokrotnie poprzez zwiększone konwersje i
-								sprzedaż.
+								Inwestycja w dobrze zaprojektowaną landing page zwraca się wielokrotnie poprzez zwiększoną sprzedaż i
+								więcej klientów.
 							</p>
 							<div className="space-y-4">
 								{benefits.map((benefit, i) => (
@@ -295,7 +295,7 @@ const LandingPages = () => {
 							Jak tworzymy Landing Pages?
 						</h2>
 						<p className="font-body text-body-lg text-muted-foreground max-w-2xl mx-auto">
-							Sprawdzony 5-etapowy proces, który gwarantuje sukces Twojej strony
+							Sprawdzony 5-etapowy proces tworzenia skutecznych stron sprzedażowych
 						</p>
 					</motion.div>
 
@@ -457,7 +457,7 @@ const LandingPages = () => {
 							Gotowy na Landing Page który sprzedaje?
 						</h2>
 						<p className="font-body text-body-lg text-primary-foreground/70 mb-10">
-							Umów bezpłatną konsultację i poznaj nasze podejście do tworzenia stron konwertujących
+							Umów bezpłatną konsultację i poznaj nasze podejście do tworzenia stron które sprzedają
 						</p>
 						<Link to="/kontakt#formularz-kontaktowy">
 							<Button variant="secondary" size="lg" className="group font-body font-medium tracking-wider uppercase">

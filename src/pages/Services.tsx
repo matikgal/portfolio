@@ -66,9 +66,9 @@ const Services = () => {
 	return (
 		<>
 			<SEOHead
-				title="Usługi - Tworzenie Stron Internetowych | Landing Pages | E-commerce"
-				description="Pełna oferta usług web design: landing pages od 3500 PLN, strony firmowe od 8000 PLN, sklepy internetowe od 12000 PLN. UX/UI design, redesign stron."
-				keywords="usługi web design, tworzenie stron internetowych, landing pages, strony firmowe, sklepy internetowe, e-commerce, UX/UI design, redesign"
+				title="uWebs - Usługi"
+				description="Profesjonalne usługi web design: landing pages od 3500 PLN, strony firmowe od 8000 PLN. UX/UI design, redesign stron. Sprawdź naszą ofertę!"
+				keywords="usługi web design, tworzenie stron internetowych, landing pages, strony firmowe, UX/UI design, redesign, uWebs"
 				canonical="https://uwebs.pl/uslugi"
 			/>
 			<Navigation />
