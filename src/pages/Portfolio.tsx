@@ -27,6 +27,7 @@ const Portfolio = () => {
 			desc: 'Strona wizytówka dla rancza i agroturystyki. Prezentuje ofertę noclegową, atrakcje dla dzieci i dorosłych oraz piękne tereny rekreacyjne w sercu natury.',
 			img: '/farma-desktop.webp',
 			url: 'sielska-ostoja.pl',
+			link: 'https://sielskaostoja.netlify.app/',
 			tech: ['Vue.js', 'Turystyka', 'Responsive'],
 			colors: ['bg-green-500', 'bg-accent', 'bg-primary'],
 		},
@@ -37,6 +38,7 @@ const Portfolio = () => {
 			desc: 'Elegancka strona dla salonu fryzjerskiego z systemem rezerwacji online, galerią stylizacji i prezentacją usług. Nowoczesny design podkreślający profesjonalizm salonu.',
 			img: '/fryzjer-desktop.webp',
 			url: 'eleganza-salon.pl',
+			link: 'https://eleganzahaircut.netlify.app/',
 			tech: ['React', 'Rezerwacje', 'Galeria'],
 			colors: ['bg-pink-500', 'bg-accent', 'bg-primary'],
 		},
@@ -132,8 +134,9 @@ const Portfolio = () => {
 										{project.link ? (
 											<a href={project.link} target="_blank" rel="noopener noreferrer">
 												<div
-													className={`group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform cursor-pointer ${isEven ? 'hover:-rotate-1' : 'hover:rotate-1'
-														}`}>
+													className={`group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform cursor-pointer ${
+														isEven ? 'hover:-rotate-1' : 'hover:rotate-1'
+													}`}>
 													{/* Browser Chrome */}
 													<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
 														<div className="flex gap-2">
@@ -157,8 +160,9 @@ const Portfolio = () => {
 											</a>
 										) : (
 											<div
-												className={`group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform ${isEven ? 'hover:-rotate-1' : 'hover:rotate-1'
-													}`}>
+												className={`group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform ${
+													isEven ? 'hover:-rotate-1' : 'hover:rotate-1'
+												}`}>
 												{/* Browser Chrome */}
 												<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
 													<div className="flex gap-2">

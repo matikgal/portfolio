@@ -41,19 +41,19 @@ const App = () => (
 								<Route path="/uslugi" element={<Services />} />
 								<Route path="/uslugi/landing-pages" element={<LandingPages />} />
 								<Route path="/uslugi/strony-firmowe" element={<CorporateWebsites />} />
-								<Route path="/uslugi/sklepy-internetowe" element={<EcommercePage />} />
+								{/* <Route path="/uslugi/sklepy-internetowe" element={<EcommercePage />} /> */}
 								<Route path="/uslugi/redesign" element={<RedesignPage />} />
 								<Route path="/uslugi/ux-ui-design" element={<UXUIDesign />} />
 								<Route path="/o-nas" element={<About />} />
-								<Route path="/cennik" element={<Pricing />} />
+								<Route path="/oferta" element={<Pricing />} />
 								<Route path="/kontakt" element={<Contact />} />
 								<Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
-								<Route path="/regulamin" element={<TermsOfService />} />
+								{/* <Route path="/regulamin" element={<TermsOfService />} /> */}
 								<Route path="/polityka-cookies" element={<CookiePolicy />} />
 								{/* Legacy routes - redirect to new structure */}
 								<Route path="/landing-pages" element={<LandingPages />} />
 								<Route path="/strony-firmowe" element={<CorporateWebsites />} />
-								<Route path="/sklepy-internetowe" element={<EcommercePage />} />
+								{/* <Route path="/sklepy-internetowe" element={<EcommercePage />} /> */}
 								<Route path="/redesign" element={<RedesignPage />} />
 								<Route path="/ux-ui-design" element={<UXUIDesign />} />
 								{/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

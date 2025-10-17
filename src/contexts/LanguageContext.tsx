@@ -17,7 +17,7 @@ const translations = {
 		'nav.home': 'Home',
 		'nav.portfolio': 'Portfolio',
 		'nav.services': 'Usługi',
-		'nav.pricing': 'Cennik',
+		'nav.pricing': 'Oferta',
 		'nav.about': 'O nas',
 		'nav.contact': 'Kontakt',
 		'nav.consultation': 'Darmowa Konsultacja',

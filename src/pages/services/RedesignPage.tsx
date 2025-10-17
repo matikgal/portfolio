@@ -332,7 +332,7 @@ const RedesignPage = () => {
 			{/* <section className="py-32 bg-card">
 				<div className="container mx-auto px-6">
 					<motion.div {...fadeInUp} className="text-center mb-16">
-						<h2 className="font-heading font-bold text-h1-mobile md:text-h1 text-primary mb-4">Cennik Redesignu</h2>
+						<h2 className="font-heading font-bold text-h1-mobile md:text-h1 text-primary mb-4">Oferta Redesignu</h2>
 						<p className="font-body text-body-lg text-muted-foreground">Ceny dostosowane do zakresu modernizacji</p>
 					</motion.div>
 

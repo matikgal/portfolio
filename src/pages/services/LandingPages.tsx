@@ -60,7 +60,6 @@ const LandingPages = () => {
 		'Mobilna responsywność',
 		'SEO-friendly struktura',
 		'Integracja z narzędziami analitycznymi',
-
 	]
 
 	const process = [
@@ -267,8 +266,8 @@ const LandingPages = () => {
 									<Sparkles className="w-16 h-16 text-secondary mx-auto mb-4" />
 									<h3 className="font-heading font-bold text-h3 mb-4">Dlaczego Landing Page?</h3>
 									<p className="text-body text-primary-foreground/80">
-										Landing page to strona stworzona z jednym celem - przekonać odwiedzającego do konkretnej akcji.
-										Bez rozpraszaczy, bez zbędnych elementów.
+										Landing page to strona stworzona z jednym celem - przekonać odwiedzającego do konkretnej akcji. Bez
+										rozpraszaczy, bez zbędnych elementów.
 									</p>
 								</div>
 								<div className="grid grid-cols-2 gap-6 text-center pt-6 border-t-2 border-secondary/30">
@@ -326,7 +325,7 @@ const LandingPages = () => {
 			{/* <section className="py-32 bg-card">
 				<div className="container mx-auto px-6">
 					<motion.div {...fadeInUp} className="text-center mb-16">
-						<h2 className="font-heading font-bold text-h1-mobile md:text-h1 text-primary mb-4">Cennik Landing Pages</h2>
+						<h2 className="font-heading font-bold text-h1-mobile md:text-h1 text-primary mb-4">Oferta Landing Pages</h2>
 						<p className="font-body text-body-lg text-muted-foreground">Przejrzyste ceny bez ukrytych kosztów</p>
 					</motion.div>
 

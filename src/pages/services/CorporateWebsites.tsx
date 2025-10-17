@@ -223,8 +223,8 @@ const CorporateWebsites = () => {
 									<Sparkles className="w-16 h-16 text-secondary mx-auto mb-4" />
 									<h3 className="font-heading font-bold text-h3 mb-4">Dlaczego strona firmowa?</h3>
 									<p className="text-body text-primary-foreground/80">
-										Profesjonalna strona internetowa to wizytówka Twojej firmy w sieci. Buduje zaufanie i pokazuje,
-										że jesteś wiarygodnym partnerem biznesowym.
+										Profesjonalna strona internetowa to wizytówka Twojej firmy w sieci. Buduje zaufanie i pokazuje, że
+										jesteś wiarygodnym partnerem biznesowym.
 									</p>
 								</div>
 								<div className="grid grid-cols-2 gap-6 text-center pt-6 border-t-2 border-secondary/30">
@@ -283,7 +283,7 @@ const CorporateWebsites = () => {
 				<div className="container mx-auto px-6">
 					<motion.div {...fadeInUp} className="text-center mb-16">
 						<h2 className="font-heading font-bold text-h1-mobile md:text-h1 text-primary mb-4">
-							Cennik Stron Firmowych
+							Oferta Stron Firmowych
 						</h2>
 						<p className="font-body text-body-lg text-muted-foreground">
 							Wybierz pakiet dopasowany do potrzeb Twojej firmy

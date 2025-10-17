@@ -47,10 +47,9 @@ const Footer = () => {
 							{[
 								{ name: 'Landing Pages', link: '/uslugi/landing-pages' },
 								{ name: 'Strony Firmowe', link: '/uslugi/strony-firmowe' },
-								
+
 								{ name: 'Redesign', link: '/uslugi/redesign' },
 								{ name: 'UX/UI Design', link: '/uslugi/ux-ui-design' },
-							
 							].map(service => (
 								<li key={service.name}>
 									<Link
@@ -76,9 +75,9 @@ const Footer = () => {
 							</li>
 							<li>
 								<Link
-									to="/cennik"
+									to="/oferta"
 									className="text-body-sm text-primary-foreground/70 hover:text-secondary transition-colors">
-									Cennik
+									Oferta
 								</Link>
 							</li>
 							<li>
@@ -154,9 +153,9 @@ const Footer = () => {
 							<Link to="/polityka-prywatnosci" className="hover:text-secondary transition-colors">
 								Polityka Prywatności
 							</Link>
-							<Link to="/regulamin" className="hover:text-secondary transition-colors">
+							{/* <Link to="/regulamin" className="hover:text-secondary transition-colors">
 								Regulamin
-							</Link>
+							</Link> */}
 							<Link to="/polityka-cookies" className="hover:text-secondary transition-colors">
 								Cookies
 							</Link>

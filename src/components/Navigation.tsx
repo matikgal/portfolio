@@ -60,7 +60,7 @@ const Navigation = () => {
 		{ name: t('nav.home'), path: '/' },
 		{ name: t('nav.portfolio'), path: '/portfolio' },
 		{ name: t('nav.services'), path: '/uslugi' },
-		{ name: t('nav.pricing'), path: '/cennik' },
+		{ name: t('nav.pricing'), path: '/oferta' },
 		{ name: t('nav.about'), path: '/o-nas' },
 		{ name: t('nav.contact'), path: '/kontakt' },
 	]

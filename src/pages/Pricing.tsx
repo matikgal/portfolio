@@ -31,7 +31,7 @@ const Pricing = () => {
 		},
 		{
 			name: 'Strona Standard',
-			price: 'od 8000 PLN',
+			price: 'od 1000 PLN',
 			description: 'Kompleksowa prezentacja firmy',
 			features: [
 				'5-10 podstron',
@@ -44,7 +44,7 @@ const Pricing = () => {
 		},
 		{
 			name: 'Strona Premium',
-			price: 'od 15000 PLN',
+			price: 'od 2000 PLN',
 			description: 'Zaawansowana strona korporacyjna',
 			features: [
 				'10+ podstron',
@@ -61,10 +61,10 @@ const Pricing = () => {
 	return (
 		<>
 			<SEOHead
-				title="uWebs - Cennik"
-				description="Sprawdź nasze ceny: Strona Basic od 3500 PLN, Standard od 8000 PLN, Premium od 15000 PLN. Przejrzyste ceny bez ukrytych kosztów. Bezpłatna wycena!"
-				keywords="cennik stron internetowych, ile kosztuje strona, ceny web design, wycena strony internetowej, uWebs"
-				canonical="https://uwebs.pl/cennik"
+				title="uWebs - Oferta"
+				description="Sprawdź naszą ofertę: Strona Basic od 3500 PLN, Standard od 8000 PLN, Premium od 15000 PLN. Przejrzyste ceny bez ukrytych kosztów. Bezpłatna wycena!"
+				keywords="oferta stron internetowych, ile kosztuje strona, ceny web design, wycena strony internetowej, uWebs"
+				canonical="https://uwebs.pl/oferta"
 			/>
 			<Navigation />
 
@@ -89,10 +89,11 @@ const Pricing = () => {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.6, delay: index * 0.1 }}
-								className={`p-10 border-4 flex flex-col ${pkg.accent
-									? 'bg-primary text-primary-foreground border-secondary shadow-lift-lg scale-105'
-									: 'bg-card border-primary'
-									} transition-all duration-300 hover:shadow-lift`}>
+								className={`p-10 border-4 flex flex-col ${
+									pkg.accent
+										? 'bg-primary text-primary-foreground border-secondary shadow-lift-lg scale-105'
+										: 'bg-card border-primary'
+								} transition-all duration-300 hover:shadow-lift`}>
 								{pkg.accent && (
 									<div className="inline-flex px-4 py-1 mb-6 bg-secondary text-secondary-foreground font-mono text-xs uppercase tracking-wider w-fit">
 										Popular
@@ -100,13 +101,15 @@ const Pricing = () => {
 								)}
 
 								<h3
-									className={`font-heading font-bold text-h3 mb-2 ${pkg.accent ? 'text-primary-foreground' : 'text-primary'
-										}`}>
+									className={`font-heading font-bold text-h3 mb-2 ${
+										pkg.accent ? 'text-primary-foreground' : 'text-primary'
+									}`}>
 									{pkg.name}
 								</h3>
 								<p
-									className={`font-body text-body-sm mb-6 ${pkg.accent ? 'text-primary-foreground/70' : 'text-muted-foreground'
-										}`}>
+									className={`font-body text-body-sm mb-6 ${
+										pkg.accent ? 'text-primary-foreground/70' : 'text-muted-foreground'
+									}`}>
 									{pkg.description}
 								</p>
 
@@ -124,8 +127,9 @@ const Pricing = () => {
 												className={`w-5 h-5 mt-0.5 flex-shrink-0 ${pkg.accent ? 'text-secondary' : 'text-accent'}`}
 											/>
 											<span
-												className={`font-body text-body-sm ${pkg.accent ? 'text-primary-foreground/90' : 'text-foreground'
-													}`}>
+												className={`font-body text-body-sm ${
+													pkg.accent ? 'text-primary-foreground/90' : 'text-foreground'
+												}`}>
 												{feature}
 											</span>
 										</li>

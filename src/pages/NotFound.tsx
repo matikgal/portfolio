@@ -129,7 +129,7 @@ const NotFound = () => {
 						{[
 							{ to: '/portfolio', icon: Search, title: 'Portfolio', desc: 'Zobacz nasze projekty' },
 							{ to: '/uslugi', icon: AlertTriangle, title: 'Usługi', desc: 'Czym się zajmujemy' },
-							{ to: '/cennik', icon: Home, title: 'Cennik', desc: 'Sprawdź nasze ceny' },
+							{ to: '/oferta', icon: Home, title: 'Oferta', desc: 'Sprawdź naszą ofertę' },
 							{ to: '/kontakt', icon: ArrowLeft, title: 'Kontakt', desc: 'Skontaktuj się z nami' },
 						].map((item, i) => (
 							<Link key={i} to={item.to}>

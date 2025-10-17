@@ -4,6 +4,7 @@ import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import SEOHead from '@/components/SEOHead'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -69,6 +70,12 @@ const Contact = () => {
 
 	return (
 		<>
+			<SEOHead
+				title="uWebs - Kontakt"
+				description="Skontaktuj się z uWebs! Bezpłatna konsultacja, wycena w 24h. Tworzenie stron internetowych Bielsko-Biała. Email: hello@uwebs.pl. Odpowiadamy szybko!"
+				keywords="uWebs kontakt, konsultacja, wycena strony internetowej, Bielsko-Biała, hello@uwebs.pl, tworzenie stron"
+				canonical="https://uwebs.pl/kontakt"
+			/>
 			<Navigation />
 
 			<main className="pt-32 pb-20 min-h-screen bg-background">

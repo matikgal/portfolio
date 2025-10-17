@@ -133,9 +133,7 @@ const Home = () => {
 			{/* Features Bar */}
 			<section className="py-20" style={{ backgroundColor: '#09132A' }}>
 				<div className="container mx-auto px-6">
-					<motion.p
-						{...fadeInUp}
-						className="font-mono text-sm text-center text-white uppercase tracking-wider mb-12">
+					<motion.p {...fadeInUp} className="font-mono text-sm text-center text-white uppercase tracking-wider mb-12">
 						Dlaczego my?
 					</motion.p>
 					<motion.div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center" {...fadeInUp}>
@@ -241,10 +239,12 @@ const Home = () => {
 										Responsive
 									</span>
 								</div>
-								<Button variant="outline" className="group">
-									Zobacz Stronę
-									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-								</Button>
+								<a href="https://sielskaostoja.netlify.app/" target="_blank" rel="noopener noreferrer">
+									<Button variant="outline" className="group">
+										Zobacz Stronę
+										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+									</Button>
+								</a>
 							</div>
 						</motion.div>
 
@@ -278,10 +278,12 @@ const Home = () => {
 										Galeria
 									</span>
 								</div>
-								<Button variant="outline" className="group">
-									Zobacz Stronę
-									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-								</Button>
+								<a href="https://eleganzahaircut.netlify.app/" target="_blank" rel="noopener noreferrer">
+									<Button variant="outline" className="group">
+										Zobacz Stronę
+										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+									</Button>
+								</a>
 							</div>
 							<div className="lg:col-span-7">
 								<Link to="/portfolio">
@@ -365,10 +367,12 @@ const Home = () => {
 										Galeria
 									</span>
 								</div>
-								<Button variant="outline" className="group">
-									Zobacz Stronę
-									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-								</Button>
+								<a href="https://slodkacukiernia.netlify.app" target="_blank" rel="noopener noreferrer">
+									<Button variant="outline" className="group">
+										Zobacz Stronę
+										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+									</Button>
+								</a>
 							</div>
 						</motion.div>
 

@@ -66,11 +66,11 @@ export const seoConfig = {
 				'portfolio web design, realizacje stron internetowych, przykłady landing pages, galeria projektów, case studies',
 		},
 		pricing: {
-			title: 'Cennik - Transparentne Ceny Stron Internetowych',
+			title: 'Oferta - Transparentne Ceny Stron Internetowych',
 			description:
-				'Przejrzyste ceny tworzenia stron internetowych. Landing pages od 3500 PLN, strony firmowe od 8000 PLN, sklepy od 12000 PLN. Sprawdź nasze pakiety!',
+				'Przejrzyste ceny tworzenia stron internetowych. Landing pages od 3500 PLN, strony firmowe od 8000 PLN, sklepy od 12000 PLN. Sprawdź naszą ofertę!',
 			keywords:
-				'cennik stron internetowych, ceny landing pages, koszt strony firmowej, ile kosztuje sklep internetowy, pakiety web design',
+				'oferta stron internetowych, ceny landing pages, koszt strony firmowej, ile kosztuje sklep internetowy, pakiety web design',
 		},
 		about: {
 			title: 'O Nas - Kim Jesteśmy | uWebs',
