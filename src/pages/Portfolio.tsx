@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import SEOHead from '@/components/SEOHead'
 import { Button } from '@/components/ui/button'
 
 const Portfolio = () => {
@@ -43,9 +44,10 @@ const Portfolio = () => {
 			title: 'Słodkie Marzenia',
 			category: 'E-commerce',
 			category2: 'Cukiernia',
-			desc: 'Elegancka strona dla cukierni specjalizującej się w tortach na zamówienie. System galerii, kalkulatora cen i formularza zamówień z możliwością personalizacji.',
+			desc: 'Elegancka strona dla cukierni specjalizującej się w tortach na zamówienie. System galerii, formularz zamówień z możliwością personalizacji.',
 			img: '/tort-desktop.webp',
 			url: 'slodkie-marzenia.pl',
+			link: 'https://slodkacukiernia.netlify.app',
 			tech: ['Vue.js', 'Zamówienia', 'Galeria'],
 			colors: ['bg-pink-500', 'bg-accent', 'bg-primary'],
 		},
@@ -63,7 +65,7 @@ const Portfolio = () => {
 			title: 'Prime Motors',
 			category: 'Warsztat',
 			category2: 'Automotive',
-			desc: 'Nowoczesna strona warsztatu samochodowego z systemem umówień online, kalkulatorem kosztów napraw i prezentacją usług serwisowych.',
+			desc: 'Nowoczesna strona warsztatu samochodowego z systemem umówień online i prezentacją usług serwisowych.',
 			img: '/mechanik-desktop.webp',
 			url: 'prime-motors.pl',
 			tech: ['Next.js', 'Rezerwacje', 'Kalkulator'],
@@ -83,6 +85,12 @@ const Portfolio = () => {
 
 	return (
 		<>
+			<SEOHead
+				title="Portfolio - Nasze Realizacje | uWebs"
+				description="Zobacz nasze projekty: landing pages, strony firmowe, sklepy internetowe. Profesjonalne realizacje dla firm z różnych branż. Sprawdź nasze portfolio!"
+				keywords="portfolio web design, realizacje stron internetowych, przykłady landing pages, projekty stron firmowych, case studies"
+				canonical="https://uwebs.pl/portfolio"
+			/>
 			<Navigation />
 
 			<main className="pt-32 pb-20 min-h-screen bg-background relative overflow-hidden">
@@ -121,30 +129,57 @@ const Portfolio = () => {
 									className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 									{/* Image Section */}
 									<div className={`lg:col-span-7 ${isEven ? 'order-2 lg:order-1' : 'order-2 lg:order-2'}`}>
-										<div
-											className={`group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform ${
-												isEven ? 'hover:-rotate-1' : 'hover:rotate-1'
-											}`}>
-											{/* Browser Chrome */}
-											<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
-												<div className="flex gap-2">
-													<div className="w-3 h-3 bg-destructive rounded-full"></div>
-													<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-													<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+										{project.link ? (
+											<a href={project.link} target="_blank" rel="noopener noreferrer">
+												<div
+													className={`group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform cursor-pointer ${isEven ? 'hover:-rotate-1' : 'hover:rotate-1'
+														}`}>
+													{/* Browser Chrome */}
+													<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
+														<div className="flex gap-2">
+															<div className="w-3 h-3 bg-destructive rounded-full"></div>
+															<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+															<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+														</div>
+														<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
+															<span className="text-xs text-muted-foreground font-mono">{project.url}</span>
+														</div>
+													</div>
+													{/* Image Container with proper aspect ratio */}
+													<div className="aspect-[19/10] relative overflow-hidden bg-muted">
+														<img
+															src={project.img}
+															alt={`${project.title} - ${project.category}`}
+															className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+														/>
+													</div>
 												</div>
-												<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
-													<span className="text-xs text-muted-foreground font-mono">{project.url}</span>
+											</a>
+										) : (
+											<div
+												className={`group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform ${isEven ? 'hover:-rotate-1' : 'hover:rotate-1'
+													}`}>
+												{/* Browser Chrome */}
+												<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
+													<div className="flex gap-2">
+														<div className="w-3 h-3 bg-destructive rounded-full"></div>
+														<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+														<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+													</div>
+													<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
+														<span className="text-xs text-muted-foreground font-mono">{project.url}</span>
+													</div>
+												</div>
+												{/* Image Container with proper aspect ratio */}
+												<div className="aspect-[19/10] relative overflow-hidden bg-muted">
+													<img
+														src={project.img}
+														alt={`${project.title} - ${project.category}`}
+														className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+													/>
 												</div>
 											</div>
-											{/* Image Container with proper aspect ratio */}
-											<div className="aspect-[19/10] relative overflow-hidden bg-muted">
-												<img
-													src={project.img}
-													alt={`${project.title} - ${project.category}`}
-													className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-												/>
-											</div>
-										</div>
+										)}
 									</div>
 
 									{/* Content Section */}
@@ -171,10 +206,19 @@ const Portfolio = () => {
 												</span>
 											))}
 										</div>
-										<Button variant="outline" className="group">
-											Zobacz Stronę
-											<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-										</Button>
+										{project.link ? (
+											<a href={project.link} target="_blank" rel="noopener noreferrer">
+												<Button variant="outline" className="group">
+													Zobacz Stronę
+													<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+												</Button>
+											</a>
+										) : (
+											<Button variant="outline" className="group" disabled>
+												Wkrótce
+												<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+											</Button>
+										)}
 									</div>
 								</motion.div>
 							)

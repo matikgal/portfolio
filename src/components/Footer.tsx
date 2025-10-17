@@ -130,6 +130,7 @@ const Footer = () => {
 								href="https://linkedin.com"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="LinkedIn"
 								className="text-primary-foreground/70 hover:text-secondary transition-colors">
 								<Linkedin size={28} />
 							</a>
@@ -137,6 +138,7 @@ const Footer = () => {
 								href="https://instagram.com"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="Instagram"
 								className="text-primary-foreground/70 hover:text-secondary transition-colors">
 								<Instagram size={28} />
 							</a>

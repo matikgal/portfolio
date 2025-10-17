@@ -43,7 +43,7 @@ const translations = {
 		// Services
 		'services.title': 'Czym Się Zajmujemy',
 		'services.landing_pages': 'Landing Pages',
-		'services.landing_pages_desc': 'Strony konwertujące od pierwszego kliknięcia',
+		'services.landing_pages_desc': 'Strony które przyciągają i przekonują',
 		'services.landing_pages_full':
 			'Projektujemy landing pages, które nie tylko wyglądają świetnie, ale przede wszystkim sprzedają. Każda strona jest zoptymalizowana pod kątem konwersji.',
 		'services.websites': 'Strony Firmowe',

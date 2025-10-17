@@ -115,6 +115,8 @@ const Navigation = () => {
 						{/* Mobile Menu Button */}
 						<button
 							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+							aria-label={mobileMenuOpen ? 'Zamknij menu' : 'Otwórz menu'}
+							aria-expanded={mobileMenuOpen}
 							className={`lg:hidden p-2 transition-colors z-50 relative ${
 								mobileMenuOpen ? 'text-primary-foreground hover:text-secondary' : 'text-foreground hover:text-secondary'
 							}`}>

@@ -21,47 +21,47 @@ const Services = () => {
 		features: string[]
 		link: string
 	}> = [
-		{
-			icon: Sparkles,
-			title: 'Landing Pages',
-			description:
-				'Strony konwertujące od pierwszego kliknięcia. Projektujemy landing pages, które nie tylko wyglądają świetnie, ale przede wszystkim sprzedają.',
-			features: [
-				'Wysokie współczynniki konwersji',
-				'Testowanie A/B',
-				'Projektowanie mobile-first',
-				'Optymalizacja SEO',
-			],
-			link: '/uslugi/landing-pages',
-		},
-		{
-			icon: Code,
-			title: 'Strony Firmowe',
-			description:
-				'Wielostronicowe witryny dla Twojego biznesu. Kompleksowe strony internetowe, które budują Twoją markę w sieci.',
-			features: [
-				'Responsywny design',
-				'Integracja z CMS',
-				'Niestandardowe funkcjonalności',
-				'Optymalizacja wydajności',
-			],
-			link: '/uslugi/strony-firmowe',
-		},
-		{
-			icon: Rocket,
-			title: 'Redesign',
-			description: 'Odświeżenie które robi różnicę. Przekształcamy przestarzałe strony w nowoczesne platformy.',
-			features: ['Audyt UX', 'Nowoczesna estetyka', 'Zwiększenie wydajności', 'Optymalizacja konwersji'],
-			link: '/uslugi/redesign',
-		},
-		{
-			icon: PenTool,
-			title: 'UX/UI Design',
-			description: 'Interfejsy które użytkownicy kochają. Projektujemy intuicyjne doświadczenia cyfrowe.',
-			features: ['Badania użytkowników', 'Wireframing i prototypowanie', 'Testy użyteczności', 'Systemy projektowe'],
-			link: '/uslugi/ux-ui-design',
-		},
-	]
+			{
+				icon: Sparkles,
+				title: 'Landing Pages',
+				description:
+					'Strony które przyciągają i przekonują. Projektujemy landing pages, które nie tylko wyglądają świetnie, ale przede wszystkim sprzedają.',
+				features: [
+					'Wysokie współczynniki konwersji',
+					'Testowanie A/B',
+					'Projektowanie mobile-first',
+					'Optymalizacja SEO',
+				],
+				link: '/uslugi/landing-pages',
+			},
+			{
+				icon: Code,
+				title: 'Strony Firmowe',
+				description:
+					'Wielostronicowe witryny dla Twojego biznesu. Kompleksowe strony internetowe, które budują Twoją markę w sieci.',
+				features: [
+					'Responsywny design',
+					'Integracja z CMS',
+					'Niestandardowe funkcjonalności',
+					'Optymalizacja wydajności',
+				],
+				link: '/uslugi/strony-firmowe',
+			},
+			{
+				icon: Rocket,
+				title: 'Redesign',
+				description: 'Odświeżenie które robi różnicę. Przekształcamy przestarzałe strony w nowoczesne platformy.',
+				features: ['Audyt UX', 'Nowoczesna estetyka', 'Zwiększenie wydajności', 'Optymalizacja konwersji'],
+				link: '/uslugi/redesign',
+			},
+			{
+				icon: PenTool,
+				title: 'UX/UI Design',
+				description: 'Interfejsy które użytkownicy kochają. Projektujemy intuicyjne doświadczenia cyfrowe.',
+				features: ['Badania użytkowników', 'Wireframing i prototypowanie', 'Testy użyteczności', 'Systemy projektowe'],
+				link: '/uslugi/ux-ui-design',
+			},
+		]
 
 	return (
 		<>

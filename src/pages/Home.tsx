@@ -131,11 +131,11 @@ const Home = () => {
 			</section>
 
 			{/* Features Bar */}
-			<section className="py-20 bg-card">
+			<section className="py-20" style={{ backgroundColor: '#09132A' }}>
 				<div className="container mx-auto px-6">
 					<motion.p
 						{...fadeInUp}
-						className="font-mono text-sm text-center text-muted-foreground uppercase tracking-wider mb-12">
+						className="font-mono text-sm text-center text-white uppercase tracking-wider mb-12">
 						Dlaczego my?
 					</motion.p>
 					<motion.div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center" {...fadeInUp}>
@@ -149,8 +149,8 @@ const Home = () => {
 							return (
 								<div key={i} className="text-center">
 									<IconComponent className="w-12 h-12 mx-auto mb-3 text-secondary" />
-									<h3 className="font-heading font-bold text-lg text-primary mb-2">{feature.title}</h3>
-									<p className="text-sm text-muted-foreground">{feature.desc}</p>
+									<h3 className="font-heading font-bold text-lg text-white mb-2">{feature.title}</h3>
+									<p className="text-sm text-gray-300">{feature.desc}</p>
 								</div>
 							)
 						})}
@@ -189,27 +189,29 @@ const Home = () => {
 						{/* Project 1 - Left Aligned */}
 						<motion.div variants={fadeInUp} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 							<div className="lg:col-span-7 order-2 lg:order-1">
-								<div className="group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform hover:-rotate-1">
-									{/* Browser Chrome */}
-									<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
-										<div className="flex gap-2">
-											<div className="w-3 h-3 bg-destructive rounded-full"></div>
-											<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-											<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+								<Link to="/portfolio">
+									<div className="group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform hover:-rotate-1 cursor-pointer">
+										{/* Browser Chrome */}
+										<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
+											<div className="flex gap-2">
+												<div className="w-3 h-3 bg-destructive rounded-full"></div>
+												<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+												<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+											</div>
+											<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
+												<span className="text-xs text-muted-foreground font-mono">sielska-ostoja.pl</span>
+											</div>
 										</div>
-										<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
-											<span className="text-xs text-muted-foreground font-mono">sielska-ostoja.pl</span>
+										{/* Image Container with proper aspect ratio */}
+										<div className="aspect-[19/10] relative overflow-hidden bg-muted">
+											<img
+												src="/farma-desktop.webp"
+												alt="Sielska Ostoja - Ranczo i Agroturystyka"
+												className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+											/>
 										</div>
 									</div>
-									{/* Image Container with proper aspect ratio */}
-									<div className="aspect-[19/10] relative overflow-hidden bg-muted">
-										<img
-											src="/farma-desktop.webp"
-											alt="Sielska Ostoja - Ranczo i Agroturystyka"
-											className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-										/>
-									</div>
-								</div>
+								</Link>
 							</div>
 							<div className="lg:col-span-5 order-1 lg:order-2 lg:pl-8">
 								<div className="flex flex-wrap gap-2 mb-4">
@@ -282,54 +284,58 @@ const Home = () => {
 								</Button>
 							</div>
 							<div className="lg:col-span-7">
-								<div className="group relative overflow-hidden bg-card border-4 border-primary hover:border-accent transition-all duration-500 hover:shadow-lift-lg transform hover:rotate-1">
-									{/* Browser Chrome */}
-									<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
-										<div className="flex gap-2">
-											<div className="w-3 h-3 bg-destructive rounded-full"></div>
-											<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-											<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+								<Link to="/portfolio">
+									<div className="group relative overflow-hidden bg-card border-4 border-primary hover:border-accent transition-all duration-500 hover:shadow-lift-lg transform hover:rotate-1 cursor-pointer">
+										{/* Browser Chrome */}
+										<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
+											<div className="flex gap-2">
+												<div className="w-3 h-3 bg-destructive rounded-full"></div>
+												<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+												<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+											</div>
+											<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
+												<span className="text-xs text-muted-foreground font-mono">eleganza-salon.pl</span>
+											</div>
 										</div>
-										<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
-											<span className="text-xs text-muted-foreground font-mono">eleganza-salon.pl</span>
+										{/* Image Container */}
+										<div className="aspect-[19/10] relative overflow-hidden bg-muted">
+											<img
+												src="/fryzjer-desktop.webp"
+												alt="Eleganza Salon - Salon Fryzjerski"
+												className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+											/>
 										</div>
 									</div>
-									{/* Image Container */}
-									<div className="aspect-[19/10] relative overflow-hidden bg-muted">
-										<img
-											src="/fryzjer-desktop.webp"
-											alt="Eleganza Salon - Salon Fryzjerski"
-											className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-										/>
-									</div>
-								</div>
+								</Link>
 							</div>
 						</motion.div>
 
 						{/* Project 3 - Left Aligned */}
 						<motion.div variants={fadeInUp} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 							<div className="lg:col-span-7 order-2 lg:order-1">
-								<div className="group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform hover:-rotate-1">
-									{/* Browser Chrome */}
-									<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
-										<div className="flex gap-2">
-											<div className="w-3 h-3 bg-destructive rounded-full"></div>
-											<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-											<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+								<Link to="/portfolio">
+									<div className="group relative overflow-hidden bg-card border-4 border-primary hover:border-secondary transition-all duration-500 hover:shadow-lift-lg transform hover:-rotate-1 cursor-pointer">
+										{/* Browser Chrome */}
+										<div className="bg-muted p-3 flex items-center gap-2 border-b-2 border-primary">
+											<div className="flex gap-2">
+												<div className="w-3 h-3 bg-destructive rounded-full"></div>
+												<div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+												<div className="w-3 h-3 bg-green-500 rounded-full"></div>
+											</div>
+											<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
+												<span className="text-xs text-muted-foreground font-mono">slodkie-marzenia.pl</span>
+											</div>
 										</div>
-										<div className="flex-1 mx-4 h-6 bg-background flex items-center px-3">
-											<span className="text-xs text-muted-foreground font-mono">slodkie-marzenia.pl</span>
+										{/* Image Container */}
+										<div className="aspect-[19/10] relative overflow-hidden bg-muted">
+											<img
+												src="/tort-desktop.webp"
+												alt="Słodkie Marzenia - Cukiernia"
+												className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+											/>
 										</div>
 									</div>
-									{/* Image Container */}
-									<div className="aspect-[19/10] relative overflow-hidden bg-muted">
-										<img
-											src="/tort-desktop.webp"
-											alt="Słodkie Marzenia - Cukiernia"
-											className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-										/>
-									</div>
-								</div>
+								</Link>
 							</div>
 							<div className="lg:col-span-5 order-1 lg:order-2 lg:pl-8">
 								<div className="flex flex-wrap gap-2 mb-4">
@@ -394,42 +400,43 @@ const Home = () => {
 									url: 'thunder-garage.pl',
 								},
 							].map((project, i) => (
-								<motion.div
-									key={i}
-									variants={fadeInUp}
-									className="group relative overflow-hidden bg-card border-4 border-primary hover:border-accent transition-all duration-300 hover:shadow-lift cursor-pointer">
-									{/* Browser Chrome */}
-									<div className="bg-muted p-2 flex items-center gap-2 border-b-2 border-primary">
-										<div className="flex gap-1">
-											<div className="w-2 h-2 bg-destructive rounded-full"></div>
-											<div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-											<div className="w-2 h-2 bg-green-500 rounded-full"></div>
+								<Link key={i} to="/portfolio">
+									<motion.div
+										variants={fadeInUp}
+										className="group relative overflow-hidden bg-card border-4 border-primary hover:border-accent transition-all duration-300 hover:shadow-lift cursor-pointer">
+										{/* Browser Chrome */}
+										<div className="bg-muted p-2 flex items-center gap-2 border-b-2 border-primary">
+											<div className="flex gap-1">
+												<div className="w-2 h-2 bg-destructive rounded-full"></div>
+												<div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+												<div className="w-2 h-2 bg-green-500 rounded-full"></div>
+											</div>
+											<div className="flex-1 mx-2 h-4 bg-background flex items-center px-2">
+												<span className="text-xs text-muted-foreground font-mono">{project.url}</span>
+											</div>
 										</div>
-										<div className="flex-1 mx-2 h-4 bg-background flex items-center px-2">
-											<span className="text-xs text-muted-foreground font-mono">{project.url}</span>
+										{/* Image Container */}
+										<div className="aspect-[19/10] relative overflow-hidden bg-muted">
+											<img
+												src={project.img}
+												alt={`${project.title} Screenshot`}
+												className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+											/>
 										</div>
-									</div>
-									{/* Image Container */}
-									<div className="aspect-[19/10] relative overflow-hidden bg-muted">
-										<img
-											src={project.img}
-											alt={`${project.title} Screenshot`}
-											className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-										/>
-									</div>
-									{/* Content Overlay */}
-									<div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-										<div className="p-6 text-primary-foreground w-full">
-											<span
-												className={`inline-block px-2 py-1 ${project.color} text-white text-xs font-mono uppercase tracking-wider mb-3`}>
-												{project.category}
-											</span>
-											<h3 className="font-heading font-bold text-lg mb-2">{project.title}</h3>
-											<p className="text-sm text-primary-foreground/90 mb-4">{project.desc}</p>
-											<span className="text-sm text-secondary font-medium">Zobacz projekt →</span>
+										{/* Content Overlay */}
+										<div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+											<div className="p-6 text-primary-foreground w-full">
+												<span
+													className={`inline-block px-2 py-1 ${project.color} text-white text-xs font-mono uppercase tracking-wider mb-3`}>
+													{project.category}
+												</span>
+												<h3 className="font-heading font-bold text-lg mb-2">{project.title}</h3>
+												<p className="text-sm text-primary-foreground/90 mb-4">{project.desc}</p>
+												<span className="text-sm text-secondary font-medium">Zobacz projekt →</span>
+											</div>
 										</div>
-									</div>
-								</motion.div>
+									</motion.div>
+								</Link>
 							))}
 						</motion.div>
 
@@ -472,8 +479,8 @@ const Home = () => {
 							<Sparkles className="w-16 h-16 text-secondary mb-6" />
 							<h3 className="font-heading font-bold text-h2-mobile md:text-h2 mb-4">Landing Pages</h3>
 							<p className="text-body text-primary-foreground/80 mb-6 max-w-md">
-								Strony konwertujące od pierwszego kliknięcia. Projektujemy landing pages, które nie tylko wyglądają
-								świetnie, ale przede wszystkim sprzedają.
+								Strony które przyciągają i przekonują. Projektujemy landing pages, które nie tylko wyglądają świetnie,
+								ale przede wszystkim sprzedają.
 							</p>
 							<Link to="/uslugi/landing-pages" className="text-secondary font-body font-medium hover:underline">
 								Dowiedz się więcej →
@@ -638,8 +645,8 @@ const Home = () => {
 						<p className="text-sm text-primary-foreground/50 mt-6">Odpowiedź w 24h</p>
 						<p className="text-body-sm text-primary-foreground/70 mt-4">
 							lub napisz:{' '}
-							<a href="mailto:hello@uwebs.pl" className="text-secondary hover:underline">
-								hello@uwebs.pl
+							<a href="mailto:kontakt@uwebs.pl" className="text-secondary hover:underline">
+								kontakt@uwebs.pl
 							</a>
 						</p>
 					</motion.div>

@@ -13,12 +13,12 @@ const SEOHead = ({
 	title = 'uWebs - Tworzenie Stron Internetowych | Landing Pages | Strony Firmowe',
 	description = 'Profesjonalne tworzenie stron internetowych, landing pages i sklepów online. Nowoczesny design, SEO, responsywność. Konkurencyjne ceny od 3500 PLN. Bezpłatna konsultacja!',
 	keywords = 'tworzenie stron internetowych, landing page, strona firmowa, sklep internetowy, web design, SEO, responsywne strony, UX/UI design',
-	canonical,
+	canonical = 'https://uwebs.pl',
 	ogImage = 'https://uwebs.pl/og-image.jpg',
 	noindex = false,
 }: SEOHeadProps) => {
 	const fullTitle = title.includes('uWebs') ? title : `${title} | uWebs`
-	const currentUrl = canonical || (typeof window !== 'undefined' ? window.location.href : 'https://uwebs.pl')
+	const currentUrl = canonical
 
 	return (
 		<Helmet>
@@ -26,7 +26,7 @@ const SEOHead = ({
 			<meta name="description" content={description} />
 			<meta name="keywords" content={keywords} />
 			{noindex && <meta name="robots" content="noindex, nofollow" />}
-			{canonical && <link rel="canonical" href={canonical} />}
+			<link rel="canonical" href={canonical} />
 
 			{/* Open Graph */}
 			<meta property="og:title" content={fullTitle} />

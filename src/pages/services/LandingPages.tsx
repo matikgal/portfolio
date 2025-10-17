@@ -55,7 +55,7 @@ const LandingPages = () => {
 	]
 
 	const benefits = [
-		'Zwiększenie współczynnika konwersji o 200-400%',
+		'Strona zaprojektowana do sprzedaży',
 		'Profesjonalny wizerunek marki',
 		'Mobilna responsywność',
 		'SEO-friendly struktura',
@@ -95,7 +95,7 @@ const LandingPages = () => {
 		<>
 			<SEOHead
 				title="Landing Pages - Strony Konwertujące od 3500 PLN"
-				description="Profesjonalne landing pages które sprzedają. Optymalizacja konwersji, A/B testing, responsywny design. Ceny od 3500 PLN. Zwiększ sprzedaż o 200-400%!"
+				description="Profesjonalne landing pages które sprzedają. Optymalizacja konwersji, A/B testing, responsywny design. Ceny od 3500 PLN. Skuteczne strony sprzedażowe!"
 				keywords="landing page, strona sprzedażowa, optymalizacja konwersji, A/B testing, strona jednosekcyjna, marketing online, zwiększenie sprzedaży"
 				canonical="https://uwebs.pl/uslugi/landing-pages"
 			/>
@@ -171,7 +171,7 @@ const LandingPages = () => {
 								<p className="font-mono font-bold text-sm text-secondary uppercase tracking-wider">Landing Pages</p>
 							</div>
 							<h1 className="font-heading font-bold text-h1-mobile md:text-h1 text-primary mb-4">
-								Strony które <span className="text-secondary">konwertują</span> od pierwszego kliknięcia
+								Strony które <span className="text-secondary">przyciągają i przekonują</span>
 							</h1>
 							<p className="font-body text-body-lg text-muted-foreground max-w-3xl mx-auto mb-8">
 								Projektujemy landing pages, które nie tylko wyglądają świetnie, ale przede wszystkim sprzedają. Każdy
@@ -262,17 +262,23 @@ const LandingPages = () => {
 						</motion.div>
 
 						<motion.div {...fadeInUp} className="bg-secondary/10 p-8 border-4 border-secondary">
-							<div className="text-center">
-								<div className="font-mono font-bold text-6xl text-secondary mb-2">200%</div>
-								<p className="text-body text-primary-foreground/80 mb-6">Średni wzrost konwersji naszych klientów</p>
-								<div className="grid grid-cols-2 gap-4 text-center">
+							<div className="space-y-8">
+								<div className="text-center">
+									<Sparkles className="w-16 h-16 text-secondary mx-auto mb-4" />
+									<h3 className="font-heading font-bold text-h3 mb-4">Dlaczego Landing Page?</h3>
+									<p className="text-body text-primary-foreground/80">
+										Landing page to strona stworzona z jednym celem - przekonać odwiedzającego do konkretnej akcji.
+										Bez rozpraszaczy, bez zbędnych elementów.
+									</p>
+								</div>
+								<div className="grid grid-cols-2 gap-6 text-center pt-6 border-t-2 border-secondary/30">
 									<div>
-										<div className="font-mono font-bold text-3xl text-secondary">50+</div>
-										<p className="text-sm text-primary-foreground/70">Landing Pages</p>
+										<div className="font-mono font-bold text-3xl text-secondary mb-2">Jeden cel</div>
+										<p className="text-sm text-primary-foreground/70">Jasny przekaz</p>
 									</div>
 									<div>
-										<div className="font-mono font-bold text-3xl text-secondary">98%</div>
-										<p className="text-sm text-primary-foreground/70">Zadowolonych klientów</p>
+										<div className="font-mono font-bold text-3xl text-secondary mb-2">Szybko</div>
+										<p className="text-sm text-primary-foreground/70">2-3 tygodnie</p>
 									</div>
 								</div>
 							</div>
@@ -448,7 +454,7 @@ const LandingPages = () => {
 				<div className="container mx-auto px-6">
 					<motion.div {...fadeInUp} className="max-w-3xl mx-auto text-center">
 						<h2 className="font-heading font-bold text-h1-mobile md:text-[72px] leading-tight mb-6">
-							Gotowy na Landing Page która sprzedaje?
+							Gotowy na Landing Page który sprzedaje?
 						</h2>
 						<p className="font-body text-body-lg text-primary-foreground/70 mb-10">
 							Umów bezpłatną konsultację i poznaj nasze podejście do tworzenia stron konwertujących
