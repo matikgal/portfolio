@@ -82,8 +82,9 @@ const Contact = () => {
 				<div className="container mx-auto px-6">
 					<motion.div {...fadeInUp} className="mb-20 text-center">
 						<p className="font-mono text-sm text-secondary uppercase tracking-wider mb-4">Kontakt</p>
-						<h1 className="font-heading font-bold text-hero-mobile md:text-hero text-primary mb-6">
-							Porozmawiajmy O <span className="text-secondary">Twoim Projekcie</span>
+						<h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-hero text-primary mb-6 px-4">
+							<span className="block sm:inline">Porozmawiajmy O</span>{' '}
+							<span className="text-secondary block sm:inline">Twoim Projekcie</span>
 						</h1>
 						<p className="font-body text-body-lg text-muted-foreground max-w-2xl mx-auto">
 							Gotowy do stworzenia czegoś wyjątkowego? Wypełnij formularz lub skontaktuj się bezpośrednio.

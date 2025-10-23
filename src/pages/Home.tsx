@@ -48,6 +48,40 @@ const Home = () => {
 				keywords="tworzenie stron internetowych, landing page, strona firmowa, web design, SEO, responsywne strony, uWebs"
 				canonical="https://uwebs.pl"
 			/>
+
+			{/* Local Business Schema */}
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						'@context': 'https://schema.org',
+						'@type': 'LocalBusiness',
+						name: 'uWebs',
+						description:
+							'Profesjonalne tworzenie stron internetowych Bielsko-Biała. Landing pages, strony firmowe, sklepy online. Nowoczesny design, SEO, responsywność.',
+						url: 'https://uwebs.pl',
+						email: 'kontakt@uwebs.pl',
+						address: {
+							'@type': 'PostalAddress',
+							addressLocality: 'Bielsko-Biała',
+							addressRegion: 'Śląsk',
+							addressCountry: 'PL',
+						},
+						areaServed: ['Bielsko-Biała', 'Żywiec', 'Beskidy', 'Śląsk'],
+						serviceType: [
+							'Tworzenie stron internetowych',
+							'Landing pages',
+							'Strony firmowe',
+							'Web design',
+							'UX/UI Design',
+							'SEO',
+						],
+						priceRange: '3500-25000 PLN',
+						openingHours: 'Mo-Fr 09:00-18:00',
+					}),
+				}}
+			/>
+
 			<FAQSchema />
 			<Navigation />
 
@@ -447,8 +481,12 @@ const Home = () => {
 						{/* View All Projects CTA */}
 						<motion.div variants={fadeInUp} className="text-center pt-16">
 							<Link to="/portfolio">
-								<Button variant="secondary" size="lg" className="group font-body font-medium tracking-wider uppercase">
-									Zobacz Wszystkie Projekty
+								<Button
+									variant="secondary"
+									size="lg"
+									className="group font-body font-medium tracking-wider uppercase px-4 sm:px-6">
+									<span className="hidden sm:inline">Zobacz Wszystkie Projekty</span>
+									<span className="sm:hidden">Zobacz Projekty</span>
 									<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
 								</Button>
 							</Link>
@@ -558,28 +596,28 @@ const Home = () => {
 								icon: Search,
 								title: 'Discovery',
 								desc: 'Poznajemy Twój biznes, cele i grupę docelową',
-								duration: '1 tydzień',
+								duration: '2-3 dni',
 							},
 							{
 								number: '02',
 								icon: PenTool,
 								title: 'Design',
 								desc: 'Tworzymy wireframes, mockupy i prototypy',
-								duration: '2-3 tygodnie',
+								duration: '3-5 dni',
 							},
 							{
 								number: '03',
 								icon: Code,
 								title: 'Development',
 								desc: 'Kodujemy responsywną, zoptymalizowaną stronę',
-								duration: '2-4 tygodnie',
+								duration: '1-2 tygodnie',
 							},
 							{
 								number: '04',
 								icon: Rocket,
 								title: 'Launch',
 								desc: 'Testujemy, wdrażamy i przekazujemy gotowy produkt',
-								duration: '1 tydzień',
+								duration: '2-3 dni',
 							},
 						].map((step, i) => (
 							<motion.div key={i} variants={fadeInUp} className="text-center">

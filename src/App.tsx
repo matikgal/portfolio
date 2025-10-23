@@ -9,6 +9,7 @@ import { CookieConsentProvider } from './contexts/CookieConsentContext'
 import ScrollToTop from './components/ScrollToTop'
 import CookieBanner from './components/CookieBanner'
 import Analytics from './components/Analytics'
+import GoogleTagManager from './components/GoogleAnalytics'
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import Services from './pages/Services'
@@ -35,6 +36,7 @@ const App = () => (
 							<ScrollToTop />
 							<CookieBanner />
 							<Analytics />
+							<GoogleTagManager />
 							<Routes>
 								<Route path="/" element={<Home />} />
 								<Route path="/portfolio" element={<Portfolio />} />

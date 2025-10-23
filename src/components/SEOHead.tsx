@@ -47,6 +47,17 @@ const SEOHead = ({
 			<meta name="author" content="uWebs" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<meta httpEquiv="Content-Language" content="pl" />
+
+			{/* Geo tags for local SEO */}
+			<meta name="geo.region" content="PL-SL" />
+			<meta name="geo.placename" content="Bielsko-Biała" />
+			<meta name="geo.position" content="49.8225;19.0444" />
+			<meta name="ICBM" content="49.8225, 19.0444" />
+
+			{/* Business info */}
+			<meta name="business:contact_data:locality" content="Bielsko-Biała" />
+			<meta name="business:contact_data:region" content="Śląsk" />
+			<meta name="business:contact_data:country_name" content="Polska" />
 		</Helmet>
 	)
 }

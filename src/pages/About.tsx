@@ -67,8 +67,9 @@ const About = () => {
 				<div className="container mx-auto px-6 relative z-10">
 					<motion.div {...fadeInUp} className="mb-20 text-center">
 						<p className="font-mono text-sm text-secondary uppercase tracking-wider mb-4">O nas</p>
-						<h1 className="font-heading font-bold text-hero-mobile md:text-hero text-primary mb-6">
-							Tworzymy <span className="text-secondary">Cyfrowe Doświadczenia</span>
+						<h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-hero text-primary mb-6 px-4">
+							<span className="block sm:inline">Tworzymy</span>{' '}
+							<span className="text-secondary block sm:inline">Cyfrowe Doświadczenia</span>
 						</h1>
 						<p className="font-body text-body-lg text-muted-foreground max-w-3xl mx-auto">
 							Jesteśmy małym, ale ambitnym zespołem z Bielska-Białej, który wierzy, że każda strona internetowa powinna
@@ -184,16 +185,15 @@ const About = () => {
 					</div>
 
 					{/* Fun Facts */}
-					<motion.div {...fadeInUp} className="bg-primary text-primary-foreground p-16 mb-16">
+					<motion.div {...fadeInUp} className="bg-primary text-primary-foreground p-8 md:p-16 mb-16">
 						<h2 className="font-heading font-bold text-h2-mobile md:text-h2 mb-8 text-center">Jak Pracujemy</h2>
-						<div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+						<div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
 							<div className="flex items-start gap-4">
 								<Star className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
 								<div>
 									<h4 className="font-heading font-bold text-lg mb-2">Świeże Spojrzenie</h4>
-									<p className="text-primary-foreground/80">
-										Jako młody zespół, patrzymy na web design bez ograniczeń starych nawyków. To pozwala nam tworzyć
-										nowoczesne rozwiązania.
+									<p className="text-primary-foreground/80 text-sm md:text-base">
+										Młody zespół bez ograniczeń starych nawyków. Nowoczesne rozwiązania.
 									</p>
 								</div>
 							</div>
@@ -201,8 +201,8 @@ const About = () => {
 								<Lightbulb className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
 								<div>
 									<h4 className="font-heading font-bold text-lg mb-2">Kreatywne Podejście</h4>
-									<p className="text-primary-foreground/80">
-										Każdy projekt to nowe wyzwanie. Lubimy niestandardowe rozwiązania i świeże pomysły.
+									<p className="text-primary-foreground/80 text-sm md:text-base">
+										Niestandardowe rozwiązania i świeże pomysły dla każdego projektu.
 									</p>
 								</div>
 							</div>
@@ -210,8 +210,8 @@ const About = () => {
 								<Clock className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
 								<div>
 									<h4 className="font-heading font-bold text-lg mb-2">Terminowość</h4>
-									<p className="text-primary-foreground/80">
-										Dotrzymujemy ustalonych terminów. Twój czas jest dla nas równie cenny jak nasz.
+									<p className="text-primary-foreground/80 text-sm md:text-base">
+										Dotrzymujemy terminów. Twój czas jest cenny.
 									</p>
 								</div>
 							</div>
@@ -219,8 +219,8 @@ const About = () => {
 								<Heart className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
 								<div>
 									<h4 className="font-heading font-bold text-lg mb-2">Długoterminowe Relacje</h4>
-									<p className="text-primary-foreground/80">
-										Każdy klient staje się naszym partnerem. Budujemy relacje oparte na zaufaniu i wzajemnym szacunku.
+									<p className="text-primary-foreground/80 text-sm md:text-base">
+										Budujemy partnerstwa oparte na zaufaniu i szacunku.
 									</p>
 								</div>
 							</div>
