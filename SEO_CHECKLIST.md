@@ -127,4 +127,3 @@ Gdy klient znajdzie Twoją stronę, ważne żeby:
 
 ---
 
-**PAMIĘTAJ:** SEO to maraton, nie sprint. Pierwsze efekty widać po 3-6 miesiącach, ale warto zacząć już dziś!
