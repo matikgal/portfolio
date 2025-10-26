@@ -90,7 +90,7 @@ const Portfolio = () => {
 			<SEOHead
 				title="uWebs - Portfolio"
 				description="Zobacz nasze projekty: landing pages, strony firmowe, sklepy internetowe. Profesjonalne realizacje dla firm z różnych branż. Sprawdź nasze portfolio!"
-				keywords="portfolio web design, realizacje stron internetowych, przykłady landing pages, projekty stron firmowych, case studies"
+				keywords="tworzenie stron internetowych, projektowanie stron internetowych,tworzenie stron internetowych Śląsk, landing page, strona firmowa, web design, SEO, nowoczesne strony internetowe, responsywne strony, uWebs, strona wizytówka, kto robi strony internetowe, firma robiąca strony internetowe, kto zrobi stronę internetową w okolicy, robienie stron internetowych, strona internetowa dla mojej firmy, potrzebuję strony internetowej dla firmy, prosta strona internetowa, modernizacja strony www, moja strona jest stara"
 				canonical="https://uwebs.pl/portfolio"
 			/>
 			<Navigation />

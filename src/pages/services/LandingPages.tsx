@@ -95,7 +95,7 @@ const LandingPages = () => {
 			<SEOHead
 				title="uWebs - Landing Pages"
 				description="Profesjonalne landing pages które sprzedają. Skuteczne strony jednosekcyjne, responsywny design, testowanie wersji. Ceny od 3500 PLN."
-				keywords="landing page, strona sprzedażowa, strona jednosekcyjna, marketing online, zwiększenie sprzedaży, skuteczna strona, uWebs"
+				keywords="tworzenie stron internetowych, projektowanie stron internetowych,tworzenie stron internetowych Śląsk, landing page, strona firmowa, web design, SEO, nowoczesne strony internetowe, responsywne strony, uWebs, strona wizytówka, kto robi strony internetowe, firma robiąca strony internetowe, kto zrobi stronę internetową w okolicy, robienie stron internetowych, strona internetowa dla mojej firmy, potrzebuję strony internetowej dla firmy, prosta strona internetowa, modernizacja strony www, moja strona jest stara"
 				canonical="https://uwebs.pl/uslugi/landing-pages"
 			/>
 			<script type="application/ld+json">

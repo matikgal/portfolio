@@ -12,7 +12,7 @@ interface SEOHeadProps {
 const SEOHead = ({
 	title = 'uWebs - Tworzenie Stron Internetowych | Landing Pages | Strony Firmowe',
 	description = 'Profesjonalne tworzenie stron internetowych, landing pages i sklepów online. Nowoczesny design, SEO, responsywność. Konkurencyjne ceny od 3500 PLN. Bezpłatna konsultacja!',
-	keywords = 'tworzenie stron internetowych, landing page, strona firmowa, sklep internetowy, web design, SEO, responsywne strony, UX/UI design',
+	keywords = 'tworzenie stron internetowych, projektowanie stron internetowych,tworzenie stron internetowych Śląsk, landing page, strona firmowa, web design, SEO, nowoczesne strony internetowe, responsywne strony, uWebs, strona wizytówka, kto robi strony internetowe, firma robiąca strony internetowe, kto zrobi stronę internetową w okolicy, robienie stron internetowych, strona internetowa dla mojej firmy, potrzebuję strony internetowej dla firmy, prosta strona internetowa, modernizacja strony www, moja strona jest stara',
 	canonical = 'https://uwebs.pl',
 	ogImage = 'https://uwebs.pl/og-image.jpg',
 	noindex = false,

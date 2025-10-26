@@ -73,7 +73,7 @@ const Contact = () => {
 			<SEOHead
 				title="uWebs - Kontakt"
 				description="Skontaktuj się z uWebs! Bezpłatna konsultacja, wycena w 24h. Tworzenie stron internetowych Bielsko-Biała. Email: hello@uwebs.pl. Odpowiadamy szybko!"
-				keywords="uWebs kontakt, konsultacja, wycena strony internetowej, Bielsko-Biała, hello@uwebs.pl, tworzenie stron"
+				keywords="tworzenie stron internetowych, projektowanie stron internetowych,tworzenie stron internetowych Śląsk, landing page, strona firmowa, web design, SEO, nowoczesne strony internetowe, responsywne strony, uWebs, strona wizytówka, kto robi strony internetowe, firma robiąca strony internetowe, kto zrobi stronę internetową w okolicy, robienie stron internetowych, strona internetowa dla mojej firmy, potrzebuję strony internetowej dla firmy, prosta strona internetowa, modernizacja strony www, moja strona jest stara"
 				canonical="https://uwebs.pl/kontakt"
 			/>
 			<Navigation />

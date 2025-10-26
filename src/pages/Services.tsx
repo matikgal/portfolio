@@ -68,7 +68,7 @@ const Services = () => {
 			<SEOHead
 				title="uWebs - Usługi"
 				description="Profesjonalne usługi web design: landing pages od 3500 PLN, strony firmowe od 8000 PLN. UX/UI design, redesign stron. Sprawdź naszą ofertę!"
-				keywords="usługi web design, tworzenie stron internetowych, landing pages, strony firmowe, UX/UI design, redesign, uWebs"
+				keywords="tworzenie stron internetowych, projektowanie stron internetowych,tworzenie stron internetowych Śląsk, landing page, strona firmowa, web design, SEO, nowoczesne strony internetowe, responsywne strony, uWebs, strona wizytówka, kto robi strony internetowe, firma robiąca strony internetowe, kto zrobi stronę internetową w okolicy, robienie stron internetowych, strona internetowa dla mojej firmy, potrzebuję strony internetowej dla firmy, prosta strona internetowa, modernizacja strony www, moja strona jest stara"
 				canonical="https://uwebs.pl/uslugi"
 			/>
 			<Navigation />

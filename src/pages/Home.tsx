@@ -45,7 +45,7 @@ const Home = () => {
 			<SEOHead
 				title="uWebs - Tworzenie Stron Internetowych"
 				description="Profesjonalne tworzenie stron internetowych. Landing pages, strony firmowe od 3500 PLN. Nowoczesny design, SEO, responsywność. Bezpłatna konsultacja!"
-				keywords="tworzenie stron internetowych, landing page, strona firmowa, web design, SEO, responsywne strony, uWebs"
+				keywords="tworzenie stron internetowych, projektowanie stron internetowych,tworzenie stron internetowych Śląsk, landing page, strona firmowa, web design, SEO, nowoczesne strony internetowe, responsywne strony, uWebs, strona wizytówka, kto robi strony internetowe, firma robiąca strony internetowe, kto zrobi stronę internetową w okolicy, robienie stron internetowych, strona internetowa dla mojej firmy, potrzebuję strony internetowej dla firmy, prosta strona internetowa, modernizacja strony www, moja strona jest stara"
 				canonical="https://uwebs.pl"
 			/>
 

@@ -51,7 +51,7 @@ const About = () => {
 			<SEOHead
 				title="uWebs - O nas"
 				description="Poznaj zespół uWebs z Bielska-Białej. Młodzi, kreatywni specjaliści od tworzenia stron internetowych. Świeże spojrzenie na web design bez ograniczeń starych nawyków."
-				keywords="uWebs, o nas, zespół, Bielsko-Biała, web design, tworzenie stron internetowych, młody zespół"
+				keywords="tworzenie stron internetowych, projektowanie stron internetowych,tworzenie stron internetowych Śląsk, landing page, strona firmowa, web design, SEO, nowoczesne strony internetowe, responsywne strony, uWebs, strona wizytówka, kto robi strony internetowe, firma robiąca strony internetowe, kto zrobi stronę internetową w okolicy, robienie stron internetowych, strona internetowa dla mojej firmy, potrzebuję strony internetowej dla firmy, prosta strona internetowa, modernizacja strony www, moja strona jest stara"
 				canonical="https://uwebs.pl/o-nas"
 			/>
 			<Navigation />

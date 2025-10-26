@@ -62,8 +62,8 @@ const Pricing = () => {
 		<>
 			<SEOHead
 				title="uWebs - Oferta"
-				description="Sprawdź naszą ofertę: Strona Basic od 3500 PLN, Standard od 8000 PLN, Premium od 15000 PLN. Przejrzyste ceny bez ukrytych kosztów. Bezpłatna wycena!"
-				keywords="oferta stron internetowych, ile kosztuje strona, ceny web design, wycena strony internetowej, uWebs"
+				description="Sprawdź naszą ofertę: Strona Basic od 500 PLN, Standard od 1000 PLN, Premium od 2000 PLN. Przejrzyste ceny bez ukrytych kosztów. Bezpłatna wycena!"
+				keywords="tworzenie stron internetowych, projektowanie stron internetowych,tworzenie stron internetowych Śląsk, landing page, strona firmowa, web design, SEO, nowoczesne strony internetowe, responsywne strony, uWebs, strona wizytówka, kto robi strony internetowe, firma robiąca strony internetowe, kto zrobi stronę internetową w okolicy, robienie stron internetowych, strona internetowa dla mojej firmy, potrzebuję strony internetowej dla firmy, prosta strona internetowa, modernizacja strony www, moja strona jest stara"
 				canonical="https://uwebs.pl/oferta"
 			/>
 			<Navigation />
