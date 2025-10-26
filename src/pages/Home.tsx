@@ -44,8 +44,7 @@ const Home = () => {
 		<>
 			<SEOHead
 				title="uWebs - Tworzenie Stron Internetowych"
-				description="Profesjonalne tworzenie stron internetowych. Landing pages, strony firmowe od 3500 PLN. Nowoczesny design, SEO, responsywność. Bezpłatna konsultacja!"
-				keywords="tworzenie stron internetowych, projektowanie stron internetowych,tworzenie stron internetowych Śląsk, landing page, strona firmowa, web design, SEO, nowoczesne strony internetowe, responsywne strony, uWebs, strona wizytówka, kto robi strony internetowe, firma robiąca strony internetowe, kto zrobi stronę internetową w okolicy, robienie stron internetowych, strona internetowa dla mojej firmy, potrzebuję strony internetowej dla firmy, prosta strona internetowa, modernizacja strony www, moja strona jest stara"
+				description="Profesjonalne tworzenie stron internetowych w całej Polsce. Landing pages, strony firmowe, redesign. Nowoczesny design, SEO, responsywność. Konkurencyjne ceny od 500 PLN. Bezpłatna konsultacja!"
 				canonical="https://uwebs.pl"
 			/>
 
@@ -55,28 +54,56 @@ const Home = () => {
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify({
 						'@context': 'https://schema.org',
-						'@type': 'LocalBusiness',
+						'@type': 'Organization',
 						name: 'uWebs',
 						description:
-							'Profesjonalne tworzenie stron internetowych Bielsko-Biała. Landing pages, strony firmowe, sklepy online. Nowoczesny design, SEO, responsywność.',
+							'Profesjonalne tworzenie stron internetowych w całej Polsce. Landing pages, strony firmowe, sklepy online, redesign, UX/UI design. Nowoczesny design, SEO, responsywność.',
 						url: 'https://uwebs.pl',
 						email: 'kontakt@uwebs.pl',
 						address: {
 							'@type': 'PostalAddress',
-							addressLocality: 'Bielsko-Biała',
-							addressRegion: 'Śląsk',
 							addressCountry: 'PL',
 						},
-						areaServed: ['Bielsko-Biała', 'Żywiec', 'Beskidy', 'Śląsk'],
+						areaServed: [
+							{
+								'@type': 'Country',
+								name: 'Polska',
+							},
+						],
 						serviceType: [
 							'Tworzenie stron internetowych',
+							'Projektowanie stron internetowych',
 							'Landing pages',
 							'Strony firmowe',
+							'Strony wizytówkowe',
+							'Sklepy internetowe',
+							'E-commerce',
 							'Web design',
 							'UX/UI Design',
+							'Redesign stron',
+							'Modernizacja stron',
 							'SEO',
+							'Optymalizacja stron',
+							'Responsive design',
+							'Mobile-first design',
+							'Frontend development',
+							'Fullstack development',
+							'CMS',
+							'WordPress',
+							'React development',
+							'Vue.js development',
+							'JavaScript development',
+							'HTML/CSS coding',
+							'Website maintenance',
+							'Technical support',
+							'Website security',
+							'Performance optimization',
+							'Digital marketing',
+							'Content management',
+							'API integration',
+							'Custom development',
 						],
-						priceRange: '3500-25000 PLN',
+						priceRange: '500-5000 PLN',
 						openingHours: 'Mo-Fr 09:00-18:00',
 					}),
 				}}

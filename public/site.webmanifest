@@ -1,0 +1,24 @@
+{
+	"name": "uWebs - Tworzenie Stron Internetowych",
+	"short_name": "uWebs",
+	"description": "Profesjonalne tworzenie stron internetowych w całej Polsce",
+	"icons": [
+		{
+			"src": "/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/favicon.ico",
+			"sizes": "16x16 32x32 48x48",
+			"type": "image/x-icon"
+		}
+	],
+	"theme_color": "#FF335F",
+	"background_color": "#ffffff",
+	"display": "standalone",
+	"start_url": "/",
+	"scope": "/",
+	"orientation": "portrait-primary"
+}
