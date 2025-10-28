@@ -9,7 +9,7 @@ Disallow: /*.json$
 # Allow important files
 Allow: /sitemap.xml
 Allow: /favicon.ico
-Allow: /logo.png
+Allow: /favicon.svg
 
 # Sitemap location
 Sitemap: https://uwebs.pl/sitemap.xml
