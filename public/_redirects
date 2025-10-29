@@ -1,0 +1,11 @@
+# Netlify redirects for React Router (SPA)
+# Przekieruj wszystkie nieistniejące ścieżki do index.html
+# React Router przejmie obsługę routingu po stronie klienta
+
+/*    /index.html   200
+
+# Opcjonalne: przekierowania dla starych URL-i
+/landing-pages    /uslugi/landing-pages    301
+/strony-firmowe   /uslugi/strony-firmowe   301
+/redesign         /uslugi/redesign         301
+/ux-ui-design     /uslugi/ux-ui-design     301
