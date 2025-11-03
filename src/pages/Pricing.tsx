@@ -24,7 +24,6 @@ const Pricing = () => {
 				'Responsywny design',
 				'Formularz kontaktowy',
 				'Podstawowe SEO',
-				'Google Analytics',
 				'Czas realizacji: 1-2 tygodnie',
 			],
 			accent: false,

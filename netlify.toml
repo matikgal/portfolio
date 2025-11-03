@@ -2,6 +2,14 @@
   publish = "dist"
   command = "npm run build"
 
+# Redirect www to non-www
+[[redirects]]
+  from = "https://www.uwebs.pl/*"
+  to = "https://uwebs.pl/:splat"
+  status = 301
+  force = true
+
+# SPA fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"

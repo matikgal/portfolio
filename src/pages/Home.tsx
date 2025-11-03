@@ -44,7 +44,7 @@ const Home = () => {
 		<>
 			<SEOHead
 				title="uWebs - Tworzenie Stron Internetowych"
-				description="Profesjonalne tworzenie stron internetowych w całej Polsce. Landing pages, strony firmowe, redesign. Nowoczesny design, SEO, responsywność. Konkurencyjne ceny od 500 PLN. Bezpłatna konsultacja!"
+				description="Profesjonalne tworzenie stron internetowych w całej Polsce. Landing pages, strony firmowe, redesign. Nowoczesny design, SEO, responsywność. Bezpłatna konsultacja!"
 				canonical="https://uwebs.pl"
 			/>
 
