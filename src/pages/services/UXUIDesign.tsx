@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/breadcrumb'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import SEOHead from '@/components/SEOHead'
 
 const UXUIDesign = () => {
 	const { t } = useLanguage()
@@ -115,6 +116,12 @@ const UXUIDesign = () => {
 
 	return (
 		<>
+			<SEOHead
+				title="uWebs - UX/UI Design"
+				description="Profesjonalny UX/UI design dla stron i aplikacji. Badania użytkowników, prototypy, testy użyteczności. Zwiększ konwersję dzięki lepszemu designowi. Ceny od 4000 PLN."
+				keywords="UX design, UI design, projektowanie interfejsów, user experience, user interface, prototypy, wireframes, design thinking, użyteczność"
+				canonical="https://uwebs.pl/uslugi/ux-ui-design"
+			/>
 			<Navigation />
 
 			{/* Breadcrumbs */}

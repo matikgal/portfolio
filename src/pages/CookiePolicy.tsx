@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import SEOHead from '@/components/SEOHead'
 
 const CookiePolicy = () => {
 	const fadeInUp = {
@@ -12,6 +13,12 @@ const CookiePolicy = () => {
 
 	return (
 		<>
+			<SEOHead
+				title="Polityka Cookies - uWebs"
+				description="Polityka cookies uWebs. Informacje o wykorzystywaniu plików cookies na naszej stronie internetowej."
+				canonical="https://uwebs.pl/polityka-cookies"
+				noindex={true}
+			/>
 			<Navigation />
 
 			<main className="pt-32 pb-20 min-h-screen bg-background">

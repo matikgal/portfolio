@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import SEOHead from '@/components/SEOHead'
 
 const PrivacyPolicy = () => {
 	const fadeInUp = {
@@ -12,6 +13,12 @@ const PrivacyPolicy = () => {
 
 	return (
 		<>
+			<SEOHead
+				title="Polityka Prywatności - uWebs"
+				description="Polityka prywatności uWebs. Dowiedz się jak przetwarzamy i chronimy Twoje dane osobowe zgodnie z RODO."
+				canonical="https://uwebs.pl/polityka-prywatnosci"
+				noindex={true}
+			/>
 			<Navigation />
 
 			<main className="pt-32 pb-20 min-h-screen bg-background">

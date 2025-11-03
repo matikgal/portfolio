@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/breadcrumb'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import SEOHead from '@/components/SEOHead'
 
 const CorporateWebsites = () => {
 	const { t } = useLanguage()
@@ -90,6 +91,12 @@ const CorporateWebsites = () => {
 
 	return (
 		<>
+			<SEOHead
+				title="uWebs - Strony Firmowe"
+				description="Profesjonalne strony firmowe z CMS. Responsywny design, intuicyjny panel administracyjny, SEO. Idealne dla firm każdej wielkości. Ceny od 8000 PLN."
+				keywords="strony firmowe, strona korporacyjna, strona dla firmy, CMS, zarządzanie treścią, strona biznesowa, profesjonalna strona, web design dla firm"
+				canonical="https://uwebs.pl/uslugi/strony-firmowe"
+			/>
 			<Navigation />
 
 			{/* Breadcrumbs */}

@@ -546,10 +546,10 @@ const Home = () => {
 							variants={fadeInUp}
 							className="lg:col-span-2 lg:row-span-2 group bg-primary text-primary-foreground p-12 border-4 border-primary hover:shadow-lift-lg transition-all duration-300 cursor-pointer">
 							<Sparkles className="w-16 h-16 text-secondary mb-6" />
-							<h3 className="font-heading font-bold text-h2-mobile md:text-h2 mb-4">Landing Pages</h3>
+							<h3 className="font-heading font-bold text-h2-mobile md:text-h2 mb-4">Landing Pages Które Sprzedają</h3>
 							<p className="text-body text-primary-foreground/80 mb-6 max-w-md">
 								Strony które przyciągają i przekonują. Projektujemy landing pages, które nie tylko wyglądają świetnie,
-								ale przede wszystkim sprzedają.
+				ale przede wszystkim sprzedają.
 							</p>
 							<Link to="/uslugi/landing-pages" className="text-secondary font-body font-medium hover:underline">
 								Dowiedz się więcej →
@@ -560,7 +560,7 @@ const Home = () => {
 						{[
 							{
 								icon: Code,
-								title: 'Strony Firmowe',
+								title: 'Profesjonalne Strony Firmowe',
 								desc: 'Multi-page websites dla Twojego biznesu',
 								link: '/uslugi/strony-firmowe',
 							},
@@ -570,7 +570,7 @@ const Home = () => {
 							// 	desc: 'Sklepy które sprzedają 24/7',
 							// 	link: '/uslugi/sklepy-internetowe',
 							// },
-							{ icon: Rocket, title: 'Redesign', desc: 'Odświeżenie które robi różnicę', link: '/uslugi/redesign' },
+							{ icon: Rocket, title: 'Redesign Stron WWW', desc: 'Odświeżenie które robi różnicę', link: '/uslugi/redesign' },
 						].map((service, i) => {
 							const IconComponent = service.icon as React.ComponentType<{ className?: string }>
 							return (
@@ -593,7 +593,7 @@ const Home = () => {
 							variants={fadeInUp}
 							className="lg:col-span-3 group bg-background p-8 border-4 border-primary hover:border-accent hover:shadow-lift transition-all duration-300">
 							<PenTool className="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition-transform" />
-							<h3 className="font-heading font-bold text-h3-mobile mb-3">UX/UI Design</h3>
+							<h3 className="font-heading font-bold text-h3-mobile mb-3">Projektowanie UX/UI</h3>
 							<p className="text-body-sm text-muted-foreground mb-4">Interfejsy które użytkownicy kochają</p>
 							<Link to="/uslugi/ux-ui-design" className="text-secondary font-body font-medium text-sm hover:underline">
 								Dowiedz się więcej →

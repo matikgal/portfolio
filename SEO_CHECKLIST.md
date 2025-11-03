@@ -126,4 +126,3 @@ Gdy klient znajdzie Twoją stronę, ważne żeby:
 - Budować zaufanie (opinie, certyfikaty, doświadczenie)
 
 ---
-

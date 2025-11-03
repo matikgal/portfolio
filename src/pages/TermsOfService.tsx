@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import SEOHead from '@/components/SEOHead'
 
 const TermsOfService = () => {
 	const fadeInUp = {
@@ -12,6 +13,12 @@ const TermsOfService = () => {
 
 	return (
 		<>
+			<SEOHead
+				title="Regulamin Usług - uWebs"
+				description="Regulamin świadczenia usług przez uWebs. Warunki współpracy, zasady realizacji projektów stron internetowych."
+				canonical="https://uwebs.pl/regulamin"
+				noindex={true}
+			/>
 			<Navigation />
 
 			<main className="pt-32 pb-20 min-h-screen bg-background">

@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/breadcrumb'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import SEOHead from '@/components/SEOHead'
 
 const EcommercePage = () => {
 	const { t } = useLanguage()
@@ -92,6 +93,12 @@ const EcommercePage = () => {
 
 	return (
 		<>
+			<SEOHead
+				title="uWebs - Sklepy Internetowe"
+				description="Profesjonalne sklepy internetowe e-commerce. Integracja płatności, zarządzanie produktami, responsywny design. Zwiększ sprzedaż online. Ceny od 12000 PLN."
+				keywords="sklep internetowy, e-commerce, sprzedaż online, sklep online, platforma sprzedażowa, WooCommerce, Shopify, sklep www"
+				canonical="https://uwebs.pl/uslugi/sklepy-internetowe"
+			/>
 			<Navigation />
 
 			{/* Breadcrumbs */}

@@ -37,12 +37,6 @@ const SEOHead = ({
 			<meta property="og:site_name" content="uWebs" />
 			<meta property="og:locale" content="pl_PL" />
 
-			{/* Twitter */}
-			<meta name="twitter:card" content="summary_large_image" />
-			<meta name="twitter:title" content={fullTitle} />
-			<meta name="twitter:description" content={description} />
-			<meta name="twitter:image" content={ogImage} />
-
 			{/* Additional SEO */}
 			<meta name="author" content="uWebs" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />

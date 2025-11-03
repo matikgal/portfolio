@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/breadcrumb'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import SEOHead from '@/components/SEOHead'
 
 const RedesignPage = () => {
 	const { t } = useLanguage()
@@ -101,6 +102,12 @@ const RedesignPage = () => {
 
 	return (
 		<>
+			<SEOHead
+				title="uWebs - Redesign Stron"
+				description="Profesjonalny redesign i modernizacja stron internetowych. Odśwież wygląd, popraw UX, zwiększ konwersję. Nowoczesny design dla Twojej starej strony. Ceny od 5000 PLN."
+				keywords="redesign strony, modernizacja strony, odświeżenie strony, nowy wygląd strony, aktualizacja strony, poprawa UX, redesign www"
+				canonical="https://uwebs.pl/uslugi/redesign"
+			/>
 			<Navigation />
 
 			{/* Breadcrumbs */}
