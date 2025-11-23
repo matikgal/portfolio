@@ -47,9 +47,7 @@ const Contact: React.FC = () => {
 								<div className="p-2 rounded-full bg-primary/10 text-primary shrink-0">
 									<Mail className="w-6 h-6" />
 								</div>
-								<span className="text-lg text-slate-700 dark:text-slate-200 font-medium">
-									Kliknij aby pokazać email
-								</span>
+								<span className="text-lg text-slate-700 dark:text-slate-200 font-medium">{t.contact.reveal}</span>
 							</button>
 						) : (
 							<button

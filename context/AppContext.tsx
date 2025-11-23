@@ -109,6 +109,7 @@ const translations = {
 				"I'm currently looking for new opportunities as a Frontend Developer. Whether you have a question or just want to say hi, my inbox is always open.",
 			footer: 'Designed with React & Tailwind.',
 			toast: 'Email copied to clipboard!',
+			reveal: 'Click to reveal email',
 		},
 		command: {
 			placeholder: 'Type a command or search...',
@@ -226,6 +227,7 @@ const translations = {
 				'Aktualnie poszukuję pracy jako Junior Frontend Developer. Jeśli masz pytania lub propozycję współpracy, moja skrzynka jest otwarta.',
 			footer: 'Zaprojektowano w React & Tailwind.',
 			toast: 'Email skopiowany do schowka!',
+			reveal: 'Kliknij aby pokazać email',
 		},
 		command: {
 			placeholder: 'Wpisz komendę lub szukaj...',
