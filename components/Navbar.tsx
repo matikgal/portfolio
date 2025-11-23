@@ -53,9 +53,11 @@ const Navbar: React.FC = () => {
               >
                 {isActive && (
                   <motion.div
-                    layoutId="active-pill"
-                    className="absolute inset-0 bg-white dark:bg-white/10 border border-slate-200 dark:border-white/5 rounded-full shadow-sm"
+                    layoutId={`active-pill-${link.id}`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="absolute inset-0 bg-white dark:bg-white/10 border border-slate-200 dark:border-white/5 rounded-full shadow-sm"
                   />
                 )}
 

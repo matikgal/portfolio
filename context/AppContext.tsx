@@ -29,7 +29,7 @@ const translations = {
 		},
 		hero: {
 			greeting: "Hi, I'm",
-			name: 'Mateusz Gałuszka',
+			name: 'Mateusz',
 			status: 'Open to work',
 			role: 'Frontend Developer',
 			description:
@@ -57,18 +57,27 @@ const translations = {
 				title: 'My Journey',
 				steps: [
 					{
-						year: '2024',
-						title: 'Internship at Rekord SI',
-						desc: 'Completed programming internship. Gained practical experience working with commercial systems and development workflows.',
+						year: '2025',
+						title: 'Programming Internship',
+						company: 'RekordSI',
+						desc: 'Created the career section on the official company website with full CMS, database integration, and content management system.',
 					},
 					{
-						year: '2023',
-						title: 'Computer Science Degree',
-						desc: 'Started university studies specializing in Software Engineering. Deep diving into algorithms and architecture.',
+						year: '2021-2025',
+						title: 'Computer Science Studies',
+						company: 'University of Bielsko-Biala',
+						desc: 'Specialization in Software Engineering. Deep diving into algorithms, system architecture, and modern development practices.',
 					},
 					{
-						year: '2019',
+						year: '2020-2021',
+						title: 'IT Administrator',
+						company: 'ZASŁAW Sp. z o.o.',
+						desc: 'Managed company website and online store. Provided helpdesk support, server administration, and comprehensive IT infrastructure management.',
+					},
+					{
+						year: '2016-2020',
 						title: 'IT Technical High School',
+						company: 'PZ10 Kęty',
 						desc: 'Began formal IT education. Learned basics of hardware, networking, and wrote first lines of code.',
 					},
 				],
@@ -137,7 +146,7 @@ const translations = {
 		},
 		hero: {
 			greeting: 'Cześć, jestem',
-			name: 'Mateusz Gałuszka',
+			name: 'Mateusz',
 			status: 'Szukam pracy',
 			role: 'Frontend Developer',
 			description:
@@ -165,18 +174,27 @@ const translations = {
 				title: 'Moja Ścieżka',
 				steps: [
 					{
-						year: '2024',
-						title: 'Praktyki w Rekord SI',
-						desc: 'Odbycie praktyk programistycznych. Praca w realnym środowisku deweloperskim i poznanie procesów wytwarzania oprogramowania.',
+						year: '2025',
+						title: 'Praktyki Programistyczne',
+						company: 'RekordSI',
+						desc: 'Tworzyłem zakładkę kariera na oficjalnej stronie firmy wraz z pełnym CMS, integracją bazy danych i systemem zarządzania treścią.',
 					},
 					{
-						year: '2023',
+						year: '2021-2025',
 						title: 'Studia Informatyczne',
-						desc: 'Rozpoczęcie studiów o specjalizacji Inżynieria Oprogramowania. Zgłębianie inżynierii systemów i zaawansowanej algorytmiki.',
+						company: 'Uniwersytet Bielsko-Bialski',
+						desc: 'Specjalizacja Inżynieria Oprogramowania. Zgłębianie algorytmiki, architektury systemów i nowoczesnych praktyk deweloperskich.',
 					},
 					{
-						year: '2019',
+						year: '2020-2021',
+						title: 'Administrator IT',
+						company: 'ZASŁAW Sp. z o.o.',
+						desc: 'Zarządzanie stroną firmową i sklepem internetowym. Obsługa helpdesk, administracja serwerami oraz kompleksowa obsługa infrastruktury IT firmy.',
+					},
+					{
+						year: '2016-2020',
 						title: 'Technikum Informatyczne',
+						company: 'PZ10 Kęty',
 						desc: 'Początek edukacji w IT. Nauka budowy sprzętu, sieci komputerowych oraz pierwsze linie kodu.',
 					},
 				],

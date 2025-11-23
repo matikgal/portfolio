@@ -64,45 +64,60 @@ export const projectsData: Project[] = [
 	},
 	{
 		id: 3,
-		title: 'TaskFlow',
+		title: 'FluxBoard',
 		description: {
-			en: 'A drag-and-drop Kanban board for personal task management. Persists data locally.',
-			pl: 'Tablica Kanban typu drag-and-drop do zarządzania zadaniami. Obsługuje lokalny zapis danych.',
+			en: 'An experimental, minimalist Kanban project management application emphasizing unique design, typography, and interaction inspired by digital brutalism and Swiss Style.',
+			pl: 'Eksperymentalna, minimalistyczna aplikacja Kanban do zarządzania projektami, kładąca nacisk na unikalny design, typografię i interakcję inspirowaną brutalizmem cyfrowym i Swiss Style.',
 		},
 		challenge: {
-			en: 'Building a performant drag-and-drop interface that feels native and smooth, ensuring state consistency across columns.',
-			pl: 'Budowa wydajnego interfejsu drag-and-drop, który działa płynnie jak aplikacja natywna, przy zachowaniu spójności stanu między kolumnami.',
+			en: 'Moving away from traditional office tool aesthetics to create a performant drag-and-drop interface with a raw, brutalist design while maintaining usability and smooth interactions.',
+			pl: 'Odejście od tradycyjnej estetyki narzędzi biurowych, aby stworzyć wydajny interfejs drag-and-drop z surowym, brutalistycznym designem przy zachowaniu użyteczności i płynnych interakcji.',
 		},
 		solution: {
-			en: "Utilized dnd-kit for accessible drag-and-drop interactions. Created a custom hook for LocalStorage synchronization to ensure data isn't lost on refresh.",
-			pl: 'Wykorzystałem dnd-kit do dostępnych interakcji przeciągania. Stworzyłem własny hook do synchronizacji z LocalStorage, aby dane nie gineły po odświeżeniu.',
+			en: 'Built with React 19 and TypeScript, featuring a fully typed architecture. Implemented dual themes (Void dark and Paper light), comprehensive task management with subtasks, tags, priorities, time tracking, and audit logs. All data persists automatically in LocalStorage with support for keyboard shortcuts and real-time filtering.',
+			pl: 'Zbudowane w React 19 i TypeScript z w pełni typowaną architekturą. Zaimplementowałem podwójne motywy (Void ciemny i Paper jasny), kompleksowe zarządzanie zadaniami z podzadaniami, tagami, priorytetami, śledzeniem czasu i historią zmian. Wszystkie dane zapisują się automatycznie w LocalStorage z obsługą skrótów klawiszowych i filtrowaniem w czasie rzeczywistym.',
 		},
 		features: [
-			{ en: 'Drag and drop tasks', pl: 'Przeciągnij i upuść zadania' },
-			{ en: 'Editable columns', pl: 'Edytowalne kolumny' },
-			{ en: 'Persistent local storage', pl: 'Trwały zapis lokalny' },
+			{ en: 'Smooth drag-and-drop task management', pl: 'Płynne przeciąganie i upuszczanie zadań' },
+			{ en: 'Dual themes: Void (dark) and Paper (light)', pl: 'Podwójne motywy: Void (ciemny) i Paper (jasny)' },
+			{ en: 'Subtasks, tags, and prioritization', pl: 'Podzadania, tagi i priorytetyzacja' },
+			{ en: 'Time tracking and audit log', pl: 'Śledzenie czasu i historia zmian' },
+			{ en: 'Column collapsing (Focus Mode)', pl: 'Zwijanie kolumn (Tryb Skupienia)' },
+			{ en: 'Keyboard shortcuts support', pl: 'Obsługa skrótów klawiszowych' },
+			{ en: 'Real-time filtering', pl: 'Filtrowanie w czasie rzeczywistym' },
+			{ en: 'Automatic LocalStorage persistence', pl: 'Automatyczny zapis w LocalStorage' },
 		],
-		tags: ['React', 'dnd-kit', 'Local Storage'],
-		imageUrl: 'https://picsum.photos/seed/p3/800/600',
-		repoUrl: 'https://github.com',
+		tags: ['React 19', 'TypeScript', 'Tailwind', 'Brutalism', 'Swiss Style'],
+		imageUrl: '/dist/assets/kanban.png',
+		repoUrl: 'https://github.com/matikgal/kanban-system',
+		demoUrl: 'https://matikgal.github.io/kanban-system/',
 	},
 ]
 
+import { useScroll } from '../context/ScrollContext'
+
 const Projects: React.FC = () => {
 	const { t, language } = useApp()
+	const { stopScroll, startScroll } = useScroll()
 	const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
 	// Lock body scroll when modal is open
 	useEffect(() => {
 		if (selectedProject) {
-			document.body.style.overflow = 'hidden'
+			stopScroll()
+			document.body.classList.add('modal-open')
+			document.documentElement.classList.add('modal-open')
 		} else {
-			document.body.style.overflow = 'unset'
+			startScroll()
+			document.body.classList.remove('modal-open')
+			document.documentElement.classList.remove('modal-open')
 		}
 		return () => {
-			document.body.style.overflow = 'unset'
+			startScroll()
+			document.body.classList.remove('modal-open')
+			document.documentElement.classList.remove('modal-open')
 		}
-	}, [selectedProject])
+	}, [selectedProject, stopScroll, startScroll])
 
 	return (
 		<>
@@ -127,10 +142,25 @@ const Projects: React.FC = () => {
 							transition={{ delay: index * 0.1 }}>
 							{/* --- SPOTLIGHT CARD COMPONENT --- */}
 							<SpotlightCard className="group cursor-default">
-								<div className="relative grid md:grid-cols-[1.5fr,2fr] gap-6 md:gap-8 p-6 md:p-8 h-full">
+								<div className="flex flex-col gap-6 p-6 md:p-8 h-full">
+									{/* Image Area */}
+									<div
+										className="relative w-full aspect-video rounded-2xl overflow-hidden border border-slate-200 dark:border-white/5 shadow-inner bg-slate-100 dark:bg-black/20 cursor-pointer"
+										onClick={() => setSelectedProject(project)}>
+										<img
+											src={project.imageUrl}
+											alt={project.title}
+											className="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-100"
+										/>
+										{/* Overlay icon */}
+										<div className="absolute top-4 right-4 p-2 bg-black/20 backdrop-blur-md rounded-lg text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+											<Folder className="w-5 h-5" />
+										</div>
+									</div>
+
 									{/* Content */}
-									<div className="flex flex-col justify-center z-10 order-2 md:order-1">
-										<div className="flex items-start justify-between mb-2">
+									<div className="flex flex-col flex-1">
+										<div className="flex items-start justify-between mb-4">
 											<h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors font-display">
 												{project.title}
 											</h3>
@@ -140,7 +170,7 @@ const Projects: React.FC = () => {
 											{project.description[language]}
 										</p>
 
-										<div className="flex flex-wrap gap-2 mb-8">
+										<div className="flex flex-wrap gap-2 mb-8 mt-auto">
 											{project.tags.map(tag => (
 												<span
 													key={tag}
@@ -150,28 +180,13 @@ const Projects: React.FC = () => {
 											))}
 										</div>
 
-										<div className="flex items-center gap-4 mt-auto">
+										<div className="flex items-center gap-4">
 											<button
 												onClick={() => setSelectedProject(project)}
 												className="flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-black rounded-xl text-sm font-medium hover:bg-slate-800 dark:hover:bg-slate-200 transition-all hover:-translate-y-0.5 shadow-lg shadow-slate-200 dark:shadow-none cursor-pointer">
 												{t.projects.readMore}
 												<ArrowRight className="w-4 h-4" />
 											</button>
-										</div>
-									</div>
-
-									{/* Image Area */}
-									<div
-										className="order-1 md:order-2 relative h-48 md:h-full min-h-[200px] md:min-h-[280px] rounded-2xl overflow-hidden border border-slate-200 dark:border-white/5 shadow-inner bg-slate-100 dark:bg-black/20 cursor-pointer"
-										onClick={() => setSelectedProject(project)}>
-										<img
-											src={project.imageUrl}
-											alt={project.title}
-											className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100 opacity-90 group-hover:opacity-100"
-										/>
-										{/* Overlay icon */}
-										<div className="absolute top-4 right-4 p-2 bg-black/20 backdrop-blur-md rounded-lg text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-											<Folder className="w-5 h-5" />
 										</div>
 									</div>
 								</div>
@@ -184,7 +199,7 @@ const Projects: React.FC = () => {
 			{/* --- PROJECT DETAILS MODAL --- */}
 			<AnimatePresence>
 				{selectedProject && (
-					<div className="fixed inset-0 z-[100] flex items-center justify-center px-4 py-4 sm:py-8">
+					<div className="fixed inset-0 z-[100] overflow-hidden">
 						{/* Backdrop */}
 						<motion.div
 							initial={{ opacity: 0 }}
@@ -194,123 +209,129 @@ const Projects: React.FC = () => {
 							className="fixed inset-0 bg-slate-900/40 dark:bg-black/80 backdrop-blur-sm"
 						/>
 
-						{/* Modal Content */}
-						<motion.div
-							initial={{ opacity: 0, scale: 0.95, y: 20 }}
-							animate={{ opacity: 1, scale: 1, y: 0 }}
-							exit={{ opacity: 0, scale: 0.95, y: 20 }}
-							className="relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-white/10 flex flex-col overflow-hidden">
-							{/* Close Button */}
-							<button
-								onClick={() => setSelectedProject(null)}
-								className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/80 dark:bg-black/50 text-slate-500 hover:text-slate-900 dark:hover:text-white backdrop-blur transition-colors">
-								<X className="w-6 h-6" />
-							</button>
+						{/* Modal Wrapper */}
+						<div
+							className="fixed inset-0 flex items-center justify-center p-4 sm:p-8"
+							onClick={() => setSelectedProject(null)}>
+							{/* Modal Content */}
+							<motion.div
+								initial={{ opacity: 0, scale: 0.95, y: 20 }}
+								animate={{ opacity: 1, scale: 1, y: 0 }}
+								exit={{ opacity: 0, scale: 0.95, y: 20 }}
+								className="relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-white/10 flex flex-col overflow-hidden"
+								onClick={e => e.stopPropagation()}>
+								{/* Close Button */}
+								<button
+									onClick={() => setSelectedProject(null)}
+									className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/80 dark:bg-black/50 text-slate-500 hover:text-slate-900 dark:hover:text-white backdrop-blur transition-colors">
+									<X className="w-6 h-6" />
+								</button>
 
-							<div className="overflow-y-auto flex-1 h-full">
-								{/* Header Image */}
-								<div className="relative h-48 sm:h-64 md:h-80 w-full bg-slate-100 dark:bg-white/5 shrink-0">
-									<img
-										src={selectedProject.imageUrl}
-										alt={selectedProject.title}
-										className="w-full h-full object-cover"
-									/>
-									<div className="absolute inset-0 bg-gradient-to-t from-white dark:from-neutral-900 to-transparent" />
+								<div className="overflow-y-auto flex-1" data-lenis-prevent>
+									{/* Header Image */}
+									<div className="relative h-48 sm:h-64 md:h-80 w-full bg-slate-100 dark:bg-white/5 shrink-0">
+										<img
+											src={selectedProject.imageUrl}
+											alt={selectedProject.title}
+											className="w-full h-full object-cover"
+										/>
+										<div className="absolute inset-0 bg-gradient-to-t from-white dark:from-neutral-900 to-transparent" />
 
-									<div className="absolute bottom-0 left-0 p-6 md:p-10 w-full">
-										<h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white font-display mb-4">
-											{selectedProject.title}
-										</h2>
-										<div className="flex flex-wrap gap-2">
-											{selectedProject.tags.map(tag => (
-												<span
-													key={tag}
-													className="text-xs font-bold font-mono px-3 py-1.5 rounded-full bg-white/50 dark:bg-black/50 backdrop-blur-md text-slate-900 dark:text-white border border-white/20 dark:border-white/10 cursor-default">
-													{tag}
-												</span>
-											))}
-										</div>
-									</div>
-								</div>
-
-								{/* Scrollable Content */}
-								<div className="p-6 md:p-10 grid md:grid-cols-[2fr,1fr] gap-12">
-									<div className="space-y-10">
-										<div>
-											<h3 className="text-lg font-bold text-primary mb-3 flex items-center gap-2 uppercase tracking-wider font-mono">
-												<Code className="w-5 h-5" /> {t.projects.modal.challenge}
-											</h3>
-											<p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg cursor-default">
-												{selectedProject.challenge
-													? selectedProject.challenge[language]
-													: selectedProject.description[language]}
-											</p>
-										</div>
-
-										<div>
-											<h3 className="text-lg font-bold text-primary mb-3 flex items-center gap-2 uppercase tracking-wider font-mono">
-												<CheckCircle2 className="w-5 h-5" /> {t.projects.modal.solution}
-											</h3>
-											<p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg cursor-default">
-												{selectedProject.solution
-													? selectedProject.solution[language]
-													: 'Standard solution description goes here...'}
-											</p>
-										</div>
-
-										<div>
-											<h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
-												{t.projects.modal.features}
-											</h3>
-											<ul className="grid gap-3">
-												{selectedProject.features &&
-													selectedProject.features.map((feature, i) => (
-														<li
-															key={i}
-															className="flex items-start gap-3 text-slate-600 dark:text-slate-400 cursor-default">
-															<span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0" />
-															<span>{feature[language]}</span>
-														</li>
-													))}
-											</ul>
-										</div>
-									</div>
-
-									{/* Sidebar Actions */}
-									<div className="flex flex-col gap-4">
-										<div className="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5">
-											<h4 className="font-bold text-slate-900 dark:text-white mb-4">Links</h4>
-											<div className="space-y-3">
-												{selectedProject.demoUrl && (
-													<a
-														href={selectedProject.demoUrl}
-														target="_blank"
-														rel="noreferrer"
-														className="flex items-center justify-center gap-2 w-full py-3 bg-primary text-slate-900 font-bold rounded-xl hover:bg-primary/90 transition-colors">
-														<ExternalLink className="w-4 h-4" />
-														Live Demo
-													</a>
-												)}
-												<a
-													href={selectedProject.repoUrl}
-													target="_blank"
-													rel="noreferrer"
-													className="flex items-center justify-center gap-2 w-full py-3 bg-white dark:bg-transparent border border-slate-200 dark:border-white/20 text-slate-700 dark:text-white font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-white/10 transition-colors">
-													<Github className="w-4 h-4" />
-													GitHub Repo
-												</a>
+										<div className="absolute bottom-0 left-0 p-6 md:p-10 w-full">
+											<h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white font-display mb-4">
+												{selectedProject.title}
+											</h2>
+											<div className="flex flex-wrap gap-2">
+												{selectedProject.tags.map(tag => (
+													<span
+														key={tag}
+														className="text-xs font-bold font-mono px-3 py-1.5 rounded-full bg-white/50 dark:bg-black/50 backdrop-blur-md text-slate-900 dark:text-white border border-white/20 dark:border-white/10 cursor-default">
+														{tag}
+													</span>
+												))}
 											</div>
 										</div>
 									</div>
-								</div>
 
-								<div className="p-6 border-t border-slate-100 dark:border-white/5 text-center md:hidden">
-									<button onClick={() => setSelectedProject(null)} className="text-slate-500 font-medium">
-										{t.projects.modal.close}
-									</button>
+									{/* Scrollable Content */}
+									<div className="p-6 md:p-10 grid md:grid-cols-[2fr,1fr] gap-12">
+										<div className="space-y-10">
+											<div>
+												<h3 className="text-lg font-bold text-primary mb-3 flex items-center gap-2 uppercase tracking-wider font-mono">
+													<Code className="w-5 h-5" /> {t.projects.modal.challenge}
+												</h3>
+												<p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg cursor-default">
+													{selectedProject.challenge
+														? selectedProject.challenge[language]
+														: selectedProject.description[language]}
+												</p>
+											</div>
+
+											<div>
+												<h3 className="text-lg font-bold text-primary mb-3 flex items-center gap-2 uppercase tracking-wider font-mono">
+													<CheckCircle2 className="w-5 h-5" /> {t.projects.modal.solution}
+												</h3>
+												<p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg cursor-default">
+													{selectedProject.solution
+														? selectedProject.solution[language]
+														: 'Standard solution description goes here...'}
+												</p>
+											</div>
+
+											<div>
+												<h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
+													{t.projects.modal.features}
+												</h3>
+												<ul className="grid gap-3">
+													{selectedProject.features &&
+														selectedProject.features.map((feature, i) => (
+															<li
+																key={i}
+																className="flex items-start gap-3 text-slate-600 dark:text-slate-400 cursor-default">
+																<span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0" />
+																<span>{feature[language]}</span>
+															</li>
+														))}
+												</ul>
+											</div>
+										</div>
+
+										{/* Sidebar Actions */}
+										<div className="flex flex-col gap-4">
+											<div className="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5">
+												<h4 className="font-bold text-slate-900 dark:text-white mb-4">Links</h4>
+												<div className="space-y-3">
+													{selectedProject.demoUrl && (
+														<a
+															href={selectedProject.demoUrl}
+															target="_blank"
+															rel="noreferrer"
+															className="flex items-center justify-center gap-2 w-full py-3 bg-primary text-slate-900 font-bold rounded-xl hover:bg-primary/90 transition-colors">
+															<ExternalLink className="w-4 h-4" />
+															Live Demo
+														</a>
+													)}
+													<a
+														href={selectedProject.repoUrl}
+														target="_blank"
+														rel="noreferrer"
+														className="flex items-center justify-center gap-2 w-full py-3 bg-white dark:bg-transparent border border-slate-200 dark:border-white/20 text-slate-700 dark:text-white font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-white/10 transition-colors">
+														<Github className="w-4 h-4" />
+														GitHub Repo
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div className="p-6 border-t border-slate-100 dark:border-white/5 text-center md:hidden">
+										<button onClick={() => setSelectedProject(null)} className="text-slate-500 font-medium">
+											{t.projects.modal.close}
+										</button>
+									</div>
 								</div>
-							</div>
-						</motion.div>
+							</motion.div>
+						</div>
 					</div>
 				)}
 			</AnimatePresence>
