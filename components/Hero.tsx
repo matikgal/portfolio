@@ -313,7 +313,7 @@ const Hero: React.FC = () => {
 								initial={{ opacity: 0, scale: 0.95, y: 20 }}
 								animate={{ opacity: 1, scale: 1, y: 0 }}
 								exit={{ opacity: 0, scale: 0.95, y: 20 }}
-								className="relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-white/10 flex flex-col overflow-hidden"
+								className="relative w-full max-w-4xl max-h-[85vh] md:max-h-[90vh] bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-white/10 flex flex-col overflow-hidden"
 								onClick={e => e.stopPropagation()}>
 								{/* Close Button */}
 								<button
