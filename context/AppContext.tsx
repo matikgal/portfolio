@@ -100,7 +100,8 @@ const translations = {
         close: "Close details",
       },
       links: {
-        source: "Source",
+        title: "Project Links",
+        source: "Source Code",
         demo: "Live Demo",
       },
     },
@@ -219,7 +220,8 @@ const translations = {
         close: "Zamknij szczegóły",
       },
       links: {
-        source: "Kod",
+        title: "Linki do projektu",
+        source: "Kod źródłowy",
         demo: "Live Demo",
       },
     },

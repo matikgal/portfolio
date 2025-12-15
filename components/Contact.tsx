@@ -85,6 +85,7 @@ const Contact: React.FC = () => {
 								href="https://github.com/matikgal"
 								target="_blank"
 								rel="noreferrer"
+								aria-label="GitHub Profile"
 								className="block p-3 rounded-full bg-white dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-slate-200 dark:border-transparent hover:shadow-lg hover:scale-110">
 								<Github className="w-6 h-6" />
 							</a>
@@ -93,6 +94,7 @@ const Contact: React.FC = () => {
 								href="https://www.linkedin.com/in/mateusz-ga%C5%82uszka-981900231/"
 								target="_blank"
 								rel="noreferrer"
+								aria-label="LinkedIn Profile"
 								className="block p-3 rounded-full bg-white dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-400 hover:text-blue-500 dark:hover:text-blue-400 transition-all border border-slate-200 dark:border-transparent hover:shadow-lg hover:scale-110">
 								<Linkedin className="w-6 h-6" />
 							</a>

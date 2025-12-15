@@ -1,97 +1,27 @@
-import React, { useState, useEffect } from 'react'
-import { Github, Linkedin, ArrowRight, Terminal, X, Folder, Code, CheckCircle2, ExternalLink } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React from 'react'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { projectsData } from './Projects'
-import { useApp } from '../context/AppContext'
-import SpotlightCard from './SpotlightCard'
-import { Project } from '../types'
+import { ArrowRight, Github, Linkedin, Terminal } from 'lucide-react'
 import {
 	SiReact,
 	SiTypescript,
-	SiNextdotjs,
 	SiTailwindcss,
 	SiNodedotjs,
-	SiGit,
-	SiFigma,
 	SiSupabase,
 	SiFramer,
+	SiNextdotjs,
+	SiGit,
+	SiFigma,
 	SiVercel,
 	SiVite,
 	SiPostgresql,
 } from 'react-icons/si'
-
-// Custom Brand Icons
-const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
-	<svg viewBox="-10.5 -9.45 21 18.9" fill="currentColor" {...props}>
-		<circle cx="0" cy="0" r="2" fill="currentColor"></circle>
-		<g stroke="currentColor" strokeWidth="1" fill="none">
-			<ellipse rx="10" ry="4.5"></ellipse>
-			<ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse>
-			<ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse>
-		</g>
-	</svg>
-)
-
-const TSIcon = (props: React.SVGProps<SVGSVGElement>) => (
-	<svg
-		viewBox="0 0 24 24"
-		fill="none"
-		stroke="currentColor"
-		strokeWidth="2"
-		strokeLinecap="round"
-		strokeLinejoin="round"
-		{...props}>
-		<path
-			d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"
-			stroke="none"
-			fill="currentColor"
-			className="opacity-20"
-		/>
-		<path
-			d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"
-			stroke="currentColor"
-			fill="none"
-		/>
-		<path d="M8 8h8" />
-		<path d="M12 8v8" />
-		<path d="M16 16c1.1 0 2-.9 2-2s-.9-2-2-2h-1" />
-		<path d="M15 12v4" />
-	</svg>
-)
-
-const NextIcon = (props: React.SVGProps<SVGSVGElement>) => (
-	<svg viewBox="0 0 180 180" fill="currentColor" {...props}>
-		<mask
-			id="mask0_408_134"
-			style={{ maskType: 'alpha' }}
-			maskUnits="userSpaceOnUse"
-			x="0"
-			y="0"
-			width="180"
-			height="180">
-			<circle cx="90" cy="90" r="90" fill="black" />
-		</mask>
-		<g mask="url(#mask0_408_134)">
-			<circle cx="90" cy="90" r="90" fill="currentColor" fillOpacity="0.1" />
-			<path
-				d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
-				fill="currentColor"
-			/>
-			<rect x="115" y="54" width="12" height="72" fill="currentColor" />
-		</g>
-	</svg>
-)
-
-const TailwindIcon = (props: React.SVGProps<SVGSVGElement>) => (
-	<svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-		<path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
-	</svg>
-)
+import { useApp } from '../context/AppContext'
+import SpotlightCard from './SpotlightCard'
+import { projectsData } from '../data/projects'
 
 const Hero: React.FC = () => {
 	const { t, language } = useApp()
-	const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 	const featuredProjects = projectsData.slice(0, 3)
 
 	const techStack = [
@@ -108,18 +38,6 @@ const Hero: React.FC = () => {
 		{ name: 'Vite', icon: SiVite, color: '#646CFF' },
 		{ name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
 	]
-
-	// Lock body scroll when modal is open
-	useEffect(() => {
-		if (selectedProject) {
-			document.body.style.overflow = 'hidden'
-		} else {
-			document.body.style.overflow = 'unset'
-		}
-		return () => {
-			document.body.style.overflow = 'unset'
-		}
-	}, [selectedProject])
 
 	return (
 		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="pt-24 md:pt-32">
@@ -237,45 +155,52 @@ const Hero: React.FC = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ delay: index * 0.1 }}>
-							<SpotlightCard className="group cursor-default">
-								<div className="p-6 md:p-8 h-full flex flex-col md:flex-row gap-8 items-start">
-									<div className="flex-1 order-2 md:order-1">
-										<h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors font-display">
-											{project.title}
-										</h3>
-										<p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-2 leading-relaxed cursor-default">
-											{project.description[language]}
-										</p>
+							<Link to={`/projects/${project.id}`}>
+								<SpotlightCard className="group cursor-pointer">
+									<div className="p-6 md:p-8 h-full flex flex-col md:flex-row gap-8 items-start">
+										<div className="flex-1 order-2 md:order-1">
+											<h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors font-display">
+												{project.title}
+											</h3>
+											<p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-2 leading-relaxed">
+												{project.description[language]}
+											</p>
 
-										<div className="flex flex-wrap gap-2 mb-6">
-											{project.tags.slice(0, 3).map(tag => (
-												<span
-													key={tag}
-													className="text-[11px] uppercase tracking-wider font-bold font-mono px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5 whitespace-nowrap cursor-default">
-													{tag}
-												</span>
-											))}
+											<div className="flex flex-wrap gap-2 mb-6">
+												{project.tags.slice(0, 3).map(tag => (
+													<span
+														key={tag}
+														className="text-[11px] uppercase tracking-wider font-bold font-mono px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5 whitespace-nowrap">
+														{tag}
+													</span>
+												))}
+											</div>
+
+											<div
+												className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors group/btn">
+												{t.projects.readMore}
+												<ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+											</div>
 										</div>
-
-										<button
-											onClick={() => setSelectedProject(project)}
-											className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors group/btn">
-											{t.projects.readMore}
-											<ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-										</button>
+										<div
+											className="md:w-64 w-full h-48 md:h-40 bg-slate-100 dark:bg-white/5 rounded-xl overflow-hidden relative shadow-inner order-1 md:order-2 focus:outline-none focus:ring-2 focus:ring-primary"
+											role="button"
+											tabIndex={0}
+											aria-label={`View details for ${project.title}`}
+										>
+											<img
+												src={project.imageUrl}
+												alt={project.title}
+												loading="lazy"
+												width={1920}
+												height={1080}
+												className="w-full h-full object-cover opacity-90 dark:opacity-70 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
+											/>
+											<div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+										</div>
 									</div>
-									<div
-										className="md:w-64 w-full h-48 md:h-40 bg-slate-100 dark:bg-white/5 rounded-xl overflow-hidden relative shadow-inner order-1 md:order-2 cursor-pointer"
-										onClick={() => setSelectedProject(project)}>
-										<img
-											src={project.imageUrl}
-											alt={project.title}
-											className="w-full h-full object-cover opacity-90 dark:opacity-70 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
-										/>
-										<div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-									</div>
-								</div>
-							</SpotlightCard>
+								</SpotlightCard>
+							</Link>
 						</motion.div>
 					))}
 				</div>
@@ -290,146 +215,6 @@ const Hero: React.FC = () => {
 					</Link>
 				</div>
 			</section>
-
-			{/* --- PROJECT DETAILS MODAL (Shared with Projects.tsx) --- */}
-			<AnimatePresence>
-				{selectedProject && (
-					<div className="fixed inset-0 z-[100] overflow-hidden">
-						{/* Backdrop */}
-						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}
-							onClick={() => setSelectedProject(null)}
-							className="fixed inset-0 bg-slate-900/40 dark:bg-black/80 backdrop-blur-sm"
-						/>
-
-						{/* Modal Wrapper */}
-						<div
-							className="fixed inset-0 flex items-center justify-center p-4 sm:p-8"
-							onClick={() => setSelectedProject(null)}>
-							{/* Modal Content */}
-							<motion.div
-								initial={{ opacity: 0, scale: 0.95, y: 20 }}
-								animate={{ opacity: 1, scale: 1, y: 0 }}
-								exit={{ opacity: 0, scale: 0.95, y: 20 }}
-								className="relative w-full max-w-4xl max-h-[85vh] md:max-h-[90vh] bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-white/10 flex flex-col overflow-hidden"
-								onClick={e => e.stopPropagation()}>
-								{/* Close Button */}
-								<button
-									onClick={() => setSelectedProject(null)}
-									className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/80 dark:bg-black/50 text-slate-500 hover:text-slate-900 dark:hover:text-white backdrop-blur transition-colors">
-									<X className="w-6 h-6" />
-								</button>
-
-								<div className="overflow-y-auto flex-1" data-lenis-prevent>
-									{/* Header Image */}
-									<div className="relative h-48 sm:h-64 md:h-80 w-full bg-slate-100 dark:bg-white/5 shrink-0">
-										<img
-											src={selectedProject.imageUrl}
-											alt={selectedProject.title}
-											className="w-full h-full object-cover"
-										/>
-										<div className="absolute inset-0 bg-gradient-to-t from-white dark:from-neutral-900 to-transparent" />
-
-										<div className="absolute bottom-0 left-0 p-6 md:p-10 w-full">
-											<h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white font-display mb-4">
-												{selectedProject.title}
-											</h2>
-											<div className="flex flex-wrap gap-2">
-												{selectedProject.tags.map(tag => (
-													<span
-														key={tag}
-														className="text-xs font-bold font-mono px-3 py-1.5 rounded-full bg-white/50 dark:bg-black/50 backdrop-blur-md text-slate-900 dark:text-white border border-white/20 dark:border-white/10 cursor-default">
-														{tag}
-													</span>
-												))}
-											</div>
-										</div>
-									</div>
-
-									{/* Scrollable Content */}
-									<div className="p-6 md:p-10 grid md:grid-cols-[2fr,1fr] gap-12">
-										<div className="space-y-10">
-											<div>
-												<h3 className="text-lg font-bold text-primary mb-3 flex items-center gap-2 uppercase tracking-wider font-mono">
-													<Code className="w-5 h-5" /> {t.projects.modal.challenge}
-												</h3>
-												<p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg cursor-default">
-													{selectedProject.challenge
-														? selectedProject.challenge[language]
-														: selectedProject.description[language]}
-												</p>
-											</div>
-
-											<div>
-												<h3 className="text-lg font-bold text-primary mb-3 flex items-center gap-2 uppercase tracking-wider font-mono">
-													<CheckCircle2 className="w-5 h-5" /> {t.projects.modal.solution}
-												</h3>
-												<p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg cursor-default">
-													{selectedProject.solution
-														? selectedProject.solution[language]
-														: 'Standard solution description goes here...'}
-												</p>
-											</div>
-
-											<div>
-												<h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
-													{t.projects.modal.features}
-												</h3>
-												<ul className="grid gap-3">
-													{selectedProject.features &&
-														selectedProject.features.map((feature, i) => (
-															<li
-																key={i}
-																className="flex items-start gap-3 text-slate-600 dark:text-slate-400 cursor-default">
-																<span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0" />
-																<span>{feature[language]}</span>
-															</li>
-														))}
-												</ul>
-											</div>
-										</div>
-
-										{/* Sidebar Actions */}
-										<div className="flex flex-col gap-4">
-											<div className="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5">
-												<h4 className="font-bold text-slate-900 dark:text-white mb-4">Links</h4>
-												<div className="space-y-3">
-													{selectedProject.demoUrl && (
-														<a
-															href={selectedProject.demoUrl}
-															target="_blank"
-															rel="noreferrer"
-															className="flex items-center justify-center gap-2 w-full py-3 bg-primary text-slate-900 font-bold rounded-xl hover:bg-primary/90 transition-colors">
-															<ExternalLink className="w-4 h-4" />
-															Live Demo
-														</a>
-													)}
-													<a
-														href={selectedProject.repoUrl}
-														target="_blank"
-														rel="noreferrer"
-														className="flex items-center justify-center gap-2 w-full py-3 bg-white dark:bg-transparent border border-slate-200 dark:border-white/20 text-slate-700 dark:text-white font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-white/10 transition-colors">
-														<Github className="w-4 h-4" />
-														GitHub Repo
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<div className="p-6 border-t border-slate-100 dark:border-white/5 text-center md:hidden">
-										<button onClick={() => setSelectedProject(null)} className="text-slate-500 font-medium">
-											{t.projects.modal.close}
-										</button>
-									</div>
-								</div>
-							</motion.div>
-						</div>
-					</div>
-				)}
-			</AnimatePresence>
 		</motion.div>
 	)
 }

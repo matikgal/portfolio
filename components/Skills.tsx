@@ -23,7 +23,7 @@ import {
 	SiCss3,
 	SiRedux,
 	SiMongodb,
-	SiGraphql,
+
 	SiDocker,
 	SiNetlify,
 } from 'react-icons/si'
@@ -60,7 +60,7 @@ const Skills: React.FC = () => {
 				{ name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
 				{ name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
 				{ name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-				{ name: 'GraphQL', icon: SiGraphql, color: '#E10098' },
+
 			],
 		},
 		{
