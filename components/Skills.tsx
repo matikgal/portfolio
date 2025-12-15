@@ -53,7 +53,7 @@ const Skills: React.FC = () => {
 			],
 		},
 		{
-			title: 'Backend & Database',
+			title: t.about.skillCats.backend,
 			skills: [
 				{ name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
 				{ name: 'Supabase', icon: SiSupabase, color: '#3ECF8E' },

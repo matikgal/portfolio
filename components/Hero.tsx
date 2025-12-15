@@ -203,7 +203,7 @@ const Hero: React.FC = () => {
 				{/* Mini Tech Stack */}
 				<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="space-y-4">
 					<h2 className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-widest">
-						Narzędzia i Technologie
+						{t.hero.currentStack}
 					</h2>
 					<div className="flex flex-wrap gap-3">
 						{techStack.map((tech, i) => (
