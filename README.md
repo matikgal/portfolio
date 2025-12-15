@@ -24,4 +24,4 @@ A modern, minimalistic, and interactive personal portfolio website. The applicat
 
 - Email: mateusz.galuszka21@gmail.com
 - LinkedIn: [Mateusz Gałuszka](https://www.linkedin.com/in/mateusz-ga%C5%82uszka-981900231/)
-- GitHub: [@matikgal](https://github.com/matikgal)
+- GitHub: [@matikgal](https://github.com/matikgal) 
