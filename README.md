@@ -4,7 +4,7 @@ Nowoczesna strona portfolio dla Frontend Developera, zbudowana w celu profesjona
 
 ## Demo
 
-[Zobacz aplikację na żywo](https://matikgal.github.io/portfolio/)
+Zobacz aplikację na żywo: [Link](https://matikgal.github.io/portfolio/)
 
 ## O projekcie
 
@@ -26,5 +26,6 @@ Projekt ten powstał jako wizytówka moich umiejętności programistycznych oraz
 
 ## Kontakt
 
-Stworzone przez Mateusz Gałuszka
 Email: mateusz.galuszka21@gmail.com
+<br>
+_Stworzone przez Mateusz Gałuszka_
