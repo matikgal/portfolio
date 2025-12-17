@@ -4,7 +4,7 @@ Nowoczesna strona portfolio dla Frontend Developera, zbudowana w celu profesjona
 
 ## Demo
 
-[Zobacz aplikację na żywo]([https://matikgal.github.io/portfolio/])
+[Zobacz aplikację na żywo](https://matikgal.github.io/portfolio/)
 
 ## O projekcie
 
