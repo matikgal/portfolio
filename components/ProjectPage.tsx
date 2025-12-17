@@ -55,18 +55,7 @@ const ProjectPage: React.FC = () => {
       exit={{ opacity: 0 }}
       className="pt-24 md:pt-32 pb-24"
     >
-      {/* Back Button - Inline for Desktop, Fixed for Mobile */}
-      <div className="hidden md:block mb-8">
-        <button
-            onClick={() => navigate(-1)}
-            className="group flex items-center gap-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
-        >
-            <div className="p-2 rounded-full bg-slate-100 dark:bg-white/5 group-hover:bg-slate-200 dark:group-hover:bg-white/10 transition-colors">
-                <ArrowLeft className="w-5 h-5" />
-            </div>
-            <span className="font-medium">{language === 'pl' ? 'Wróć' : 'Go back'}</span>
-        </button>
-      </div>
+      {/* Back Button - Inline for Desktop REMOVED (Moved to Header) */}
 
       {/* Mobile Fixed Back Button */}
       <button
@@ -79,9 +68,19 @@ const ProjectPage: React.FC = () => {
 
       {/* Hero Section */}
       <div className="space-y-8 mb-12">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white font-display">
-          {project.title}
-        </h1>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white font-display">
+            {project.title}
+            </h1>
+            
+            <button
+                onClick={() => navigate(-1)}
+                className="hidden md:flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium hover:bg-slate-800 dark:hover:bg-slate-200 transition-all hover:scale-105 shadow-lg shadow-slate-900/10"
+            >
+                <ArrowLeft className="w-5 h-5" />
+                <span>{language === 'pl' ? 'Wróć' : 'Go back'}</span>
+            </button>
+        </div>
         
         {/* Image with bottom fade */}
         <div className="relative w-full rounded-xl overflow-hidden shadow-2xl bg-slate-100 dark:bg-white/5">
@@ -149,15 +148,13 @@ const ProjectPage: React.FC = () => {
 
 
             {/* Bottom Back Button */}
-            <div className="pt-8 border-t border-slate-200 dark:border-white/10">
+            <div className="pt-8 border-t border-slate-200 dark:border-white/10 w-full">
                 <button
                     onClick={() => navigate(-1)}
-                    className="group flex items-center gap-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+                    className="w-full group flex items-center justify-center gap-2 py-4 rounded-xl bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 transition-all active:scale-[0.99]"
                 >
-                    <div className="p-2 rounded-full bg-slate-100 dark:bg-white/5 group-hover:bg-slate-200 dark:group-hover:bg-white/10 transition-colors">
-                        <ArrowLeft className="w-5 h-5" />
-                    </div>
-                    <span className="font-medium">{language === 'pl' ? 'Wróć' : 'Go back'}</span>
+                    <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                    <span className="font-medium">{language === 'pl' ? 'Wróć do projektów' : 'Back to projects'}</span>
                 </button>
             </div>
         </div>

@@ -78,7 +78,7 @@ const Skills: React.FC = () => {
 	]
 
 	return (
-		<div className="mt-12 pt-12 border-t border-slate-200 dark:border-white/5">
+		<div id="skills" className="mt-12 pt-12 border-t border-slate-200 dark:border-white/5">
 			<motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
 				<h2 className="text-sm font-mono text-primary mb-8 uppercase tracking-widest">{t.about.skillsTitle}</h2>
 

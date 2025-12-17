@@ -33,10 +33,11 @@ const translations = {
       status: "Open to work",
       role: "Frontend Developer",
       description:
-        "I build accessible, pixel-perfect, and performant web experiences. Focusing on the React ecosystem and modern UI engineering.",
+        "I specialize in creating scalable and modern web applications, taking care of every detail of the interface.",
       viewWork: "Featured Work",
       viewAll: "View all",
       currentStack: "Tools & Technologies",
+      moreSkills: "More",
       buttons: {
         github: "GitHub",
         linkedin: "LinkedIn",
@@ -153,10 +154,11 @@ const translations = {
       status: "Szukam pracy",
       role: "Frontend Developer",
       description:
-        "Tworzę dostępne, dopracowane i wydajne aplikacje internetowe. Skupiam się na ekosystemie React i nowoczesnej inżynierii UI.",
+        "Specjalizuję się w tworzeniu skalowalnych i nowoczesnych aplikacji webowych, dbając o każdy detal interfejsu.",
       viewWork: "Wybrane Prace",
       viewAll: "Zobacz wszystkie",
       currentStack: "Narzędzia i Technologie",
+      moreSkills: "Więcej",
       buttons: {
         github: "GitHub",
         linkedin: "LinkedIn",

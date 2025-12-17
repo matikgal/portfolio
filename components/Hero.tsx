@@ -132,6 +132,12 @@ const Hero: React.FC = () => {
 								<span className="text-sm font-medium">{tech.name}</span>
 							</div>
 						))}
+						<Link
+							to="/about#skills"
+							className="group flex items-center gap-1 px-4 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+							{t.hero.moreSkills}
+							<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+						</Link>
 					</div>
 				</motion.div>
 			</section>

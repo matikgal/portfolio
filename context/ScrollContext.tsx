@@ -39,18 +39,12 @@ export const ScrollProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     };
   }, []);
 
-  // Handle scroll restoration and route changes
+  // Handle scroll restoration and route changes - MOVED TO APP.TSX
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
-
-    if (lenis) {
-      lenis.scrollTo(0, { immediate: true });
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [pathname, lenis]);
+  }, []);
 
   const stopScroll = () => {
     lenis?.stop();

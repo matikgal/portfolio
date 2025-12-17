@@ -12,9 +12,8 @@ import Preloader from "./components/Preloader";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import { AppProvider, useApp } from "./context/AppContext";
-import { ScrollProvider } from "./context/ScrollContext";
+import { ScrollProvider, useScroll } from "./context/ScrollContext";
 import { CheckCircle2, XCircle, Info } from "lucide-react";
-import { useKonamiCode } from "./hooks/useKonamiCode";
 
 // Toast Container
 const ToastContainer = () => {
@@ -52,9 +51,46 @@ const ToastContainer = () => {
 // AnimatedRoutes
 const AnimatedRoutes = () => {
   const location = useLocation();
+  const { lenis } = useScroll();
+
+  const handleExitComplete = () => {
+    // 1. Always reset to top first on page change
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+
+    // 2. Handle Hash Scrolling
+    if (window.location.hash && lenis) {
+      const hash = window.location.hash;
+      const targetId = hash.substring(1);
+
+      // Polling for element
+      let attempts = 0;
+      const maxAttempts = 20; // 2s total
+      
+      const interval = setInterval(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          clearInterval(interval);
+          lenis.scrollTo(element, {
+            offset: -100,
+            duration: 1.5,
+          });
+          return;
+        }
+
+        attempts++;
+        if (attempts >= maxAttempts) {
+          clearInterval(interval);
+        }
+      }, 100);
+    }
+  };
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Hero />} />
         <Route path="/about" element={<About />} />
