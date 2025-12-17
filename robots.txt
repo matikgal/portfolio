@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matikgal.github.io/portfolio/sitemap.xml
