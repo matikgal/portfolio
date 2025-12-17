@@ -1,27 +1,50 @@
-# Frontend Developer Portfolio
+# Mateusz Gałuszka - Portfolio
 
-A modern, minimalistic, and interactive personal portfolio website. The application features a clean aesthetic, smooth page transitions, and a command palette for power-user navigation.
+Nowoczesna strona portfolio dla Frontend Developera, zbudowana w celu profesjonalnej prezentacji projektów i umiejętności. Aplikacja wyróżnia się minimalistycznym designem, płynnymi animacjami oraz wysoką wydajnością.
 
-## Features
+## Demo
 
-- Modern Design: Minimalist UI with glassmorphism effects and a clean grid layout
-- Dark/Light Mode: Fully supported theme switching with persistent state
-- Interactive Elements: Custom spotlight cards, magnetic buttons, and smooth Framer Motion animations
-- Command Palette: Accessible navigation accessed via `Ctrl + K`
-- Internationalization (i18n): Full support for Polish (PL) and English (EN) languages
-- Responsive: Mobile-first approach ensuring perfect display on all devices
+[Zobacz aplikację na żywo]([LINK DO DEMO])
 
-## Tech Stack
+## O projekcie
 
-- React 19, TypeScript
-- Tailwind CSS
-- Framer Motion
-- React Router
-- Lucide React
-- Vite
+Projekt ten powstał jako wizytówka moich umiejętności programistycznych oraz estetycznego zmysłu. Głównym celem było stworzenie interfejsu, który jest nie tylko funkcjonalny, ale również przyjemny dla oka dzięki zastosowaniu mikro-interakcji i nowoczesnych technik stylowania. Budując tę aplikację, chciałem zgłębić tajniki zaawansowanych animacji w React przy użyciu Framer Motion oraz zoptymalizować doświadczenie użytkownika poprzez płynne przewijanie i intuicyjną nawigację.
 
-## Contact
+## Technologie
 
-- Email: mateusz.galuszka21@gmail.com
-- LinkedIn: [Mateusz Gałuszka](https://www.linkedin.com/in/mateusz-ga%C5%82uszka-981900231/)
-- GitHub: [@matikgal](https://github.com/matikgal) 
+- **Frontend:** ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- **Inne:** ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+
+## Główne funkcjonalności
+
+- Płynna nawigacja między stronami z animacjami przejść (Page Transitions)
+- Interaktywna paleta komend (Command Palette) dostępna pod skrótem `Ctrl + K`
+- Obsługa motywu jasnego i ciemnego (Dark/Light Mode)
+- System powiadomień (Toast Notifications) dla interakcji użytkownika
+- Płynne przewijanie (Smooth Scrolling) przy użyciu Lenis
+- Pełna responsywność (Mobile First)
+
+## Jak uruchomić lokalnie
+
+Instrukcja dla deweloperów chcących uruchomić projekt na własnej maszynie.
+
+1. Sklonuj repozytorium:
+
+   ```bash
+   git clone [LINK DO REPO]
+   ```
+
+2. Zainstaluj zależności:
+
+   ```bash
+   npm install
+   ```
+
+3. Uruchom projekt:
+   ```bash
+   npm run dev
+   ```
+
+## Kontakt
+
+Mateusz Gałuszka - [LinkedIn](https://www.linkedin.com/in/mateusz-ga%C5%82uszka-981900231/)
