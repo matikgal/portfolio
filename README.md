@@ -4,7 +4,7 @@ Nowoczesna strona portfolio dla Frontend Developera, zbudowana w celu profesjona
 
 ## Demo
 
-[Zobacz aplikację na żywo]([LINK DO DEMO])
+[Zobacz aplikację na żywo]([https://matikgal.github.io/portfolio/])
 
 ## O projekcie
 
@@ -24,27 +24,7 @@ Projekt ten powstał jako wizytówka moich umiejętności programistycznych oraz
 - Płynne przewijanie (Smooth Scrolling) przy użyciu Lenis
 - Pełna responsywność (Mobile First)
 
-## Jak uruchomić lokalnie
-
-Instrukcja dla deweloperów chcących uruchomić projekt na własnej maszynie.
-
-1. Sklonuj repozytorium:
-
-   ```bash
-   git clone [LINK DO REPO]
-   ```
-
-2. Zainstaluj zależności:
-
-   ```bash
-   npm install
-   ```
-
-3. Uruchom projekt:
-   ```bash
-   npm run dev
-   ```
-
 ## Kontakt
 
-Mateusz Gałuszka - [LinkedIn](https://www.linkedin.com/in/mateusz-ga%C5%82uszka-981900231/)
+Stworzone przez Mateusz Gałuszka
+Email: mateusz.galuszka21@gmail.com
