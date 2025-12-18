@@ -1,5 +1,5 @@
 import { useState, lazy, Suspense } from "react";
-import { HashRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence, motion, LazyMotion, domAnimation, m } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Preloader from "@/components/Preloader";
@@ -73,7 +73,7 @@ function AppContent() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <HashRouter>
+    <BrowserRouter basename="/portfolio">
         <ScrollProvider>
           <ScrollToTop />
           <AnimatePresence>
@@ -101,7 +101,7 @@ function AppContent() {
             </div>
           </div>
         </ScrollProvider>
-      </HashRouter>
+      </BrowserRouter>
     </LazyMotion>
   );
 }
