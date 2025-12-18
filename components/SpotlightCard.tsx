@@ -1,21 +1,21 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState, ReactNode, MouseEvent } from 'react';
 
 interface SpotlightCardProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   spotlightColor?: string;
 }
 
-const SpotlightCard: React.FC<SpotlightCardProps> = ({ 
+export default function SpotlightCard({ 
   children, 
   className = "", 
   spotlightColor = "rgba(255, 255, 255, 0.15)" 
-}) => {
+}: SpotlightCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!divRef.current) return;
 
     const rect = divRef.current.getBoundingClientRect();
@@ -53,6 +53,4 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       </div>
     </div>
   );
-};
-
-export default SpotlightCard;
+}

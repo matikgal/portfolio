@@ -1,9 +1,8 @@
-
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Github, Linkedin, Cloud, CloudRain, Sun, Command } from 'lucide-react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '@/context/AppContext';
 
-const Footer: React.FC = () => {
+export default function Footer() {
   const { t } = useApp();
   const [time, setTime] = useState<string>('');
   const [weather, setWeather] = useState<{ temp: number, code: number } | null>(null);
@@ -79,7 +78,7 @@ const Footer: React.FC = () => {
                             {t.footer.weather}
                         </span>
                         <div className="flex items-center gap-2 font-mono font-medium text-slate-700 dark:text-slate-200">
-                            {weather && getWeatherIcon(weather.code)}
+                            {getWeatherIcon(weather?.code ?? 0)}
                             <span>{weather ? `${weather.temp}°C` : '--'}</span>
                         </div>
                     </div>
@@ -93,7 +92,7 @@ const Footer: React.FC = () => {
                         title="Open Command Palette (Ctrl+K)"
                     >
                         <Command className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors" />
-                        <span className="font-normal text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors text-xs font-medium">{t.footer.cmdHint}</span>
+                        <span className="text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors text-xs font-medium">{t.footer.cmdHint}</span>
                         <div className="flex items-center gap-1 ml-1">
                             <kbd className="font-mono px-1.5 py-0.5 bg-slate-200 dark:bg-neutral-800 rounded border border-slate-300 dark:border-neutral-600 text-slate-700 dark:text-slate-200 text-[10px] font-bold shadow-sm min-w-[24px]">Ctrl</kbd>
                             <span className="text-slate-400 dark:text-slate-500 text-[10px] font-bold">+</span>
@@ -125,6 +124,4 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

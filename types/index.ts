@@ -1,4 +1,7 @@
 import { LucideIcon } from 'lucide-react';
+import { Translations } from '@/data/translations';
+
+export type { Translations };
 
 export interface LocalizedString {
   en: string;

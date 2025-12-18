@@ -1,10 +1,9 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import Skills from './Skills'
-import Timeline from './Timeline'
-import { useApp } from '../context/AppContext'
+import Skills from '@/components/Skills'
+import Timeline from '@/components/Timeline'
+import { useApp } from '@/context/AppContext'
 
-const About: React.FC = () => {
+export default function About() {
 	const { t } = useApp()
 
 	return (
@@ -31,5 +30,3 @@ const About: React.FC = () => {
 		</motion.section>
 	)
 }
-
-export default About

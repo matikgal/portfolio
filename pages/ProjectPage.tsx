@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Github, ExternalLink, Code, CheckCircle2 } from "lucide-react";
-import { useApp } from "../context/AppContext";
-import { projectsData } from "../data/projects";
-import NotFound from "./NotFound";
+import { useApp } from "@/context/AppContext";
+import { projectsData } from "@/data/projects";
+import { Project, Translations } from "@/types";
 
-const ProjectLinks: React.FC<{ project: any; t: any }> = ({ project, t }) => (
+function ProjectLinks({ project, t }: { project: Project; t: Translations }) {
+  return (
     <div className="space-y-4">
         {project.demoUrl && (
             <a
@@ -29,9 +30,10 @@ const ProjectLinks: React.FC<{ project: any; t: any }> = ({ project, t }) => (
             {t.projects.links.source}
         </a>
     </div>
-);
+  );
+}
 
-const ProjectPage: React.FC = () => {
+export default function ProjectPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { t, language } = useApp();
@@ -45,7 +47,7 @@ const ProjectPage: React.FC = () => {
   }, [id]);
 
   if (!project) {
-    return <NotFound />;
+    return <Navigate to="/" replace />;
   }
 
   return (
@@ -183,6 +185,4 @@ const ProjectPage: React.FC = () => {
       </div>
     </motion.div>
   );
-};
-
-export default ProjectPage;
+}

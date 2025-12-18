@@ -1,6 +1,5 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import Lenis from 'lenis';
-import { useLocation } from 'react-router-dom';
 
 interface ScrollContextType {
   lenis: Lenis | null;
@@ -10,9 +9,8 @@ interface ScrollContextType {
 
 const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
 
-export const ScrollProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export function ScrollProvider({ children }: { children: ReactNode }) {
   const [lenis, setLenis] = useState<Lenis | null>(null);
-  const { pathname } = useLocation();
 
   useEffect(() => {
     const lenisInstance = new Lenis({
@@ -39,7 +37,7 @@ export const ScrollProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     };
   }, []);
 
-  // Handle scroll restoration and route changes - MOVED TO APP.TSX
+  // Handle scroll restoration
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
@@ -59,7 +57,7 @@ export const ScrollProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       {children}
     </ScrollContext.Provider>
   );
-};
+}
 
 export const useScroll = () => {
   const context = useContext(ScrollContext);

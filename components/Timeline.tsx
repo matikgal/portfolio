@@ -1,8 +1,7 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { useApp } from '../context/AppContext'
+import { useApp } from '@/context/AppContext'
 
-const Timeline: React.FC = () => {
+export default function Timeline() {
 	const { t } = useApp()
 	const steps = t.about.timeline.steps
 
@@ -11,7 +10,7 @@ const Timeline: React.FC = () => {
 			<h2 className="text-2xl font-bold text-slate-900 dark:text-white font-display mb-10">{t.about.timeline.title}</h2>
 
 			<div className="relative border-l border-slate-200 dark:border-white/10 ml-3 space-y-12">
-				{steps.map((step: any, index: number) => (
+				{steps.map((step, index) => (
 					<motion.div
 						key={index}
 						initial={{ opacity: 0, x: -20 }}
@@ -42,5 +41,3 @@ const Timeline: React.FC = () => {
 		</div>
 	)
 }
-
-export default Timeline

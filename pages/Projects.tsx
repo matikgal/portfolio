@@ -1,15 +1,11 @@
-import React from "react";
 import { motion } from "framer-motion";
-import {
-  Folder,
-  ArrowRight,
-} from "lucide-react";
-import { useApp } from "../context/AppContext";
-import SpotlightCard from "./SpotlightCard";
-import { projectsData } from "../data/projects";
+import { Folder, ArrowRight } from "lucide-react";
+import { useApp } from "@/context/AppContext";
+import SpotlightCard from "@/components/SpotlightCard";
+import { projectsData } from "@/data/projects";
 import { Link } from "react-router-dom";
 
-const Projects: React.FC = () => {
+export default function Projects() {
   const { t, language } = useApp();
 
   return (
@@ -101,6 +97,4 @@ const Projects: React.FC = () => {
       </motion.section>
     </>
   );
-};
-
-export default Projects;
+}

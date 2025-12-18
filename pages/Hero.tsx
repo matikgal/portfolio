@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Github, Linkedin, Terminal } from 'lucide-react'
@@ -16,11 +15,11 @@ import {
 	SiVite,
 	SiPostgresql,
 } from 'react-icons/si'
-import { useApp } from '../context/AppContext'
-import SpotlightCard from './SpotlightCard'
-import { projectsData } from '../data/projects'
+import { useApp } from '@/context/AppContext'
+import SpotlightCard from '@/components/SpotlightCard'
+import { projectsData } from '@/data/projects'
 
-const Hero: React.FC = () => {
+export default function Hero() {
 	const { t, language } = useApp()
 	const featuredProjects = projectsData.slice(0, 3)
 
@@ -197,7 +196,7 @@ const Hero: React.FC = () => {
 											<img
 												src={project.imageUrl}
 												alt={project.title}
-												loading="lazy"
+												loading={index === 0 ? "eager" : "lazy"}
 												width={1920}
 												height={1080}
 												className="w-full h-full object-cover opacity-90 dark:opacity-70 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
@@ -224,5 +223,3 @@ const Hero: React.FC = () => {
 		</motion.div>
 	)
 }
-
-export default Hero

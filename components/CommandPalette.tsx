@@ -1,12 +1,11 @@
-
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Home, User, FolderGit2, Mail, Sun, Moon, Globe, Copy } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useApp } from '../context/AppContext';
-import { CommandAction } from '../types';
+import { useApp } from '@/context/AppContext';
+import { CommandAction } from '@/types';
 
-const CommandPalette: React.FC = () => {
+export default function CommandPalette() {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
@@ -115,18 +114,19 @@ const CommandPalette: React.FC = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="relative w-full max-w-lg bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-slate-200 dark:border-white/10 overflow-hidden flex flex-col"
+            className="relative w-full max-w-lg bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-slate-200 dark:border-white/10 transition-colors overflow-hidden flex flex-col"
           >
             {/* Search Bar */}
-            <div className="flex items-center px-4 border-b border-slate-100 dark:border-white/5">
-              <Search className="w-5 h-5 text-slate-400" />
+           
+            <div className="flex items-center px-4 border-b border-slate-100 dark:border-white/5 transition-all focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary focus-within:border-transparent group/search relative z-10 rounded-t-xl">
+              <Search className="w-5 h-5 text-slate-400 group-focus-within/search:text-primary transition-colors" />
               <input
                 autoFocus
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={t.command.placeholder}
-                className="w-full px-4 py-4 bg-transparent border-none outline-none text-slate-700 dark:text-slate-200 placeholder-slate-400 text-lg"
+                className="w-full px-4 py-4 bg-transparent border-none outline-none focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 appearance-none text-slate-700 dark:text-slate-200 placeholder-slate-400 text-lg"
               />
               <div className="flex items-center gap-2">
                 <kbd className="hidden md:inline-flex h-6 items-center gap-1 rounded border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2 font-mono text-xs text-slate-500">
@@ -178,6 +178,4 @@ const CommandPalette: React.FC = () => {
       )}
     </AnimatePresence>
   );
-};
-
-export default CommandPalette;
+}

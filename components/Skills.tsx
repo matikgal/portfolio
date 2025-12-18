@@ -1,7 +1,6 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { useApp } from '../context/AppContext'
-import SpotlightCard from './SpotlightCard'
+import { useApp } from '@/context/AppContext'
+import SpotlightCard from '@/components/SpotlightCard'
 import {
 	SiReact,
 	SiTypescript,
@@ -23,12 +22,11 @@ import {
 	SiCss3,
 	SiRedux,
 	SiMongodb,
-
 	SiDocker,
 	SiNetlify,
 } from 'react-icons/si'
 
-const Skills: React.FC = () => {
+export default function Skills() {
 	const { t } = useApp()
 
 	const skillCategories = [
@@ -108,5 +106,3 @@ const Skills: React.FC = () => {
 		</div>
 	)
 }
-
-export default Skills

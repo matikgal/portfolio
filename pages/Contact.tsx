@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Copy, Check, Github, Linkedin } from 'lucide-react'
-import { useApp } from '../context/AppContext'
+import { useApp } from '@/context/AppContext'
 
-const Contact: React.FC = () => {
+export default function Contact() {
 	const { t, showToast } = useApp()
 	const [copied, setCopied] = useState(false)
 	const [revealed, setRevealed] = useState(false)
@@ -105,5 +105,3 @@ const Contact: React.FC = () => {
 		</motion.section>
 	)
 }
-
-export default Contact
