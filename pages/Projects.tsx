@@ -43,14 +43,39 @@ export default function Projects() {
                     tabIndex={0}
                     aria-label={`View details for ${project.title}`}
                   >
-                    <img
-                      src={project.imageUrl}
-                      alt={project.title}
-                      loading="lazy"
-                      width={1920}
-                      height={1080}
-                      className="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-100"
-                    />
+                    {project.isWorkInProgress && (
+                      <div className="absolute top-4 left-4 z-10">
+                        <div className="flex items-center gap-2 px-3 py-1.5 bg-amber-500/90 backdrop-blur-md rounded-lg text-white shadow-lg border border-amber-400/20">
+                          
+                          <span className="text-xs font-bold font-mono help-cursor uppercase tracking-wider">
+                            {language === 'pl' ? 'W trakcie prac' : 'In Progress'}
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                    {project.mobileImages && project.mobileImages.length > 0 ? (
+                      // Mobile Mockup View
+                      <div className="w-full h-full flex items-end justify-center bg-gradient-to-b from-slate-50 to-slate-200 dark:from-slate-900/50 dark:to-slate-800/50 pt-8 px-4 relative group-hover:scale-105 transition-transform duration-700">
+                         <div className="relative w-full max-w-[180px] sm:max-w-[220px] aspect-[9/19] rounded-t-[2.5rem] overflow-hidden border-[8px] border-b-0 border-slate-900 shadow-2xl translate-y-2">
+                            <img
+                              src={project.imageUrl}
+                              alt={project.title}
+                              loading="lazy"
+                              className="w-full h-full object-cover"
+                            />
+                         </div>
+                      </div>
+                    ) : (
+                      // Standard Desktop View
+                      <img
+                        src={project.imageUrl}
+                        alt={project.title}
+                        loading="lazy"
+                        width={1920}
+                        height={1080}
+                        className="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-100"
+                      />
+                    )}
                     <div className="absolute top-4 right-4 p-2 bg-black/20 backdrop-blur-md rounded-lg text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <Folder className="w-5 h-5" />
                     </div>

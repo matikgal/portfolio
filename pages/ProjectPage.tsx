@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Github, ExternalLink, Code, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Code, CheckCircle2, KeyRound } from "lucide-react";
 import { useApp } from "@/context/AppContext";
 import { projectsData } from "@/data/projects";
 import { Project, Translations } from "@/types";
@@ -10,15 +10,23 @@ function ProjectLinks({ project, t }: { project: Project; t: Translations }) {
   return (
     <div className="space-y-4">
         {project.demoUrl && (
-            <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3.5 bg-primary text-slate-900 font-bold rounded-xl hover:bg-primary/90 transition-all hover:-translate-y-0.5 shadow-lg shadow-primary/20"
-            >
-                <ExternalLink className="w-4 h-4" />
-                {t.projects.links.demo}
-            </a>
+            <div className="space-y-2">
+                <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-primary text-slate-900 font-bold rounded-xl hover:bg-primary/90 transition-all hover:-translate-y-0.5 shadow-lg shadow-primary/20"
+                >
+                    <ExternalLink className="w-4 h-4" />
+                    {t.projects.links.demo}
+                </a>
+                {project.demoCredentials && (
+                    <div className="flex items-start gap-2 p-3 text-xs font-mono bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 rounded-lg border border-slate-200 dark:border-white/10">
+                        <KeyRound className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                        <span>{project.demoCredentials[useApp().language]}</span>
+                    </div>
+                )}
+            </div>
         )}
         <a
             href={project.repoUrl}
@@ -85,7 +93,25 @@ export default function ProjectPage() {
         </div>
         
         {/* Image with bottom fade */}
-        <div className="relative w-full rounded-xl overflow-hidden shadow-2xl bg-slate-100 dark:bg-white/5">
+        {/* Project Images - Mobile Gallery or Single Hero */}
+        {project.mobileImages && project.mobileImages.length > 0 ? (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {project.mobileImages.map((img, i) => (
+              <div 
+                key={i} 
+                className="relative aspect-[9/19] rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border-[8px] border-slate-900 dark:border-slate-800 ring-1 ring-white/10"
+              >
+                <img
+                  src={img}
+                  alt={`${project.title} screen ${i + 1}`}
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="relative w-full rounded-xl overflow-hidden shadow-2xl bg-slate-100 dark:bg-white/5">
             <img
                 src={project.imageUrl}
                 alt={project.title}
@@ -94,7 +120,8 @@ export default function ProjectPage() {
                 height={1080}
                 loading="eager"
             />
-        </div>
+          </div>
+        )}
 
         <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (

@@ -193,15 +193,32 @@ export default function Hero() {
 											tabIndex={0}
 											aria-label={`View details for ${project.title}`}
 										>
-											<img
-												src={project.imageUrl}
-												alt={project.title}
-												loading={index === 0 ? "eager" : "lazy"}
-												width={1920}
-												height={1080}
-												className="w-full h-full object-cover opacity-90 dark:opacity-70 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
-											/>
-											<div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+											{project.mobileImages && project.mobileImages.length > 0 ? (
+												// Mobile Mockup View for Hero
+												<div className="w-full h-full flex items-end justify-center bg-gradient-to-b from-slate-50 to-slate-200 dark:from-slate-900/50 dark:to-slate-800/50 pt-4 px-2 relative">
+													<div className="relative w-[100px] aspect-[9/19] rounded-t-[1.5rem] overflow-hidden border-[6px] border-b-0 border-slate-900 shadow-xl translate-y-1 group-hover:scale-105 transition-transform duration-700">
+														<img
+															src={project.imageUrl}
+															alt={project.title}
+															loading={index === 0 ? "eager" : "lazy"}
+															className="w-full h-full object-cover"
+														/>
+													</div>
+												</div>
+											) : (
+												// Standard Desktop View
+												<>
+													<img
+														src={project.imageUrl}
+														alt={project.title}
+														loading={index === 0 ? "eager" : "lazy"}
+														width={1920}
+														height={1080}
+														className="w-full h-full object-cover opacity-90 dark:opacity-70 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
+													/>
+													<div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+												</>
+											)}
 										</div>
 									</div>
 								</SpotlightCard>

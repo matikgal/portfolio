@@ -19,6 +19,9 @@ export interface Project {
   imageUrl: string;
   repoUrl: string;
   demoUrl?: string;
+  isWorkInProgress?: boolean;
+  mobileImages?: string[];
+  demoCredentials?: LocalizedString;
 }
 
 export interface Skill {

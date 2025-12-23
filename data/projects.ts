@@ -1,6 +1,93 @@
 import { Project } from "../types";
+import popstackImg from "../assets/popstack.webp";
+import vortexImg from "../assets/vortex.webp";
+import fluxboardImg from "../assets/fluxboard.webp";
+// Work Grid System Image Placeholder
+import workGridImg from "../assets/workgrid.webp";
+// UBB Schedule Images
+import ubb1 from "../assets/3.webp"; // TODO: Replace with mobile mockup
+import ubb2 from "../assets/2.webp";
+import ubb3 from "../assets/4.webp";
+import ubb4 from "../assets/1.webp";
 
 export const projectsData: Project[] = [
+  {
+    id: 4,
+    title: "Work Grid System",
+    description: {
+      en: "A comprehensive work schedule management system replacing outdated spreadsheets. Enables schedule creation, leave management, and automatic hour calculation.",
+      pl: "Kompleksowy system do zarządzania grafikami pracy zastępujący przestarzałe arkusze kalkulacyjne. Umożliwia tworzenie grafików, zarządzanie urlopami i automatyczne zliczanie godzin.",
+    },
+    challenge: {
+      en: "Creating a modern 'command center' for teams that is efficient, responsive, and easy to use across various devices, improving upon manual spreadsheet processes.",
+      pl: "Stworzenie nowoczesnego 'centrum dowodzenia' dla zespołów, które jest wydajne, responsywne i łatwe w obsłudze na różnych urządzeniach, usprawniające ręczne procesy na arkuszach.",
+    },
+    solution: {
+      en: "Command Center style application with Dark Mode, built with React and TypeScript using Supabase as backend. Features interactive calendar, reporting, employee management, and realtime updates.",
+      pl: "Aplikacja typu Command Center z trybem ciemnym, zbudowana w React i TypeScript z wykorzystaniem Supabase. Oferuje interaktywny kalendarz, raportowanie, zarządzanie pracownikami i aktualizacje w czasie rzeczywistym.",
+    },
+    features: [
+      {
+        en: "Interactive Calendar with Drag & Drop",
+        pl: "Interaktywny kalendarz z Drag & Drop",
+      },
+      {
+        en: "Shift & Absence Management",
+        pl: "Zarządzanie zmianami i absencjami",
+      },
+      {
+        en: "Automatic Monthly Reporting",
+        pl: "Automatyczne raportowanie miesięczne",
+      },
+      { en: "Dark Mode Interface", pl: "Interfejs w trybie ciemnym" },
+      { en: "Team Management", pl: "Zarządzanie zespołem" },
+      { en: "Real-time updates", pl: "Aktualizacje w czasie rzeczywistym" },
+    ],
+    tags: ["React", "TypeScript", "Tailwind", "Supabase", "Vite"],
+    imageUrl: workGridImg,
+    repoUrl: "https://github.com/matikgal/work-grid-system",
+    demoUrl: "https://matikgal.github.io/work-grid-system/",
+    isWorkInProgress: true,
+    demoCredentials: {
+      en: "Demo Account: Login: demo | Pass: demo",
+      pl: "Konto Demo: Login: demo | Hasło: demo",
+    },
+  },
+  {
+    id: 5,
+    title: "UBB Schedule",
+    description: {
+      en: "Mobile application for University of Bielsko-Biala students, providing quick access to class schedules and university news on the go.",
+      pl: "Aplikacja mobilna dla studentów Uniwersytetu Bielsko-Bialskiego, zapewniająca szybki dostęp do planu zajęć i aktualności uniwersyteckich w biegu.",
+    },
+    challenge: {
+      en: "Providing students with a seamless, mobile-optimized way to check their schedules, replacing the need to navigate cumbersome websites on small screens.",
+      pl: "Zapewnienie studentom płynnego, zoptymalizowanego mobilnie sposobu na sprawdzanie planu zajęć, zastępując konieczność nawigowania po niewygodnych stronach na małych ekranach.",
+    },
+    solution: {
+      en: "A native-feel mobile application designed for efficiency. Features a clean interface for viewing daily and weekly schedules, checking room numbers, and staying updated.",
+      pl: "Aplikacja o natywnym odczuciu zaprojektowana dla wydajności. Posiada czysty interfejs do przeglądania planów dziennych i tygodniowych, sprawdzania numerów sal i bycia na bieżąco.",
+    },
+    features: [
+      {
+        en: "Mobile-optimized Schedule View",
+        pl: "Zoptymalizowany mobilnie widok planu",
+      },
+      {
+        en: "Quick Class Information",
+        pl: "Szybka informacja o zajęciach",
+      },
+      {
+        en: "University News Feed",
+        pl: "Kanał aktualności uniwersyteckich",
+      },
+      { en: "Offline Access Support", pl: "Wsparcie dla dostępu offline" },
+    ],
+    tags: ["React", "TypeScript", "Mobile", "PWA"],
+    imageUrl: ubb1,
+    mobileImages: [ubb1, ubb2, ubb3, ubb4],
+    repoUrl: "https://github.com/matikgal/ubb-schedule",
+  },
   {
     id: 1,
     title: "PopStack",
@@ -35,7 +122,7 @@ export const projectsData: Project[] = [
       { en: "Multi-language support", pl: "Obsługa wielu języków" },
     ],
     tags: ["React", "TypeScript", "Tailwind", "Supabase", "API Integration"],
-    imageUrl: "./popstack.webp",
+    imageUrl: popstackImg,
     repoUrl: "https://github.com/matikgal/popstack",
     demoUrl: "https://matikgal.github.io/pop-stack/",
   },
@@ -84,7 +171,7 @@ export const projectsData: Project[] = [
       "Framer Motion",
       "Tailwind",
     ],
-    imageUrl: "./vortex.webp",
+    imageUrl: vortexImg,
     repoUrl: "https://github.com/matikgal/vortex-portfolio",
     demoUrl: "https://matikgal.github.io/vortex-portfolio/",
   },
@@ -132,7 +219,7 @@ export const projectsData: Project[] = [
       },
     ],
     tags: ["React", "TypeScript", "Tailwind", "Brutalism", "Swiss Style"],
-    imageUrl: "./fluxboard.webp",
+    imageUrl: fluxboardImg,
     repoUrl: "https://github.com/matikgal/kanban-system",
     demoUrl: "https://matikgal.github.io/kanban-system/",
   },
