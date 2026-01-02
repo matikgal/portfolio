@@ -1,14 +1,14 @@
-import { Project } from "../types";
-import popstackImg from "../assets/popstack.webp";
-import vortexImg from "../assets/vortex.webp";
-import fluxboardImg from "../assets/fluxboard.webp";
+import { Project } from "@/types";
+import popstackImg from "@/assets/popstack.webp";
+import vortexImg from "@/assets/vortex.webp";
+import fluxboardImg from "@/assets/fluxboard.webp";
 // Work Grid System Image Placeholder
-import workGridImg from "../assets/workgrid.webp";
+import workGridImg from "@/assets/workgrid.webp";
 // UBB Schedule Images
-import ubb1 from "../assets/3.webp"; // TODO: Replace with mobile mockup
-import ubb2 from "../assets/2.webp";
-import ubb3 from "../assets/4.webp";
-import ubb4 from "../assets/1.webp";
+import ubb1 from "@/assets/3.webp"; // TODO: Replace with mobile mockup
+import ubb2 from "@/assets/2.webp";
+import ubb3 from "@/assets/4.webp";
+import ubb4 from "@/assets/1.webp";
 
 export const projectsData: Project[] = [
   {

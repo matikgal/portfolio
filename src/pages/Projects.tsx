@@ -38,10 +38,7 @@ export default function Projects() {
                 <div className="flex flex-col gap-6 p-6 md:p-8 h-full">
                   {/* Image Area */}
                   <div
-                    className="relative w-full aspect-video rounded-2xl overflow-hidden border border-slate-200 dark:border-white/5 shadow-inner bg-slate-100 dark:bg-black/20 focus:outline-none focus:ring-2 focus:ring-primary"
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`View details for ${project.title}`}
+                    className="relative w-full aspect-video rounded-2xl overflow-hidden border border-slate-200 dark:border-white/5 shadow-inner bg-slate-100 dark:bg-black/20"
                   >
                     {project.isWorkInProgress && (
                       <div className="absolute top-4 left-4 z-10">

@@ -2,12 +2,12 @@
 export default {
   content: [
     "./index.html",
-    "./App.tsx",
-    "./index.tsx",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./context/**/*.{js,ts,jsx,tsx}",
-    "./data/**/*.{js,ts,jsx,tsx}",
+    "./src/App.tsx",
+    "./src/index.tsx",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/context/**/*.{js,ts,jsx,tsx}",
+    "./src/data/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
   theme: {
