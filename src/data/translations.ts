@@ -28,7 +28,23 @@ export const translations = {
       title: "About Me",
       p1: "Hi, I'm a passionate Junior Frontend Developer based in Poland. I started my coding journey building custom themes for simple websites, which quickly escalated into a love for JavaScript and the modern web ecosystem.",
       p2: "With <strong>over a year</strong> of commercial freelance experience, I treat every project as a production-grade application. I focus heavily on code quality, component reusability, and creating intuitive user interfaces.",
-      p3: "When I'm not coding, you can find me exploring new UI design trends, optimizing web performance, or learning about backend technologies to become a more well-rounded engineer.",
+      education: {
+        title: "Education",
+        items: [
+          {
+            school: "University of Bielsko-Biala",
+            degree: "Computer Science",
+            year: "2021 - 2026",
+            desc: "Engineering studies specializing in Software Development.",
+          },
+          {
+            school: "PZ10 Kęty",
+            degree: "IT Technician",
+            year: "2016 - 2020",
+            desc: "Learned basics of hardware, networking, and wrote first lines of code.",
+          },
+        ],
+      },
       skillsTitle: "Technical Skills",
       skillCats: {
         core: "Core",
@@ -40,16 +56,16 @@ export const translations = {
         title: "My Journey",
         steps: [
           {
+            year: "2024 - Present",
+            title: "Freelance Frontend Developer",
+            company: "Self-employed",
+            desc: "Developing custom web solutions for diverse clients. Specializing in high-performance landing pages and interactive web applications.",
+          },
+          {
             year: "2025",
             title: "Programming Internship",
             company: "RekordSI",
             desc: "Created the career section on the official company website with full CMS, database integration, and content management system.",
-          },
-          {
-            year: "2021-2025",
-            title: "Computer Science Studies",
-            company: "University of Bielsko-Biala",
-            desc: "Specialization in Software Engineering. Deep diving into algorithms, system architecture, and modern development practices.",
           },
           {
             year: "2022",
@@ -62,12 +78,6 @@ export const translations = {
             title: "IT Administrator",
             company: "ZASŁAW Sp. z o.o.",
             desc: "Managed company website and online store. Provided helpdesk support, server administration, and comprehensive IT infrastructure management.",
-          },
-          {
-            year: "2016-2020",
-            title: "IT Technical High School",
-            company: "PZ10 Kęty",
-            desc: "Began formal IT education. Learned basics of hardware, networking, and wrote first lines of code.",
           },
         ],
       },
@@ -170,7 +180,23 @@ export const translations = {
       title: "O mnie",
       p1: "Cześć, jestem początkującym Frontend Developerem z Polski. Moja przygoda z kodowaniem zaczęła się od prostych modyfikacji stron, co szybko przerodziło się w pasję do JavaScriptu i nowoczesnych technologii webowych.",
       p2: "Mimo że szukam stałej roli, posiadam <strong>ponad rok</strong> doświadczenia komercyjnego jako freelancer. Każdy projekt traktuję profesjonalnie, kładąc nacisk na jakość kodu, reużywalność i intuicyjność interfejsów.",
-      p3: "Kiedy nie koduję, śledzę nowe trendy w UI, optymalizuję wydajność stron lub uczę się podstaw backendu, aby lepiej rozumieć cały proces tworzenia oprogramowania.",
+      education: {
+        title: "Edukacja",
+        items: [
+          {
+            school: "Uniwersytet Bielsko-Bialski",
+            degree: "Informatyka",
+            year: "2021 - 2026",
+            desc: "Studia inżynierskie o specjalizacji Inżynieria Oprogramowania.",
+          },
+          {
+            school: "PZ10 Kęty",
+            degree: "Technik Informatyk",
+            year: "2016 - 2020",
+            desc: "Początek edukacji w IT. Nauka budowy sprzętu, sieci komputerowych oraz pierwsze linie kodu.",
+          },
+        ],
+      },
       skillsTitle: "Umiejętności Techniczne",
       skillCats: {
         core: "Baza",
@@ -182,16 +208,16 @@ export const translations = {
         title: "Moja Ścieżka",
         steps: [
           {
+            year: "2024 - Obecnie",
+            title: "Freelance Frontend Developer",
+            company: "Samozatrudnienie",
+            desc: "Tworzenie dedykowanych rozwiązań webowych dla różnorodnych klientów. Specjalizacja w wydajnych landing page'ach i interaktywnych aplikacjach.",
+          },
+          {
             year: "2025",
             title: "Praktyki Programistyczne",
             company: "RekordSI",
             desc: "Tworzyłem zakładkę kariera na oficjalnej stronie firmy wraz z pełnym CMS, integracją bazy danych i systemem zarządzania treścią.",
-          },
-          {
-            year: "2021-2025",
-            title: "Studia Informatyczne",
-            company: "Uniwersytet Bielsko-Bialski",
-            desc: "Specjalizacja Inżynieria Oprogramowania. Zgłębianie algorytmiki, architektury systemów i nowoczesnych praktyk deweloperskich.",
           },
           {
             year: "2022",
@@ -204,12 +230,6 @@ export const translations = {
             title: "Administrator IT",
             company: "ZASŁAW Sp. z o.o.",
             desc: "Zarządzanie stroną firmową i sklepem internetowym. Obsługa helpdesk, administracja serwerami oraz kompleksowa obsługa infrastruktury IT firmy.",
-          },
-          {
-            year: "2016-2020",
-            title: "Technikum Informatyczne",
-            company: "PZ10 Kęty",
-            desc: "Początek edukacji w IT. Nauka budowy sprzętu, sieci komputerowych oraz pierwsze linie kodu.",
           },
         ],
       },
