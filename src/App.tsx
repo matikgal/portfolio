@@ -1,5 +1,5 @@
 import { useState, lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate, matchPath } from "react-router-dom";
 import { AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Preloader from "@/components/Preloader";
@@ -17,6 +17,8 @@ const About = lazy(() => import("@/pages/About"));
 const Projects = lazy(() => import("@/pages/Projects"));
 const ProjectPage = lazy(() => import("@/pages/ProjectPage"));
 const Contact = lazy(() => import("@/pages/Contact"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
+import SEO from "@/components/SEO";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -25,12 +27,12 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Suspense fallback={<PageLoader />}>
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<ProjectPage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/" element={<><SEO /><Hero /></>} />
+          <Route path="/about" element={<><SEO title="About" /><About /></>} />
+          <Route path="/projects" element={<><SEO title="Projects" /><Projects /></>} />
+          <Route path="/projects/:id" element={<><SEO title="Project Details" /><ProjectPage /></>} />
+          <Route path="/contact" element={<><SEO title="Contact" /><Contact /></>} />
+          <Route path="*" element={<><SEO title="Page Not Found" /><NotFound /></>} />
         </Routes>
       </Suspense>
     </AnimatePresence>
@@ -38,7 +40,30 @@ function AnimatedRoutes() {
 }
 
 function AppContent() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    // Check if current path is a valid route
+    const basename = "/portfolio";
+    let path = window.location.pathname;
+    
+    if (path.startsWith(basename)) {
+      path = path.slice(basename.length);
+    }
+    
+    if (!path) path = "/";
+
+    const validRoutes = [
+      "/",
+      "/about",
+      "/projects",
+      "/projects/:id",
+      "/contact"
+    ];
+
+    const isValid = validRoutes.some(route => matchPath(route, path));
+    
+    // Only show preloader for valid routes
+    return isValid;
+  });
 
   return (
     <LazyMotion features={domAnimation}>

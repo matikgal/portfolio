@@ -2,17 +2,15 @@ import { Project } from "@/types";
 import popstackImg from "@/assets/popstack.webp";
 import vortexImg from "@/assets/vortex.webp";
 import fluxboardImg from "@/assets/fluxboard.webp";
-// Work Grid System Image Placeholder
 import workGridImg from "@/assets/workgrid.webp";
-// UBB Schedule Images
-import ubb1 from "@/assets/3.webp"; // TODO: Replace with mobile mockup
-import ubb2 from "@/assets/2.webp";
-import ubb3 from "@/assets/4.webp";
-import ubb4 from "@/assets/1.webp";
+import ubb from "@/assets/ubb.webp";
+import ubbOcena from "@/assets/ubbocena.webp";
+import rekord from "@/assets/rekord.webp"
 
 export const projectsData: Project[] = [
+  
   {
-    id: 4,
+    id: 1,
     title: "Work Grid System",
     description: {
       en: "A comprehensive work schedule management system replacing outdated spreadsheets. Enables schedule creation, leave management, and automatic hour calculation.",
@@ -54,7 +52,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 5,
+    id: 2,
     title: "UBB Schedule",
     description: {
       en: "Mobile application for University of Bielsko-Biala students, providing quick access to class schedules and university news on the go.",
@@ -84,12 +82,53 @@ export const projectsData: Project[] = [
       { en: "Offline Access Support", pl: "Wsparcie dla dostępu offline" },
     ],
     tags: ["React", "TypeScript", "Mobile", "PWA"],
-    imageUrl: ubb1,
-    mobileImages: [ubb1, ubb2, ubb3, ubb4],
+    imageUrl: ubb,
     repoUrl: "https://github.com/matikgal/ubb-schedule",
   },
   {
-    id: 1,
+    id: 3,
+    title: "Rekord Career Portal",
+    description: {
+      en: "A modern recruitment platform for Rekord Systemy Informatyczne, showcasing job offers, career paths, and organizational culture. Serves as a central hub for candidates with an intuitive application process.",
+      pl: "Nowoczesna platforma rekrutacyjna dla firmy Rekord Systemy Informatyczne, prezentująca oferty pracy, ścieżki kariery oraz kulturę organizacyjną. Stanowi centralny punkt kontaktu dla kandydatów.",
+    },
+    challenge: {
+      en: "Replacing static job listings with a dynamic, engaging Employer Branding experience that clearly communicates company values, recruitment steps, and streamlines the application process.",
+      pl: "Zastąpienie statycznych ogłoszeń dynamicznym, angażującym doświadczeniem Employer Branding, które jasno komunikuje wartości firmy, kroki rekrutacji i usprawnia proces aplikacji.",
+    },
+    solution: {
+      en: "Built with React, TypeScript, and Supabase. Features a dynamic job board filtered by technology, an interactive recruitment timeline, a dedicated Student Zone, video gallery, and a secure admin panel for real-time content management.",
+      pl: "Zbudowana w React, TypeScript i Supabase. Zawiera dynamiczną tablicę ofert filtrowaną po technologiach, interaktywną oś czasu rekrutacji, dedykowaną Strefę Studenta, galerię wideo oraz bezpieczny panel administracyjny do zarządzania treścią w czasie rzeczywistym.",
+    },
+    features: [
+      {
+        en: "Dynamic Job Offers Database",
+        pl: "Dynamiczna baza ofert pracy",
+      },
+      {
+        en: "Interactive Recruitment Timeline",
+        pl: "Interaktywna oś procesu rekrutacji",
+      },
+      {
+        en: "Student & Internship Zone",
+        pl: "Strefa studenta i praktyk",
+      },
+      {
+        en: "Video Gallery & FAQ",
+        pl: "Galeria wideo i FAQ",
+      },
+      {
+        en: "CMS Admin Panel",
+        pl: "Panel administracyjny CMS",
+      },
+    ],
+    tags: ["React", "TypeScript", "TailwindCSS", "Supabase", "Framer Motion"],
+    imageUrl: rekord,
+    repoUrl: "https://github.com/matikgal/carrer-rekord",
+    demoUrl: "https://matikgal.github.io/carrer-rekord/",
+  },
+  {
+    id: 4,
     title: "PopStack",
     description: {
       en: "A comprehensive entertainment tracking platform similar to Filmweb. Browse popular movies, games, and TV series, create watchlists and play queues, write reviews and ratings.",
@@ -116,7 +155,7 @@ export const projectsData: Project[] = [
       {
         en: "Follow friends and view their profiles",
         pl: "Obserwuj znajomych i przeglądaj ich profile",
-      },
+        },
       { en: "Track personal statistics", pl: "Śledź osobiste statystyki" },
       { en: "Dark/Light theme support", pl: "Obsługa motywu ciemnego/jasnego" },
       { en: "Multi-language support", pl: "Obsługa wielu języków" },
@@ -127,7 +166,48 @@ export const projectsData: Project[] = [
     demoUrl: "https://matikgal.github.io/pop-stack/",
   },
   {
-    id: 2,
+    id: 5,
+    title: "UBB Staff Assessment System",
+    description: {
+      en: "A comprehensive digital platform for periodic academic staff assessment. The tool automates achievement data collection, enables verification, and generates reports, replacing paper documentation with a modern web interface.",
+      pl: "Kompleksowa platforma cyfrowa do obsługi procesu okresowej oceny pracowników naukowo-dydaktycznych. Narzędzie automatyzuje zbieranie danych o osiągnięciach, umożliwia ich weryfikację oraz generowanie raportów.",
+    },
+    challenge: {
+      en: "Streamlining university administrative processes and creating a central hub for recording didactic, scientific, and organizational achievements.",
+      pl: "Usprawnienie procesów administracyjnych na uczelni i stworzenie centralnego huba dla pracowników do ewidencji sukcesów dydaktycznych, naukowych i organizacyjnych.",
+    },
+    solution: {
+      en: "Application allowing dynamic assessment criteria management, integrated with Keycloak SSO and Firebase for security. Includes dedicated panels for Staff, Deans, and Admins.",
+      pl: "Aplikacja umożliwiająca dynamiczne zarządzanie kryteriami oceny, zintegrowana z SSO Keycloak i Firebase. Posiada dedykowane panele dla Pracowników, Dziekanów i Administratorów.",
+    },
+    features: [
+      {
+        en: "Multidimensional Survey (Didactics, Science, Organization)",
+        pl: "Wielowymiarowa Ankieta (Dydaktyka, Nauka, Organizacja)",
+      },
+      {
+        en: "Keycloak SSO Integration",
+        pl: "Integracja SSO Keycloak",
+      },
+      {
+        en: "Dynamic Question Management",
+        pl: "Zarządzanie Pytaniami",
+      },
+      {
+        en: "Role-based Access Control",
+        pl: "System Uprawnień i ról",
+      },
+      {
+        en: "Library Records Integration",
+        pl: "Ewidencja Biblioteczna",
+      },
+    ],
+    tags: ["React", "TypeScript", "TailwindCSS", "Firebase", "Keycloak"],
+    imageUrl: ubbOcena,
+    repoUrl: "https://github.com/matikgal/UBB-ocena-pracownika",
+  },
+  {
+    id: 6,
     title: "VORTEX",
     description: {
       en: 'A fully interactive "Awwwards-style" portfolio showcasing advanced frontend capabilities. Combines brutalism and acid design aesthetics with cutting-edge web technologies like WebGL.',
@@ -174,9 +254,10 @@ export const projectsData: Project[] = [
     imageUrl: vortexImg,
     repoUrl: "https://github.com/matikgal/vortex-portfolio",
     demoUrl: "https://matikgal.github.io/vortex-portfolio/",
+    isExperimental: true,
   },
   {
-    id: 3,
+    id: 7,
     title: "FluxBoard",
     description: {
       en: "An experimental, minimalist Kanban project management application emphasizing unique design, typography, and interaction inspired by digital brutalism and Swiss Style.",

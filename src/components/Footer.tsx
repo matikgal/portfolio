@@ -17,9 +17,9 @@ export default function Footer() {
 
   // Weather (Open-Meteo API for Warsaw)
   useEffect(() => {
-    const fetchWeather = async () => {
+      const fetchWeather = async () => {
       try {
-        const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.2297&longitude=21.0122&current_weather=true');
+        const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=49.8225&longitude=19.0444&current_weather=true');
         if (!res.ok) return;
         const data = await res.json();
         if (data.current_weather) {

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Github, Linkedin, Terminal } from 'lucide-react'
+import { ArrowRight, Github, Linkedin, Terminal, Download } from 'lucide-react'
 import {
 	SiReact,
 	SiTypescript,
@@ -84,13 +84,18 @@ export default function Hero() {
 					</motion.div>
 				</div>
 
-				<motion.p
+				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.3 }}
 					className="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed mb-10">
-					{t.hero.description}
-				</motion.p>
+					<span dangerouslySetInnerHTML={{ __html: t.hero.description }} />
+					<Link
+						to="/about#timeline"
+						className="inline-flex items-center gap-1 ml-2 text-sm text-primary font-medium transition-all hover:gap-2 group align-baseline">
+						{t.hero.buttons.checkHistory} <ArrowRight className="w-4 h-4" />
+					</Link>
+				</motion.div>
 
 				{/* Actions */}
 				<motion.div
@@ -115,6 +120,15 @@ export default function Hero() {
 						<Linkedin className="w-5 h-5 transition-colors" />
 						<span>{t.hero.buttons.linkedin}</span>
 					</a>
+
+					<a
+						href="/cv.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex items-center gap-3 px-7 py-3.5 bg-transparent border border-slate-200 dark:border-white/20 text-slate-700 dark:text-white rounded-full font-medium transition-all duration-300 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:scale-105">
+						<Download className="w-5 h-5 transition-colors" />
+						<span>{t.hero.buttons.downloadCV}</span>
+					</a>
 				</motion.div>
 
 				{/* Mini Tech Stack */}
@@ -133,7 +147,7 @@ export default function Hero() {
 						))}
 						<Link
 							to="/about#skills"
-							className="group flex items-center gap-1 px-4 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+							className="group flex items-center gap-1 px-4 py-2 text-sm font-medium text-primary transition-colors">
 							{t.hero.moreSkills}
 							<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
 						</Link>

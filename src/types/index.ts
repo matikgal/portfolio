@@ -20,6 +20,7 @@ export interface Project {
   repoUrl: string;
   demoUrl?: string;
   isWorkInProgress?: boolean;
+  isExperimental?: boolean;
   mobileImages?: string[];
   demoCredentials?: LocalizedString;
 }

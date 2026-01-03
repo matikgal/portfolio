@@ -12,7 +12,7 @@ export const translations = {
       status: "Open to work",
       role: "Frontend Developer",
       description:
-        "I specialize in creating scalable and modern web applications, taking care of every detail of the interface.",
+        "I specialize in creating scalable and modern web applications. With <strong>over a year</strong> of freelance experience, I take care of every detail of the interface.",
       viewWork: "Featured Work",
       viewAll: "View all",
       currentStack: "Tools & Technologies",
@@ -20,12 +20,14 @@ export const translations = {
       buttons: {
         github: "GitHub",
         linkedin: "LinkedIn",
+        checkHistory: "My Journey",
+        downloadCV: "Download CV",
       },
     },
     about: {
       title: "About Me",
       p1: "Hi, I'm a passionate Junior Frontend Developer based in Poland. I started my coding journey building custom themes for simple websites, which quickly escalated into a love for JavaScript and the modern web ecosystem.",
-      p2: "Although I haven't had my first commercial role yet, I treat every personal project as a production-grade application. I focus heavily on code quality, component reusability, and creating intuitive user interfaces.",
+      p2: "With <strong>over a year</strong> of commercial freelance experience, I treat every project as a production-grade application. I focus heavily on code quality, component reusability, and creating intuitive user interfaces.",
       p3: "When I'm not coding, you can find me exploring new UI design trends, optimizing web performance, or learning about backend technologies to become a more well-rounded engineer.",
       skillsTitle: "Technical Skills",
       skillCats: {
@@ -50,6 +52,12 @@ export const translations = {
             desc: "Specialization in Software Engineering. Deep diving into algorithms, system architecture, and modern development practices.",
           },
           {
+            year: "2022",
+            title: "Quality Assurance Tester",
+            company: "uTest",
+            desc: "Freelance testing of mobile and web applications. Detecting bugs, executing test scenarios, and ensuring software quality.",
+          },
+          {
             year: "2020-2021",
             title: "IT Administrator",
             company: "ZASŁAW Sp. z o.o.",
@@ -60,6 +68,27 @@ export const translations = {
             title: "IT Technical High School",
             company: "PZ10 Kęty",
             desc: "Began formal IT education. Learned basics of hardware, networking, and wrote first lines of code.",
+          },
+        ],
+      },
+      services: {
+        title: "What matches your needs",
+        items: [
+          {
+            title: "Frontend Architecture",
+            desc: "Designing scalable, maintainable, and future-proof application structures using modern best practices.",
+          },
+          {
+            title: "UI/UX Implementation",
+            desc: "Translating designs into pixel-perfect, interactive, and accessible user interfaces.",
+          },
+          {
+            title: "Performance Optimization",
+            desc: "Maximizing application speed and efficiency, focusing on Core Web Vitals and user experience.",
+          },
+          {
+            title: "Mobile-First Development",
+            desc: "Creating responsive web applications that provide a seamless experience across all devices.",
           },
         ],
       },
@@ -106,7 +135,7 @@ export const translations = {
     },
     footer: {
       time: "Local Time",
-      weather: "Warsaw, PL",
+      weather: "Bielsko-Biała, PL",
       rights: "All rights reserved.",
       rightsReserved: "All rights reserved.",
       cmdHint: "Command Palette",
@@ -125,7 +154,7 @@ export const translations = {
       status: "Szukam pracy",
       role: "Frontend Developer",
       description:
-        "Specjalizuję się w tworzeniu skalowalnych i nowoczesnych aplikacji webowych, dbając o każdy detal interfejsu.",
+        "Specjalizuję się w tworzeniu skalowalnych i nowoczesnych aplikacji webowych. Posiadam <strong>ponad rok</strong> doświadczenia jako freelancer, dbając o każdy detal interfejsu.",
       viewWork: "Wybrane Prace",
       viewAll: "Zobacz wszystkie",
       currentStack: "Narzędzia i Technologie",
@@ -133,12 +162,14 @@ export const translations = {
       buttons: {
         github: "GitHub",
         linkedin: "LinkedIn",
+        checkHistory: "Moja Ścieżka",
+        downloadCV: "Pobierz CV",
       },
     },
     about: {
       title: "O mnie",
       p1: "Cześć, jestem początkującym Frontend Developerem z Polski. Moja przygoda z kodowaniem zaczęła się od prostych modyfikacji stron, co szybko przerodziło się w pasję do JavaScriptu i nowoczesnych technologii webowych.",
-      p2: "Mimo że szukam pierwszej komercyjnej roli, każdy projekt traktuję profesjonalnie. Kładę duży nacisk na jakość kodu, reużywalność komponentów i intuicyjne interfejsy użytkownika.",
+      p2: "Mimo że szukam stałej roli, posiadam <strong>ponad rok</strong> doświadczenia komercyjnego jako freelancer. Każdy projekt traktuję profesjonalnie, kładąc nacisk na jakość kodu, reużywalność i intuicyjność interfejsów.",
       p3: "Kiedy nie koduję, śledzę nowe trendy w UI, optymalizuję wydajność stron lub uczę się podstaw backendu, aby lepiej rozumieć cały proces tworzenia oprogramowania.",
       skillsTitle: "Umiejętności Techniczne",
       skillCats: {
@@ -163,6 +194,12 @@ export const translations = {
             desc: "Specjalizacja Inżynieria Oprogramowania. Zgłębianie algorytmiki, architektury systemów i nowoczesnych praktyk deweloperskich.",
           },
           {
+            year: "2022",
+            title: "Tester Oprogramowania",
+            company: "uTest",
+            desc: "Freelancerskie testowanie aplikacji mobilnych i webowych. Wykrywanie błędów, realizacja scenariuszy testowych i dbanie o jakość oprogramowania.",
+          },
+          {
             year: "2020-2021",
             title: "Administrator IT",
             company: "ZASŁAW Sp. z o.o.",
@@ -173,6 +210,27 @@ export const translations = {
             title: "Technikum Informatyczne",
             company: "PZ10 Kęty",
             desc: "Początek edukacji w IT. Nauka budowy sprzętu, sieci komputerowych oraz pierwsze linie kodu.",
+          },
+        ],
+      },
+      services: {
+        title: "W czym mogę pomóc",
+        items: [
+          {
+            title: "Architektura Frontend",
+            desc: "Projektowanie skalowalnych i łatwych w utrzymaniu struktur aplikacji przy użyciu nowoczesnych wzorców.",
+          },
+          {
+            title: "Wdrożenia UI/UX",
+            desc: "Przekładanie projektów graficznych na pixel-perfect, interaktywne i dostępne interfejsy.",
+          },
+          {
+            title: "Optymalizacja Wydajności",
+            desc: "Maksymalizacja szybkości działania aplikacji, skupienie na Core Web Vitals i doświadczeniu użytkownika.",
+          },
+          {
+            title: "Development Mobile-First",
+            desc: "Tworzenie responsywnych aplikacji webowych zapewniających spójne działanie na każdym urządzeniu.",
           },
         ],
       },
@@ -219,7 +277,7 @@ export const translations = {
     },
     footer: {
       time: "Czas lokalny",
-      weather: "Warszawa, PL",
+      weather: "Bielsko-Biała, PL",
       rights: "Wszelkie prawa zastrzeżone.",
       rightsReserved: "Wszelkie prawa zastrzeżone.",
       cmdHint: "Paleta Komend",

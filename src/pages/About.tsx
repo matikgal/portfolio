@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Skills from '@/components/Skills'
 import Timeline from '@/components/Timeline'
+import Services from '@/components/Services'
 import { useApp } from '@/context/AppContext'
 
 export default function About() {
@@ -19,13 +20,18 @@ export default function About() {
 
 				<div className="prose dark:prose-invert prose-slate max-w-none mb-16">
 					<p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-6">{t.about.p1}</p>
-					<p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">{t.about.p2}</p>
+					<p
+						className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6"
+						dangerouslySetInnerHTML={{ __html: t.about.p2 }}
+					/>
 					<p className="text-slate-600 dark:text-slate-400 leading-relaxed">{t.about.p3}</p>
 				</div>
 
 				<Timeline />
 
 				<Skills />
+				
+				<Services />
 			</div>
 		</motion.section>
 	)

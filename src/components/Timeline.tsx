@@ -6,7 +6,7 @@ export default function Timeline() {
 	const steps = t.about.timeline.steps
 
 	return (
-		<div className="mt-20">
+		<div className="mt-20" id="timeline">
 			<h2 className="text-2xl font-bold text-slate-900 dark:text-white font-display mb-10">{t.about.timeline.title}</h2>
 
 			<div className="relative border-l border-slate-200 dark:border-white/10 ml-3 space-y-12">
