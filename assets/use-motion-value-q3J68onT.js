@@ -1,1 +1,0 @@
-import{a1 as n,A as t,M as u,a3 as c}from"./index-DeCE6vts.js";function f(o){const e=n(()=>c(o)),{isStatic:s}=t.useContext(u);if(s){const[,a]=t.useState(o);t.useEffect(()=>e.on("change",a),[])}return e}export{f as u};
