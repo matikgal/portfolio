@@ -94,7 +94,8 @@ function AppContent() {
               <Navbar />
               <main
                 id="main-content"
-                className="max-w-3xl mx-auto px-6 sm:px-8 md:px-12 w-full flex-1 flex flex-col"
+                tabIndex={-1}
+                className="max-w-3xl mx-auto px-6 sm:px-8 md:px-12 w-full flex-1 flex flex-col focus:outline-none"
               >
                 <AnimatedRoutes />
               </main>

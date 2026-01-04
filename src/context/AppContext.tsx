@@ -48,6 +48,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  // Apply Language to HTML tag
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   const toggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };

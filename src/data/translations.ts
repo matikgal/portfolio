@@ -21,7 +21,7 @@ export const translations = {
         github: "GitHub",
         linkedin: "LinkedIn",
         checkHistory: "My Journey",
-        downloadCV: "Download CV",
+        viewCV: "View CV",
       },
     },
     about: {
@@ -173,7 +173,7 @@ export const translations = {
         github: "GitHub",
         linkedin: "LinkedIn",
         checkHistory: "Moja Ścieżka",
-        downloadCV: "Pobierz CV",
+        viewCV: "Zobacz CV",
       },
     },
     about: {

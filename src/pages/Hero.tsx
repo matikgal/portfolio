@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Github, Linkedin, Terminal, Download } from 'lucide-react'
+import { ArrowRight, Github, Linkedin, Terminal, FileText } from 'lucide-react'
+import cvFile from '@/assets/CV.pdf'
 import {
 	SiReact,
 	SiTypescript,
@@ -122,12 +123,12 @@ export default function Hero() {
 					</a>
 
 					<a
-						href="/cv.pdf"
+						href={cvFile}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="flex items-center gap-3 px-7 py-3.5 bg-transparent border border-slate-200 dark:border-white/20 text-slate-700 dark:text-white rounded-full font-medium transition-all duration-300 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:scale-105">
-						<Download className="w-5 h-5 transition-colors" />
-						<span>{t.hero.buttons.downloadCV}</span>
+						<FileText className="w-5 h-5 transition-colors" />
+						<span>{t.hero.buttons.viewCV}</span>
 					</a>
 				</motion.div>
 
@@ -202,10 +203,7 @@ export default function Hero() {
 											</div>
 										</div>
 										<div
-											className="md:w-64 w-full h-48 md:h-40 bg-slate-100 dark:bg-white/5 rounded-xl overflow-hidden relative shadow-inner order-1 md:order-2 focus:outline-none focus:ring-2 focus:ring-primary"
-											role="button"
-											tabIndex={0}
-											aria-label={`View details for ${project.title}`}
+											className="md:w-64 w-full h-48 md:h-40 bg-slate-100 dark:bg-white/5 rounded-xl overflow-hidden relative shadow-inner order-1 md:order-2"
 										>
 											{project.mobileImages && project.mobileImages.length > 0 ? (
 												// Mobile Mockup View for Hero

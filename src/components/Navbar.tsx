@@ -1,9 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
-import { Home, User, FolderGit2, Mail, Sun, Moon, Menu, X, Download } from 'lucide-react';
+import { Home, User, FolderGit2, Mail, Sun, Moon, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
+import cvFile from '@/assets/CV.pdf';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -49,6 +50,7 @@ const Navbar: React.FC = () => {
                 to={link.path}
                 onMouseEnter={() => setHoveredSection(link.id)}
                 onMouseLeave={() => setHoveredSection(null)}
+                aria-label={link.name}
                 className={`relative flex items-center gap-2 px-4 py-2.5 rounded-full transition-all duration-300 cursor-pointer no-underline`}
               >
                 {isActive && (
@@ -112,16 +114,13 @@ const Navbar: React.FC = () => {
           <div className="w-px h-5 bg-slate-300/50 dark:bg-white/10 mx-1" />
 
           <a
-            href="/cv.pdf"
+            href={cvFile}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 rounded-full hover:bg-white/50 dark:hover:bg-white/5 text-slate-500 dark:text-slate-400 transition-colors group relative"
-            aria-label="Download CV"
+            className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-white/50 dark:hover:bg-white/5 text-xs font-mono font-bold text-slate-600 dark:text-slate-400 transition-colors"
+            aria-label="View CV"
           >
-            <Download className="w-4 h-4" />
-             <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs font-medium text-white bg-slate-900 dark:bg-slate-700 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-              CV
-            </span>
+            CV
           </a>
         </nav>
       </div>
@@ -191,13 +190,13 @@ const Navbar: React.FC = () => {
                   </button>
                   <div className="w-px h-10 bg-slate-200 dark:bg-white/10" />
                    <a
-                    href="/cv.pdf"
+                    href={cvFile}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col items-center gap-2 text-sm text-slate-600 dark:text-slate-300"
                   >
-                     <div className="w-11 h-11 flex items-center justify-center rounded-full bg-slate-100 dark:bg-white/10">
-                        <Download className="w-5 h-5" />
+                     <div className="w-11 h-11 flex items-center justify-center rounded-full bg-slate-100 dark:bg-white/10 font-mono font-bold">
+                        CV
                      </div>
                      <span>CV</span>
                   </a>
