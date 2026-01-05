@@ -68,7 +68,7 @@ export const translations = {
             desc: "Created the career section on the official company website with full CMS, database integration, and content management system.",
           },
           {
-            year: "2022",
+            year: "2024",
             title: "Quality Assurance Tester",
             company: "uTest",
             desc: "Freelance testing of mobile and web applications. Detecting bugs, executing test scenarios, and ensuring software quality.",
@@ -236,7 +236,7 @@ export const translations = {
             desc: "Tworzyłem zakładkę kariera na oficjalnej stronie firmy wraz z pełnym CMS, integracją bazy danych i systemem zarządzania treścią.",
           },
           {
-            year: "2022",
+            year: "2024",
             title: "Tester Oprogramowania",
             company: "uTest",
             desc: "Freelancerskie testowanie aplikacji mobilnych i webowych. Wykrywanie błędów, realizacja scenariuszy testowych i dbanie o jakość oprogramowania.",
