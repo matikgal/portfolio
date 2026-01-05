@@ -74,7 +74,7 @@ export const translations = {
             desc: "Freelance testing of mobile and web applications. Detecting bugs, executing test scenarios, and ensuring software quality.",
           },
           {
-            year: "2020-2021",
+            year: "2022",
             title: "IT Administrator",
             company: "ZASŁAW Sp. z o.o.",
             desc: "Managed company website and online store. Provided helpdesk support, server administration, and comprehensive IT infrastructure management.",
@@ -242,7 +242,7 @@ export const translations = {
             desc: "Freelancerskie testowanie aplikacji mobilnych i webowych. Wykrywanie błędów, realizacja scenariuszy testowych i dbanie o jakość oprogramowania.",
           },
           {
-            year: "2020-2021",
+            year: "2022",
             title: "Administrator IT",
             company: "ZASŁAW Sp. z o.o.",
             desc: "Zarządzanie stroną firmową i sklepem internetowym. Obsługa helpdesk, administracja serwerami oraz kompleksowa obsługa infrastruktury IT firmy.",
