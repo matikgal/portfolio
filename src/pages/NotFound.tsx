@@ -2,10 +2,12 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { Home, ArrowLeft, Terminal } from 'lucide-react';
+import { useApp } from '@/context/AppContext';
 
 export default function NotFound() {
   const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const { t } = useApp();
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -45,7 +47,7 @@ export default function NotFound() {
           transition={{ delay: 0.3 }}
           className="text-2xl md:text-3xl font-bold text-slate-700 dark:text-slate-200 mb-6"
         >
-          Page Not Found
+          {t.notFound.title}
         </motion.h2>
 
         <motion.p 
@@ -54,7 +56,7 @@ export default function NotFound() {
           transition={{ delay: 0.4 }}
           className="text-slate-600 dark:text-slate-400 text-lg mb-12 leading-relaxed max-w-md"
         >
-          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+          {t.notFound.description}
         </motion.p>
 
         <motion.div
@@ -65,18 +67,18 @@ export default function NotFound() {
         >
           <button
             onClick={() => navigate(-1)}
-            className="group flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-slate-200 dark:border-white/10 text-slate-700 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 transition-all font-medium"
+            className="flex items-center justify-center gap-3 px-7 py-3.5 bg-transparent border border-slate-200 dark:border-white/20 text-slate-700 dark:text-white rounded-full font-medium transition-all duration-300 hover:bg-slate-50 dark:hover:bg-white/10 hover:scale-105"
           >
-            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-            Go Back
+            <ArrowLeft className="w-4 h-4" />
+            {t.notFound.goBack}
           </button>
 
           <Link
             to="/"
-            className="group flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-white hover:bg-primary/90 transition-all font-medium shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5"
+            className="relative group flex items-center justify-center gap-3 px-7 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-black rounded-full font-medium transition-all duration-300 hover:shadow-[0_10px_20px_-10px_rgba(0,0,0,0.5)] dark:hover:shadow-[0_10px_20px_-10px_rgba(255,255,255,0.3)] hover:scale-105"
           >
             <Home className="w-4 h-4" />
-            Home Page
+            {t.notFound.home}
           </Link>
         </motion.div>
       </div>

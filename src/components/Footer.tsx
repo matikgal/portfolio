@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { Github, Linkedin, Cloud, CloudRain, Sun, Command } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 
+import { useWeather } from '@/hooks/useWeather';
+
 export default function Footer() {
   const { t } = useApp();
   const [time, setTime] = useState<string>('');
-  const [weather, setWeather] = useState<{ temp: number, code: number } | null>(null);
+  // weather state extracted to hook useWeather
 
   // Clock
   useEffect(() => {
@@ -15,26 +17,8 @@ export default function Footer() {
     return () => clearInterval(interval);
   }, []);
 
-  // Weather (Open-Meteo API for Warsaw)
-  useEffect(() => {
-      const fetchWeather = async () => {
-      try {
-        const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=49.8225&longitude=19.0444&current_weather=true');
-        if (!res.ok) return;
-        const data = await res.json();
-        if (data.current_weather) {
-            setWeather({
-                temp: data.current_weather.temperature,
-                code: data.current_weather.weathercode
-            });
-        }
-      } catch (e) {
-        // Silently fail if weather service is unavailable
-        console.warn("Weather widget unavailable");
-      }
-    };
-    fetchWeather();
-  }, []);
+  // Weather (Open-Meteo API for Warsaw) - extracted to hook
+  const { weather } = useWeather();
 
   const getWeatherIcon = (code: number) => {
     if (code <= 3) return <Sun className="w-4 h-4 text-yellow-500" />;

@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { useParams, useNavigate, Navigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Github, ExternalLink, Code, CheckCircle2, KeyRound } from "lucide-react";
 import { useApp } from "@/context/AppContext";
 import { projectsData } from "@/data/projects";
 import { Project, Translations } from "@/types";
+import NotFound from "@/pages/NotFound";
 
 function ProjectLinks({ project, t }: { project: Project; t: Translations }) {
   return (
@@ -41,6 +42,8 @@ function ProjectLinks({ project, t }: { project: Project; t: Translations }) {
   );
 }
 
+
+
 export default function ProjectPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -55,7 +58,7 @@ export default function ProjectPage() {
   }, [id]);
 
   if (!project) {
-    return <Navigate to="/" replace />;
+    return <NotFound />;
   }
 
   return (

@@ -160,6 +160,12 @@ export const translations = {
       rightsReserved: "All rights reserved.",
       cmdHint: "Command Palette",
     },
+    notFound: {
+      title: "Page Not Found",
+      description: "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+      goBack: "Go Back",
+      home: "Home Page",
+    },
   },
   pl: {
     nav: {
@@ -321,6 +327,12 @@ export const translations = {
       rights: "Wszelkie prawa zastrzeżone.",
       rightsReserved: "Wszelkie prawa zastrzeżone.",
       cmdHint: "Paleta Komend",
+    },
+    notFound: {
+      title: "Strona nie znaleziona",
+      description: "Strona, której szukasz, mogła zostać usunięta, zmieniono jej nazwę lub jest tymczasowo niedostępna.",
+      goBack: "Wróć",
+      home: "Strona Główna",
     },
   },
 };

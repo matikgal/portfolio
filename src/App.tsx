@@ -11,6 +11,7 @@ import { ScrollProvider } from "@/context/ScrollContext";
 import PageLoader from "@/components/ui/PageLoader";
 import ToastContainer from "@/components/ui/ToastContainer";
 import CommandPalette from "@/components/CommandPalette";
+import SEO from "@/components/SEO";
 
 // Lazy loading ONLY non-critical pages
 const About = lazy(() => import("@/pages/About"));
@@ -18,7 +19,8 @@ const Projects = lazy(() => import("@/pages/Projects"));
 const ProjectPage = lazy(() => import("@/pages/ProjectPage"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
-import SEO from "@/components/SEO";
+
+import { projectsData } from "@/data/projects";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -51,18 +53,20 @@ function AppContent() {
     
     if (!path) path = "/";
 
-    const validRoutes = [
-      "/",
-      "/about",
-      "/projects",
-      "/projects/:id",
-      "/contact"
-    ];
+    // 1. Static routes check
+    const staticRoutes = ["/", "/about", "/projects", "/contact"];
+    if (staticRoutes.includes(path)) return true;
 
-    const isValid = validRoutes.some(route => matchPath(route, path));
-    
-    // Only show preloader for valid routes
-    return isValid;
+    // 2. Dynamic Project route check
+    const projectMatch = matchPath("/projects/:id", path);
+    if (projectMatch && projectMatch.params.id) {
+        const id = Number(projectMatch.params.id);
+        const exists = projectsData.some(p => p.id === id);
+        return exists;
+    }
+
+    // Default: invalid route -> no preloader
+    return false;
   });
 
   return (
