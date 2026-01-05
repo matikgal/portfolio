@@ -1,107 +1,243 @@
-import { useState } from 'react'
+import { useState, useRef, FormEvent, ChangeEvent } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Copy, Check, Github, Linkedin } from 'lucide-react'
+import { ArrowRight, Loader2 } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 import { useApp } from '@/context/AppContext'
 
+interface FormFieldState {
+  value: string
+  isFocused: boolean
+}
+
+interface FormState {
+  name: FormFieldState
+  email: FormFieldState
+  message: FormFieldState
+}
+
+const INITIAL_FORM_STATE: FormState = {
+  name: { value: '', isFocused: false },
+  email: { value: '', isFocused: false },
+  message: { value: '', isFocused: false },
+}
+
 export default function Contact() {
-	const { t, showToast } = useApp()
-	const [copied, setCopied] = useState(false)
-	const [revealed, setRevealed] = useState(false)
-	const email = 'mateusz.galuszka21@gmail.com'
+  const { t, showToast } = useApp()
+  const formRef = useRef<HTMLFormElement>(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [formState, setFormState] = useState<FormState>(INITIAL_FORM_STATE)
 
-	const handleCopy = () => {
-		navigator.clipboard.writeText(email)
-		setCopied(true)
-		showToast(t.contact.toast, 'success')
-		setTimeout(() => setCopied(false), 2000)
-	}
+  const handleInputChange = (field: keyof FormState) => (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormState(prev => ({
+      ...prev,
+      [field]: { ...prev[field], value: e.target.value }
+    }))
+  }
 
-	const handleReveal = () => {
-		setRevealed(true)
-	}
+  const handleFocus = (field: keyof FormState) => () => {
+    setFormState(prev => ({
+      ...prev,
+      [field]: { ...prev[field], isFocused: true }
+    }))
+  }
 
-	return (
-		<motion.section
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			exit={{ opacity: 0, y: -20 }}
-			className="pt-32 pb-20 flex-1 flex flex-col items-center justify-center">
-			<div className="flex flex-col items-center justify-center text-center w-full mb-20">
-				<motion.div
-					initial={{ scale: 0.9, opacity: 0 }}
-					animate={{ scale: 1, opacity: 1 }}
-					transition={{ delay: 0.1 }}
-					className="w-full px-2">
-					<h1 className="text-4xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 font-display text-gradient">
-						{t.contact.title}
-					</h1>
-					<p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-						{t.contact.subtitle}
-					</p>
+  const handleBlur = (field: keyof FormState) => () => {
+    setFormState(prev => ({
+      ...prev,
+      [field]: { ...prev[field], isFocused: false }
+    }))
+  }
 
-					<div className="flex flex-col items-center gap-8 w-full">
-						{!revealed ? (
-							<button
-								onClick={handleReveal}
-								className="group relative flex items-center justify-center gap-3 px-8 py-5 w-full max-w-md bg-white dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/10 transition-all hover:scale-105 shadow-xl shadow-slate-200/50 dark:shadow-none">
-								<div className="p-2 rounded-full bg-primary/10 text-primary shrink-0">
-									<Mail className="w-6 h-6" />
-								</div>
-								<span className="text-lg text-slate-700 dark:text-slate-200 font-medium">{t.contact.reveal}</span>
-							</button>
-						) : (
-							<button
-								onClick={handleCopy}
-								className="group relative flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 px-6 py-4 md:px-8 md:py-5 w-full max-w-[90vw] md:max-w-auto md:w-auto bg-white dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/10 transition-all active:scale-95 hover:scale-105 shadow-xl shadow-slate-200/50 dark:shadow-none overflow-hidden">
-								<div className="flex items-center gap-3">
-									<div className="p-2 rounded-full bg-primary/10 text-primary shrink-0">
-										<Mail className="w-5 h-5 md:w-6 md:h-6" />
-									</div>
-									<span className="text-sm sm:text-base md:text-xl text-slate-700 dark:text-slate-200 font-mono tracking-wide break-all">
-										{email}
-									</span>
-								</div>
+  const isLabelFloated = (field: keyof FormState): boolean => {
+    return formState[field].isFocused || formState[field].value.length > 0
+  }
 
-								<div className="hidden md:block w-px h-6 bg-slate-200 dark:bg-white/10 mx-2" />
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    if (!formRef.current) return
+    setIsLoading(true)
 
-								<div className="flex items-center gap-2 text-xs md:text-sm text-slate-400 md:text-inherit">
-									{copied ? (
-										<>
-											<Check className="w-4 h-4 md:w-5 md:h-5 text-green-500 dark:text-green-400" />
-											<span className="md:hidden text-green-500">Copied!</span>
-										</>
-									) : (
-										<>
-											<Copy className="w-4 h-4 md:w-5 md:h-5 text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
-											<span className="md:hidden">Copy</span>
-										</>
-									)}
-								</div>
-							</button>
-						)}
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      showToast(t.contact.form.success, 'success')
+      setFormState(INITIAL_FORM_STATE)
+      formRef.current.reset()
+    } catch (error) {
+      showToast(t.contact.form.error, 'error')
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
-						<div className="flex items-center gap-6">
-							<a
-								href="https://github.com/matikgal"
-								target="_blank"
-								rel="noreferrer"
-								aria-label="GitHub Profile"
-								className="block p-3 rounded-full bg-white dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-slate-200 dark:border-transparent hover:shadow-lg hover:scale-110">
-								<Github className="w-6 h-6" />
-							</a>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    }
+  }
 
-							<a
-								href="https://www.linkedin.com/in/mateusz-ga%C5%82uszka-981900231/"
-								target="_blank"
-								rel="noreferrer"
-								aria-label="LinkedIn Profile"
-								className="block p-3 rounded-full bg-white dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-400 hover:text-blue-500 dark:hover:text-blue-400 transition-all border border-slate-200 dark:border-transparent hover:shadow-lg hover:scale-110">
-								<Linkedin className="w-6 h-6" />
-							</a>
-						</div>
-					</div>
-				</motion.div>
-			</div>
-		</motion.section>
-	)
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
+  }
+
+  const inputBaseStyles = `
+    w-full bg-transparent border-0 border-b border-slate-200 dark:border-white/10 
+    py-4 text-lg text-slate-900 dark:text-white placeholder-transparent 
+    transition-colors duration-300
+    focus:outline-none focus:ring-0 focus:border-primary dark:focus:border-primary
+  `.replace(/\s+/g, ' ').trim()
+
+  return (
+    <motion.section 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen pt-32 pb-20 flex flex-col justify-center"
+    >
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="w-full max-w-xl mx-auto"
+      >
+        
+        {/* Header */}
+        <motion.div variants={itemVariants} className="mb-16">
+          <span className="text-xs font-mono text-primary uppercase tracking-widest mb-4 block">
+            {t.nav.contact}
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white tracking-tight font-display leading-tight">
+            {t.contact.title}
+          </h1>
+          <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
+            {t.contact.subtitle}
+          </p>
+        </motion.div>
+
+        {/* Form */}
+        <motion.form 
+          variants={itemVariants}
+          ref={formRef} 
+          onSubmit={handleSubmit} 
+          className="space-y-8"
+        >
+          {/* Name Field */}
+          <div className="relative">
+            <input 
+              type="text" 
+              name="user_name"
+              id="contact-name"
+              required
+              autoComplete="name"
+              value={formState.name.value}
+              onChange={handleInputChange('name')}
+              onFocus={handleFocus('name')}
+              onBlur={handleBlur('name')}
+              className={inputBaseStyles}
+              placeholder={t.contact.form.name}
+            />
+            <label 
+              htmlFor="contact-name"
+              className={`absolute left-0 transition-all duration-300 pointer-events-none ${
+                isLabelFloated('name')
+                  ? '-top-2.5 text-xs font-medium text-slate-500 dark:text-slate-400'
+                  : 'top-4 text-lg text-slate-400 dark:text-slate-500'
+              }`}
+            >
+              {t.contact.form.name}
+            </label>
+          </div>
+
+          {/* Email Field */}
+          <div className="relative">
+            <input 
+              type="email" 
+              name="user_email"
+              id="contact-email"
+              required
+              autoComplete="email"
+              value={formState.email.value}
+              onChange={handleInputChange('email')}
+              onFocus={handleFocus('email')}
+              onBlur={handleBlur('email')}
+              className={inputBaseStyles}
+              placeholder={t.contact.form.email}
+            />
+            <label 
+              htmlFor="contact-email"
+              className={`absolute left-0 transition-all duration-300 pointer-events-none ${
+                isLabelFloated('email')
+                  ? '-top-2.5 text-xs font-medium text-slate-500 dark:text-slate-400'
+                  : 'top-4 text-lg text-slate-400 dark:text-slate-500'
+              }`}
+            >
+              {t.contact.form.email}
+            </label>
+          </div>
+
+          {/* Message Field */}
+          <div className="relative">
+            <textarea 
+              name="message"
+              id="contact-message"
+              required
+              rows={4}
+              value={formState.message.value}
+              onChange={handleInputChange('message')}
+              onFocus={handleFocus('message')}
+              onBlur={handleBlur('message')}
+              className={`${inputBaseStyles} resize-none min-h-[120px]`}
+              placeholder={t.contact.form.message}
+            />
+            <label 
+              htmlFor="contact-message"
+              className={`absolute left-0 transition-all duration-300 pointer-events-none ${
+                isLabelFloated('message')
+                  ? '-top-2.5 text-xs font-medium text-slate-500 dark:text-slate-400'
+                  : 'top-4 text-lg text-slate-400 dark:text-slate-500'
+              }`}
+            >
+              {t.contact.form.message}
+            </label>
+          </div>
+
+          {/* Actions */}
+          <div className="pt-4 flex flex-col sm:flex-row gap-6 items-center sm:justify-between">
+            <button 
+              type="submit" 
+              disabled={isLoading}
+              className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-black rounded-full text-base font-medium transition-all duration-300 hover:scale-105 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-slate-900/10 dark:shadow-none hover:shadow-xl"
+            >
+              {isLoading ? t.contact.form.sending : t.contact.form.send}
+              {isLoading ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              )}
+            </button>
+
+            {/* Email Tile */}
+            <a 
+              href="mailto:mateusz.galuszka21@gmail.com"
+              className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10 transition-all group"
+            >
+              <span className="text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors text-sm font-mono">
+                mateusz.galuszka21@gmail.com
+              </span>
+            </a>
+          </div>
+        </motion.form>
+
+
+
+      </motion.div>
+    </motion.section>
+  )
 }

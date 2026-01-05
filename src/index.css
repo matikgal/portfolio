@@ -7,6 +7,12 @@
     @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-white dark:ring-offset-neutral-950;
   }
 
+  /* Override for form inputs - use subtle border instead of ring */
+  input:focus-visible,
+  textarea:focus-visible {
+    @apply ring-0 ring-offset-0;
+  }
+
   html {
     scroll-behavior: smooth;
   }

@@ -128,6 +128,16 @@ export const translations = {
       footer: "Designed with React & Tailwind.",
       toast: "Email copied to clipboard!",
       reveal: "Click to reveal email",
+      or: "or",
+      form: {
+        name: "Name",
+        email: "Email",
+        message: "Message",
+        send: "Send Message",
+        sending: "Sending...",
+        success: "Message sent successfully!",
+        error: "Failed to send message. Please try again.",
+      },
     },
     command: {
       placeholder: "Type a command or search...",
@@ -280,6 +290,16 @@ export const translations = {
       footer: "Zaprojektowano w React & Tailwind.",
       toast: "Email skopiowany do schowka!",
       reveal: "Kliknij aby pokazać email",
+      or: "lub",
+      form: {
+        name: "Imię",
+        email: "Email",
+        message: "Wiadomość",
+        send: "Wyślij wiadomość",
+        sending: "Wysyłanie...",
+        success: "Wiadomość została wysłana!",
+        error: "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
+      },
     },
     command: {
       placeholder: "Wpisz komendę lub szukaj...",
