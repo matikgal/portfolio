@@ -34,7 +34,7 @@ export const translations = {
           {
             school: "University of Bielsko-Biala",
             degree: "Computer Science",
-            year: "2021 - 2026",
+            year: "2022 - 2026",
             desc: "Engineering studies specializing in Software Development.",
           },
           {
@@ -202,7 +202,7 @@ export const translations = {
           {
             school: "Uniwersytet Bielsko-Bialski",
             degree: "Informatyka",
-            year: "2021 - 2026",
+            year: "2022 - 2026",
             desc: "Studia inżynierskie o specjalizacji Inżynieria Oprogramowania.",
           },
           {
