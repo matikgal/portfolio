@@ -12,7 +12,7 @@ export const translations = {
       status: "Open to work",
       role: "Frontend Developer",
       description:
-        "I specialize in creating scalable and modern web applications. With <strong>over a year</strong> of freelance experience, I take care of every detail of the interface.",
+        "I specialize in creating scalable and modern web applications. I take care of every detail of the interface.",
       viewWork: "Featured Work",
       viewAll: "View all",
       currentStack: "Tools & Technologies",
@@ -26,8 +26,8 @@ export const translations = {
     },
     about: {
       title: "About Me",
-      p1: "Hi, I'm a passionate Junior Frontend Developer based in Poland. I started my coding journey building custom themes for simple websites, which quickly escalated into a love for JavaScript and the modern web ecosystem.",
-      p2: "With <strong>over a year</strong> of commercial freelance experience, I treat every project as a production-grade application. I focus heavily on code quality, component reusability, and creating intuitive user interfaces.",
+      p1: "Hi, I'm a Frontend Developer based in Poland. I started my coding journey building custom themes for simple websites, and today I specialize in building high-performance, scalable applications within the React ecosystem.",
+      p2: "I treat every project as a production-grade application. I focus heavily on code quality, component reusability, and creating intuitive user interfaces.",
       education: {
         title: "Education",
         items: [
@@ -55,12 +55,7 @@ export const translations = {
       timeline: {
         title: "My Journey",
         steps: [
-          {
-            year: "2024 - Present",
-            title: "Freelance Frontend Developer",
-            company: "Self-employed",
-            desc: "Developing custom web solutions for diverse clients. Specializing in high-performance landing pages and interactive web applications.",
-          },
+
           {
             year: "2025",
             title: "Programming Internship",
@@ -90,11 +85,11 @@ export const translations = {
           },
           {
             title: "UI/UX Implementation",
-            desc: "Translating designs into pixel-perfect, interactive, and accessible user interfaces.",
+            desc: "Translating Figma designs into pixel-perfect code. Creating interactive and accessible user interfaces.",
           },
           {
             title: "Performance Optimization",
-            desc: "Maximizing application speed and efficiency, focusing on Core Web Vitals and user experience.",
+            desc: "Maximizing application speed and efficiency. Ensuring high Core Web Vitals scores and SEO optimization.",
           },
           {
             title: "Mobile-First Development",
@@ -180,7 +175,7 @@ export const translations = {
       status: "Szukam pracy",
       role: "Frontend Developer",
       description:
-        "Specjalizuję się w tworzeniu skalowalnych i nowoczesnych aplikacji webowych. Posiadam <strong>ponad rok</strong> doświadczenia jako freelancer, dbając o każdy detal interfejsu.",
+        "Specjalizuję się w tworzeniu skalowalnych i nowoczesnych aplikacji webowych, dbając o każdy detal interfejsu.",
       viewWork: "Wybrane Prace",
       viewAll: "Zobacz wszystkie",
       currentStack: "Narzędzia i Technologie",
@@ -194,8 +189,8 @@ export const translations = {
     },
     about: {
       title: "O mnie",
-      p1: "Cześć, jestem początkującym Frontend Developerem z Polski. Moja przygoda z kodowaniem zaczęła się od prostych modyfikacji stron, co szybko przerodziło się w pasję do JavaScriptu i nowoczesnych technologii webowych.",
-      p2: "Mimo że szukam stałej roli, posiadam <strong>ponad rok</strong> doświadczenia komercyjnego jako freelancer. Każdy projekt traktuję profesjonalnie, kładąc nacisk na jakość kodu, reużywalność i intuicyjność interfejsów.",
+      p1: "Cześć, jestem Frontend Developerem z Polski. Moja przygoda z kodowaniem zaczęła się od prostych modyfikacji stron, a obecnie skupiam się na tworzeniu wydajnych i skalowalnych aplikacji w ekosystemie React",
+      p2: "Każdy projekt traktuję profesjonalnie, kładąc nacisk na jakość kodu, reużywalność i intuicyjność interfejsów.",
       education: {
         title: "Edukacja",
         items: [
@@ -223,12 +218,7 @@ export const translations = {
       timeline: {
         title: "Moja Ścieżka",
         steps: [
-          {
-            year: "2024 - Obecnie",
-            title: "Freelance Frontend Developer",
-            company: "Samozatrudnienie",
-            desc: "Tworzenie dedykowanych rozwiązań webowych dla różnorodnych klientów. Specjalizacja w wydajnych landing page'ach i interaktywnych aplikacjach.",
-          },
+
           {
             year: "2025",
             title: "Praktyki Programistyczne",
@@ -258,11 +248,11 @@ export const translations = {
           },
           {
             title: "Wdrożenia UI/UX",
-            desc: "Przekładanie projektów graficznych na pixel-perfect, interaktywne i dostępne interfejsy.",
+            desc: "Przekładanie projektów z Figmy na pikselowo idealny kod (Pixel Perfect). Tworzenie interaktywnych i dostępnych interfejsów.",
           },
           {
             title: "Optymalizacja Wydajności",
-            desc: "Maksymalizacja szybkości działania aplikacji, skupienie na Core Web Vitals i doświadczeniu użytkownika.",
+            desc: "Maksymalizacja szybkości działania aplikacji. Dbanie o wysokie wyniki Core Web Vitals i SEO.",
           },
           {
             title: "Development Mobile-First",
@@ -292,7 +282,7 @@ export const translations = {
     contact: {
       title: "Napisz do mnie.",
       subtitle:
-        "Aktualnie poszukuję pracy jako Junior Frontend Developer. Jeśli masz pytania lub propozycję współpracy, moja skrzynka jest otwarta.",
+        "Aktualnie poszukuję pracy jako Frontend Developer. Jeśli masz pytania lub propozycję współpracy, moja skrzynka jest otwarta.",
       footer: "Zaprojektowano w React & Tailwind.",
       toast: "Email skopiowany do schowka!",
       reveal: "Kliknij aby pokazać email",
