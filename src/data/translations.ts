@@ -10,7 +10,7 @@ export const translations = {
       greeting: "Hi, I'm",
       name: "Mateusz",
       status: "Open to work",
-      role: "Frontend Developer",
+      role: "Fullstack Developer",
       description:
         "I specialize in creating scalable and modern web applications. I take care of every detail of the interface.",
       viewWork: "Featured Work",
@@ -31,6 +31,12 @@ export const translations = {
       education: {
         title: "Education",
         items: [
+          {
+            school: "University of Bielsko-Biala",
+            degree: "Computer Science – Master's Degree",
+            year: "2026 - 2027",
+            desc: "Master's studies in Computer Science.",
+          },
           {
             school: "University of Bielsko-Biala",
             degree: "Computer Science",
@@ -173,7 +179,7 @@ export const translations = {
       greeting: "Cześć, jestem",
       name: "Mateusz",
       status: "Szukam pracy",
-      role: "Frontend Developer",
+      role: "Fullstack Developer",
       description:
         "Specjalizuję się w tworzeniu skalowalnych i nowoczesnych aplikacji webowych, dbając o każdy detal interfejsu.",
       viewWork: "Wybrane Prace",
@@ -194,6 +200,12 @@ export const translations = {
       education: {
         title: "Edukacja",
         items: [
+          {
+            school: "Uniwersytet Bielsko-Bialski",
+            degree: "Informatyka",
+            year: "2026 - 2027",
+            desc: "Studia magisterskie na kierunku Informatyka.",
+          },
           {
             school: "Uniwersytet Bielsko-Bialski",
             degree: "Informatyka",

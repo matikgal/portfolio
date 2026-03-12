@@ -36,7 +36,7 @@ export default function About() {
 								<div key={index} className="flex items-start md:items-center gap-5">
 									<div className="p-3 bg-white dark:bg-white/5 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5 shrink-0">
 										<img 
-											src={index === 0 ? ubbIcon : pz10Icon} 
+											src={index < 2 ? ubbIcon : pz10Icon} 
 											alt={item.school} 
 											className="w-10 h-10 object-contain rounded-sm" 
 										/>
