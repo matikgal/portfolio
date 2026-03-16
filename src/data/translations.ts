@@ -26,7 +26,7 @@ export const translations = {
     },
     about: {
       title: "About Me",
-      p1: "Hi, I'm a Frontend Developer based in Poland. I started my coding journey building custom themes for simple websites, and today I specialize in building high-performance, scalable applications within the React ecosystem.",
+      p1: "Hi, I'm a Fullstack Developer based in Poland. I started my coding journey building custom themes for simple websites, and today I specialize in building high-performance, scalable applications within the React ecosystem.",
       p2: "I treat every project as a production-grade application. I focus heavily on code quality, component reusability, and creating intuitive user interfaces.",
       education: {
         title: "Education",
@@ -125,7 +125,7 @@ export const translations = {
     contact: {
       title: "Let's work together.",
       subtitle:
-        "I'm currently looking for new opportunities as a Frontend Developer. Whether you have a question or just want to say hi, my inbox is always open.",
+        "Whether you have a question or just want to say hi, my inbox is always open.",
       footer: "Designed with React & Tailwind.",
       toast: "Email copied to clipboard!",
       reveal: "Click to reveal email",
@@ -195,7 +195,7 @@ export const translations = {
     },
     about: {
       title: "O mnie",
-      p1: "Cześć, jestem Frontend Developerem z Polski. Moja przygoda z kodowaniem zaczęła się od prostych modyfikacji stron, a obecnie skupiam się na tworzeniu wydajnych i skalowalnych aplikacji w ekosystemie React",
+      p1: "Cześć, jestem Fullstack Developerem z Polski. Moja przygoda z kodowaniem zaczęła się od prostych modyfikacji stron, a obecnie skupiam się na tworzeniu wydajnych i skalowalnych aplikacji w ekosystemie React",
       p2: "Każdy projekt traktuję profesjonalnie, kładąc nacisk na jakość kodu, reużywalność i intuicyjność interfejsów.",
       education: {
         title: "Edukacja",
@@ -294,7 +294,7 @@ export const translations = {
     contact: {
       title: "Napisz do mnie.",
       subtitle:
-        "Aktualnie poszukuję pracy jako Frontend Developer. Jeśli masz pytania lub propozycję współpracy, moja skrzynka jest otwarta.",
+        "Jeśli masz pytania lub propozycję współpracy, moja skrzynka jest otwarta.",
       footer: "Zaprojektowano w React & Tailwind.",
       toast: "Email skopiowany do schowka!",
       reveal: "Kliknij aby pokazać email",
